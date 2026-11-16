@@ -168,3 +168,11 @@ footer { padding: 24px 0 40px; color: var(--txt-3); font-size: .8rem; }
 .lista::-webkit-scrollbar-thumb:hover, .detalhe::-webkit-scrollbar-thumb:hover { background: #636366; background-clip: padding-box; }
 .legenda-score { margin: 0 18px 8px; color: var(--txt-2); font-size: .76rem; line-height: 1.35; }
 .legenda-score b { color: var(--txt); font-weight: 600; }
+.relacao { padding: 13px 0; border-bottom: 1px solid var(--sep); }
+.relacao:last-child { border-bottom: 0; }
+.rel-topo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .98rem; }
+.rel-topo a { color: var(--azul); }
+.rel-tag { font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--txt-2); background: var(--painel-2); border-radius: 5px; padding: 2px 6px; }
+.rel-desc { margin: 4px 0 3px; font-size: .92rem; }
+.relacao .meta { color: var(--txt-2); font-size: .78rem; }
+.relacao .meta a { color: var(--txt-2); text-decoration: underline; }

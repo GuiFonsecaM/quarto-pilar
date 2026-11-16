@@ -100,3 +100,25 @@ def test_nome_exibicao():
 def test_publicacao_if_data():
     assert backtest.publicacao(202506).isoformat() == "2025-08-29"
     assert backtest.publicacao(202512).isoformat() == "2026-03-31"
+
+
+def test_relacoes_ponto_de_vista_e_regras():
+    from radar import relacoes
+    bancos = pd.DataFrame({"cod": ["C1", "C2"], "nome_exibicao": ["Banco Alfa", "Banco Beta"],
+                           "busca": ['"Banco Alfa"', '"Banco Beta"']})
+    noticias_df = pd.DataFrame([{"id": "n1", "data": "2026-11-10T00:00:00+00:00", "titulo": "Banco Alfa vende carteira ao Banco Beta",
+                                 "fonte": "X", "link": "https://x", "cod": "C1", "consulta": "", "origem": "",
+                                 "coletado_em": "", "processado": False}])
+    import radar.eventos as E
+    import tempfile, pathlib
+    with tempfile.TemporaryDirectory() as d:
+        E.ARQ = pathlib.Path(d) / "ev.parquet"
+        from radar import config as C
+        C.DADOS = pathlib.Path(d)
+        ev = E.processar(noticias_df, bancos, bancos)
+    assert ev.iloc[0]["contraparte_cod"] == "C2" and ev.iloc[0]["relacao"] == "citado_junto"
+    rel = relacoes.montar(ev, {"C1": "Banco Alfa", "C2": "Banco Beta"})
+    beta = relacoes.do_banco(rel, "C2", {"C1", "C2"})
+    assert any(r["outro_cod"] == "C1" and "Banco Alfa" in r["descricao"] for r in beta)
+    master = relacoes.do_banco(rel, "C0080367", {"C0080367"})
+    assert any("BRB" in r["outro"] for r in master)   # vem da lista verificada

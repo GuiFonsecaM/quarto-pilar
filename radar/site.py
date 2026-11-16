@@ -9,6 +9,7 @@ import pandas as pd
 
 from . import config as C
 from .eventos import TIPOS
+from .relacoes import do_banco
 
 TIPO_INST = {"B1": "Banco comercial ou múltiplo", "B2": "Banco de investimento", "B3S": "Cooperativa de crédito",
              "B4": "Banco de desenvolvimento", "N1": "Financeira ou instituição de crédito"}
@@ -50,8 +51,9 @@ def _lista(serie: pd.Series):
 
 def construir(scores: pd.DataFrame, atual: pd.DataFrame, ev: pd.DataFrame, dossies: dict,
               backtest: dict | None, nomes: dict, historico: pd.DataFrame | None = None,
-              liquidadas: set | None = None) -> dict:
+              liquidadas: set | None = None, relacoes: pd.DataFrame | None = None) -> dict:
     liquidadas = liquidadas or set()
+    no_site = set(atual["cod"])
     agora = datetime.now(timezone.utc)
     ref = int(atual["anomes"].max())
     medianas = scores.groupby(["anomes", "grupo"])[list(set(PARES.values()))].median()
@@ -94,6 +96,7 @@ def construir(scores: pd.DataFrame, atual: pd.DataFrame, ev: pd.DataFrame, dossi
             "score_noticias": int(l["score_noticias"]), "nivel": l["nivel_final"], "sinais": l["sinais"],
             "liquidada": cod in liquidadas,
             "serie": serie, "historico_diario": hist, "noticias": notis, "dossie": dossies.get(cod),
+            "relacoes": do_banco(relacoes, cod, no_site),
         }
         _escrever(C.SITE_DADOS / "bancos" / f"{cod}.json", info)
         ranking.append({

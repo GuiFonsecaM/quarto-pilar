@@ -11,6 +11,7 @@ import pandas as pd
 
 from . import config as C
 from . import llm
+from .relacoes import RELACOES
 
 log = logging.getLogger("radar.eventos")
 
@@ -35,9 +36,14 @@ SISTEMA = """Você é analista de risco bancário. Classifique manchetes de not�
 Para cada manchete devolva: o código do banco da lista (ou null se não for nenhum dela), o tipo de evento,
 a gravidade (0 = irrelevante para a saúde financeira, 1 = leve, 2 = relevante, 3 = grave),
 o status (confirmado, rumor ou opiniao) e um resumo neutro de até 20 palavras.
+Se a manchete citar outra instituição, empresa, fundo ou gestora ligada ao banco (quem comprou, vendeu,
+investiu, fez aporte ou é parceiro), informe em "contraparte" o nome dela e em "relacao" o tipo de ligação,
+do ponto de vista do banco. Sem outra parte envolvida, use null nos dois.
 Use só o que está na manchete. Não invente fatos. Responda apenas JSON no formato:
-{"itens":[{"id":"...","cod":"C0000000 ou null","tipo":"<tipo>","gravidade":0,"status":"confirmado","resumo":"..."}]}
-Tipos válidos: """ + ", ".join(TIPOS)
+{"itens":[{"id":"...","cod":"C0000000 ou null","tipo":"<tipo>","gravidade":0,"status":"confirmado","resumo":"...",
+"contraparte":"nome ou null","relacao":"<relacao> ou null"}]}
+Tipos válidos: """ + ", ".join(TIPOS) + """
+Relações válidas: """ + ", ".join(RELACOES)
 
 REGRAS = [
     ("liquidacao_intervencao", 3, r"liquida[cç][aã]o extrajudicial|interven[cç][aã]o|\braet\b|decreta liquida"),
@@ -80,11 +86,21 @@ def carregar() -> pd.DataFrame:
     if ARQ.exists():
         return pd.read_parquet(ARQ)
     return pd.DataFrame(columns=["id", "cod", "tipo", "gravidade", "status", "resumo", "metodo",
-                                 "data", "titulo", "link", "fonte"])
+                                 "contraparte", "contraparte_cod", "relacao", "data", "titulo", "link", "fonte"])
 
 
-def processar(noticias: pd.DataFrame, bancos: pd.DataFrame) -> pd.DataFrame:
-    """bancos: cod, nome_exibicao. Classifica as notícias ainda não processadas."""
+def _bancos_no_texto(titulo: str, bancos: pd.DataFrame) -> list[str]:
+    """Todos os bancos monitorados citados num texto, na ordem da lista."""
+    achados = []
+    for r in bancos.itertuples():
+        if _casar_banco(titulo, bancos[bancos["cod"] == r.cod]) and r.cod not in achados:
+            achados.append(r.cod)
+    return achados
+
+
+def processar(noticias: pd.DataFrame, bancos: pd.DataFrame, todos: pd.DataFrame | None = None) -> pd.DataFrame:
+    """bancos: cod, nome_exibicao (alvos do dia). todos: o universo inteiro, para achar a contraparte."""
+    todos = bancos if todos is None else todos
     ev = carregar()
     pend = noticias[~noticias["processado"].astype(bool)].copy()
     if pend.empty:
@@ -114,14 +130,24 @@ def processar(noticias: pd.DataFrame, bancos: pd.DataFrame) -> pd.DataFrame:
                     grav = max(0, min(3, int(it.get("gravidade", 0))))
                 except (TypeError, ValueError):
                     grav = 0
+                contra = it.get("contraparte")
+                contra = str(contra).strip()[:80] if contra and str(contra).lower() not in ("null", "none") else ""
+                rel = it.get("relacao") if it.get("relacao") in RELACOES and contra else ""
+                contra_cod = _casar_banco(contra, todos) if contra else None
                 novos.append({"id": r.id, "cod": cod, "tipo": it["tipo"], "gravidade": grav,
                               "status": str(it.get("status", ""))[:12], "resumo": str(it.get("resumo", ""))[:200],
-                              "metodo": "ia"})
+                              "metodo": "ia", "contraparte": contra, "contraparte_cod": contra_cod or "",
+                              "relacao": rel})
             else:
                 tipo, grav = classificar_regras(r.titulo)
                 cod = r.cod if r.cod in validos else _casar_banco(r.titulo, bancos)
+                # sem IA: se a manchete cita dois bancos monitorados, registra a ligação genérica
+                citados = [c for c in _bancos_no_texto(r.titulo, todos) if c != cod]
+                contra_cod = citados[0] if cod and citados else ""
+                contra = todos.set_index("cod").loc[contra_cod, "nome_exibicao"] if contra_cod else ""
                 novos.append({"id": r.id, "cod": cod, "tipo": tipo, "gravidade": grav, "status": "",
-                              "resumo": "", "metodo": "regras"})
+                              "resumo": "", "metodo": "regras", "contraparte": contra,
+                              "contraparte_cod": contra_cod, "relacao": "citado_junto" if contra_cod else ""})
     n = pd.DataFrame(novos).merge(noticias[["id", "data", "titulo", "link", "fonte"]], on="id", how="left")
     ev = pd.concat([ev, n], ignore_index=True).drop_duplicates("id", keep="last")
     ev.to_parquet(ARQ, index=False)

@@ -14,7 +14,7 @@ from datetime import date, datetime, timezone
 
 import pandas as pd
 
-from . import backtest, config as C, dossie, eventos, ifdata, indicadores, llm, noticias, painel, score, site
+from . import backtest, config as C, dossie, eventos, ifdata, indicadores, llm, noticias, painel, relacoes, score, site
 
 log = logging.getLogger("radar")
 ARQ_SCORES = C.DADOS / "scores.parquet"
@@ -85,7 +85,8 @@ def montar_site(atual: pd.DataFrame, s: pd.DataFrame, ev: pd.DataFrame, buscar_i
     h.to_parquet(ARQ_HIST, index=False)
     bt = json.loads(ARQ_BACKTEST.read_text(encoding="utf-8")) if ARQ_BACKTEST.exists() else None
     liquidadas = {c["cod"] for c in (bt or {}).get("casos", [])}
-    meta = site.construir(s, atual, ev, dossies, bt, nomes, h, liquidadas)
+    rel = relacoes.montar(ev, nomes)
+    meta = site.construir(s, atual, ev, dossies, bt, nomes, h, liquidadas, rel)
     meta["uso_ia"] = llm.uso()
     return meta
 
@@ -105,7 +106,7 @@ def diario() -> None:
     alvo_cods = list(dict.fromkeys(list(em_alerta) + list(maiores)))[:C.BANCOS_NOTICIAS]
     alvos = t[t["cod"].isin(alvo_cods)]
     n = noticias.coletar(alvos)
-    ev = eventos.processar(n, alvos[["cod", "nome_exibicao", "busca"]])
+    ev = eventos.processar(n, alvos[["cod", "nome_exibicao", "busca"]], t)
     meta = montar_site(atual, s, ev)
     log.info("Site atualizado: %s", meta)
 

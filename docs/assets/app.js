@@ -161,6 +161,15 @@ async function abrir(cod, empurrar = true) {
         <div class="nota">Números da data-base ${R.trimestre(d.anomes)}.</div>
       </div></div>` : ""}
 
+    ${(b.relacoes || []).length ? `<div class="bloco"><h2>Relacionamentos</h2>
+      <p class="desc">Ligações com outras instituições citadas na imprensa: venda de carteiras, compras, aportes e fundos em comum.</p>
+      <div class="cartao">${b.relacoes.map((r) => `<div class="relacao">
+        <div class="rel-topo">${r.outro_cod ? `<a href="#${R.esc(r.outro_cod)}" data-abrir="${R.esc(r.outro_cod)}">${R.esc(r.outro)}</a>` : `<span>${R.esc(r.outro)}</span>`}
+          <span class="rel-tag">${r.origem === "curadoria" ? "verificado" : "extraído de notícia"}</span></div>
+        <div class="rel-desc">${R.esc(r.descricao)}</div>
+        <div class="meta">${r.data ? r.data.split("-").reverse().join("/") + " · " : ""}${r.link ? `<a href="${R.esc(r.link)}" target="_blank" rel="noopener">${R.esc(r.fonte || "fonte")}</a>` : R.esc(r.fonte || "")}</div>
+      </div>`).join("")}</div></div>` : ""}
+
     <div class="bloco"><h2>Notícias</h2>
       <div class="cartao">${b.noticias.length ? b.noticias.map((n) => `<a class="noticia" href="${R.esc(n.link)}" target="_blank" rel="noopener">
         <div class="fonte">${R.esc(n.fonte || "Notícia")}</div>
@@ -177,6 +186,9 @@ async function abrir(cod, empurrar = true) {
     estado.metrica = bt.dataset.m;
     box.querySelectorAll("[data-m]").forEach((x) => x.setAttribute("aria-pressed", String(x === bt)));
     graficoPrincipal(estado.banco);
+  }));
+  box.querySelectorAll("[data-abrir]").forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault(); abrir(a.dataset.abrir);
   }));
   document.getElementById("voltar").addEventListener("click", () => {
     document.getElementById("app").classList.remove("aberto");

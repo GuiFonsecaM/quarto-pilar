@@ -90,7 +90,8 @@ def calcular(p: pd.DataFrame) -> pd.DataFrame:
     i["liquidez_ampla"] = div(liq + p["tvm"].fillna(0), p["captacoes"])
     conhecidos = sum(p[c].fillna(0) for c in (
         "disponibilidades", "aplicacoes_interfinanceiras", "tvm", "derivativos_ativo",
-        "credito_liquido", "outras_op_credito", "arrendamento", "permanente"))
+        "credito_liquido", "outras_op_credito", "transacoes_pagamento", "arrendamento", "permanente")
+        if c in p)
     residual = (p["ativo_total"] - conhecidos).clip(lower=0)
     i["share_ativos_outros"] = div(residual, p["ativo_total"])
     i["delta_ativos_outros_12m"] = i["share_ativos_outros"] - i.groupby("cod")["share_ativos_outros"].shift(4)

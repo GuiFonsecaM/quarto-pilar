@@ -32,6 +32,23 @@ def test_montar_e_trimestralizar():
     assert p["lucro_liquido_tri"].tolist() == [10.0, 15.0]
 
 
+def test_recebiveis_de_cartao_nao_contam_como_ativo_dificil():
+    # Layout da Resolução 4.966: cartão/pós-pago tem linha própria (h) no relatório de Ativo
+    grupo = "Valores a Receber de Transações de Pagamentos - Usuários Finais (Pós-pago)"
+    linhas = _bruto(202606, "C1", [
+        ("1", None, "Ativo Total", 1000.0),
+        ("2", None, "Disponibilidades \n(a)", 50.0),
+        ("2", "Operações de Crédito", "Operações de Crédito \n(e)", 300.0),
+        ("2", grupo, "Valor Contábil Bruto \n(h1)", 520.0),
+        ("2", grupo, grupo + " \n(h)", 500.0),
+        ("2", None, "Outros Ativos Realizáveis \n(i)", 150.0),
+    ])
+    p = painel.montar(pd.DataFrame(linhas))
+    assert p["transacoes_pagamento"].iloc[0] == 500.0
+    i = indicadores.calcular(p)
+    assert abs(i["share_ativos_outros"].iloc[0] - 0.15) < 1e-9
+
+
 def _indicadores_base(n=40):
     rng = np.random.default_rng(0)
     return pd.DataFrame({

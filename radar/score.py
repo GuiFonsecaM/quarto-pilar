@@ -125,7 +125,7 @@ def pontuar_trimestre(t: pd.DataFrame) -> pd.DataFrame:
         so = r["share_ativos_outros"]
         zo = z_outros.get(r.name, np.nan)
         if pd.notna(so) and so > 0.3 and pd.notna(zo) and zo > 2:
-            add(12, "ativos_dificeis", f"{_pct(so)} do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)", so)
+            add(12, "ativos_dificeis", f"{_pct(so)} do ativo fora de caixa, títulos, crédito e cartão (ativos de difícil avaliação)", so)
             if pd.notna(r["delta_ativos_outros_12m"]) and r["delta_ativos_outros_12m"] > 0.05:
                 add(5, "ativos_dificeis_subindo", f"Essa fatia subiu {_pp(r['delta_ativos_outros_12m'])} em 12 meses", r["delta_ativos_outros_12m"])
         ck, cre = r["cresc_carteira_12m"], r["cresc_rendas_credito_12m"]

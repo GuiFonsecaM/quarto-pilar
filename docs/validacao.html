@@ -56,7 +56,7 @@ Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
       type: "bar",
       data: { labels: c.serie.map((x) => R.trimestre(x.anomes)),
         datasets: [{ data: c.serie.map((x) => x.score), backgroundColor: c.serie.map((x) =>
-          x.score >= 65 ? "#ff453a" : x.score >= 45 ? "#ff9f0a" : x.score >= 25 ? "#ffd60a" : "#30d158"), borderRadius: 4 }] },
+          x.score >= 65 ? "#ff453a" : x.score >= 45 ? "#ff9f0a" : x.score >= 25 ? "#98989d" : "#30d158"), borderRadius: 4 }] },
       options: { maintainAspectRatio: false, plugins: { legend: { display: false } },
         scales: { y: { min: 0, max: 100, grid: { color: "rgba(84,84,88,.35)" }, border: { display: false } }, x: { grid: { display: false }, border: { display: false } } } },
     });

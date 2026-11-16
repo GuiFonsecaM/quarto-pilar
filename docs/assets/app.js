@@ -32,7 +32,7 @@ function desenharLista() {
     const varTxt = b.liquidada ? "liquidada" : b.variacao ? `${b.variacao > 0 ? "+" : ""}${b.variacao} no tri` : b.nivel;
     return `<div class="item${b.cod === estado.sel ? " sel" : ""}" role="listitem" tabindex="0" data-cod="${b.cod}">
       <div style="min-width:0"><div class="n1">${R.esc(b.nome)}</div><div class="n2">${R.esc(b.tipo)}</div></div>
-      ${R.sparkline(b.spark || [], cor)}
+      ${R.sparkline(b.spark || [], cor) || '<span aria-hidden="true"></span>'}
       <div class="pilula c-${c}">${b.score}<small>${varTxt}</small></div>
     </div>`;
   }).join("") + `<div class="rodape-lista">${itens.length} instituições · ativo acima de R$ 1 bi</div>`;

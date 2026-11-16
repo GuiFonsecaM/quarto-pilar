@@ -1,6 +1,6 @@
 // Funções compartilhadas pelas páginas do Quarto Pilar
 const R = {
-  cores: { normal: "#30d158", atencao: "#ffd60a", alerta: "#ff9f0a", alto: "#ff453a", azul: "#0a84ff", cinza: "rgba(235,235,245,.45)" },
+  cores: { normal: "#30d158", atencao: "#98989d", alerta: "#ff9f0a", alto: "#ff453a", azul: "#0a84ff", cinza: "rgba(235,235,245,.45)" },
   async json(caminho) {
     const r = await fetch(caminho, { cache: "no-cache" });
     if (!r.ok) throw new Error(`Falha ao carregar ${caminho}`);

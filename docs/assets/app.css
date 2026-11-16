@@ -58,8 +58,8 @@ button { font-family: inherit; }
 .item svg { width: 70px; height: 30px; display: block; }
 .pilula { justify-self: end; min-width: 68px; text-align: right; padding: 5px 8px; border-radius: 7px; font: 600 1rem var(--num); font-variant-numeric: tabular-nums; color: #fff; }
 .pilula small { display: block; font-size: .66rem; font-weight: 500; opacity: .85; margin-top: -1px; }
-.c-normal { background: var(--verde); } .c-atencao { background: var(--amarelo); color: #000; } .c-alerta { background: var(--laranja); color: #000; } .c-alto { background: var(--vermelho); }
-.c-liq { background: #48484a; }
+.c-normal { background: var(--verde); } .c-atencao { background: #636366; color: #fff; } .c-alerta { background: var(--laranja); color: #000; } .c-alto { background: var(--vermelho); }
+.c-liq { background: #3a3a3c; color: rgba(235,235,245,.7); }
 .rodape-lista { color: var(--txt-3); font-size: .75rem; padding: 12px 18px; }
 
 /* ---------- detalhe ---------- */
@@ -156,3 +156,13 @@ footer { padding: 24px 0 40px; color: var(--txt-3); font-size: .8rem; }
 .dossie ul.fontes { list-style: none; padding-left: 0; }
 .dossie ul.fontes li { margin: 8px 0; color: rgba(235,235,245,.85); }
 .dossie ul.fontes .ev { cursor: default; margin: 0 6px 0 0; }
+
+/* barras de rolagem escuras, finas e discretas (estilo macOS) */
+:root { color-scheme: dark; }
+.lista, .detalhe, html { scrollbar-width: thin; scrollbar-color: #48484a transparent; }
+.lista::-webkit-scrollbar, .detalhe::-webkit-scrollbar, html::-webkit-scrollbar { width: 10px; }
+.lista::-webkit-scrollbar-track, .detalhe::-webkit-scrollbar-track, html::-webkit-scrollbar-track { background: transparent; }
+.lista::-webkit-scrollbar-thumb, .detalhe::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+  background: #48484a; border-radius: 10px; border: 3px solid #000; background-clip: padding-box;
+}
+.lista::-webkit-scrollbar-thumb:hover, .detalhe::-webkit-scrollbar-thumb:hover { background: #636366; background-clip: padding-box; }

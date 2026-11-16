@@ -116,11 +116,11 @@ async function abrir(cod, empurrar = true) {
     <h1>${R.esc(b.nome)}</h1>
     <div class="sub">${R.esc(b.tipo)}${b.segmento ? " · " + b.segmento : ""} · ${R.esc(b.nome_oficial || "")}</div>
     <div class="preco">
-      <span class="v">${b.score_final}<small> /100</small></span>
+      <span class="v">${b.score_final}<small> /100 de alerta</small></span>
       <span class="etq c-${c}">${b.liquidada ? "Em liquidação" : b.nivel}</span>
       ${delta !== null ? `<span class="var ${corDelta}">${delta > 0 ? "+" : ""}${delta} desde ${R.trimestre(s.anomes[s.anomes.length - 2])}</span>` : ""}
     </div>
-    <div class="sub">Balanço de ${R.trimestre(b.anomes_ref)}${b.score_noticias ? ` · +${b.score_noticias} por notícias recentes` : ""}</div>
+    <div class="sub">Quanto maior, mais sinais de risco · balanço de ${R.trimestre(b.anomes_ref)}${b.score_noticias ? ` · +${b.score_noticias} por notícias recentes` : ""}</div>
     ${b.liquidada ? '<div class="aviso forte">Esta instituição entrou em liquidação extrajudicial. Os números são os últimos divulgados antes do evento.</div>'
       : b.defasado ? `<div class="aviso forte">Não divulgou a data-base mais recente. Números de ${R.trimestre(b.anomes_ref)}.</div>` : ""}
 

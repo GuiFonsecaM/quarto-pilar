@@ -47,8 +47,10 @@ MAPA: dict[str, list[tuple[str, str | None, str]]] = {
     "arrendamento": [("2", None, "arrendamento mercantil liquido de provisao"),
                      ("2", None, "operacoes de arrendamento financeiro")],
     "outros_creditos": [("2", None, "outros creditos - liquido de provisao")],
-    # recebíveis de cartão e outras transações de pagamento (linha própria só a partir de 2025)
-    "recebiveis_pagamento": [("2", None, "valores a receber de transacoes de pagamentos - usuarios finais")],
+    # recebíveis de cartão/pós-pago: linha própria (h) no layout da Resolução 4.966 (a partir de 2025).
+    # Antes disso ficavam misturados em "Outros Créditos" e não dá para separar.
+    "transacoes_pagamento": [("2", "valores a receber de transacoes de pagamentos",
+                              "valores a receber de transacoes de pagamentos - usuarios finais")],
     "outros_ativos_realizaveis": [("2", None, "outros ativos realizaveis")],
     "permanente": [("2", None, "permanente ajustado"), ("2", None, "ativo permanente")],
     # Passivo

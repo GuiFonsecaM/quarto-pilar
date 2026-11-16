@@ -1,92 +1,195 @@
 {
- "C0083539": {
-  "resumo": "Banco Afinz aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+ "C0080367": {
+  "resumo": "O Banco Master chama atenção pelo alto custo de captação, liquidez extremamente baixa e grande parcela de ativos de difícil avaliação, além de crescimento acelerado de crédito. As notícias de liquidação e investigações judiciais reforçam a percepção de risco, mas alguns indicadores financeiros ainda mostram desempenho positivo, gerando contradições.",
   "pontos": [
    {
-    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%",
+    "texto": "Custo de captação de 25,7% ao ano, 2,7 vezes a mediana dos pares, indica pressão sobre a rentabilidade.",
     "evidencias": [
-     "F1"
+     "F1",
+     "F9"
     ]
    },
    {
-    "texto": "72,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "texto": "Liquidez imediata de apenas 0,6% da captação, muito abaixo dos concorrentes, evidencia vulnerabilidade de curto prazo.",
+    "evidencias": [
+     "F4",
+     "F10"
+    ]
+   },
+   {
+    "texto": "88,4% da captação provém de CDBs, com aumento de 12,7 p.p. em 12 meses, mostrando alta concentração de fonte de recursos.",
+    "evidencias": [
+     "F5",
+     "F6"
+    ]
+   },
+   {
+    "texto": "46,2% do ativo está fora de caixa, em títulos e crédito de difícil avaliação, aumentando o risco de perdas não reconhecidas.",
     "evidencias": [
      "F2"
     ]
    },
    {
-    "texto": "Prejuízo em 12 meses (ROE de -58,2%)",
+    "texto": "Ausência de divulgação do Índice de Basileia neste trimestre quebra a transparência regulatória esperada.",
     "evidencias": [
      "F3"
     ]
    },
    {
-    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares",
+    "texto": "Crescimento rápido da carteira de crédito (55,6%) e da captação (34,9%) pode comprometer a qualidade dos empréstimos.",
     "evidencias": [
-     "F4"
+     "F7",
+     "F8"
     ]
    }
   ],
-  "contradicoes": [],
-  "acompanhar": [],
-  "metodo": "regras",
-  "chave": "94dd67b56c59",
+  "contradicoes": [
+   {
+    "texto": "Apesar das notícias de liquidação e perdas de R$ 76 bi, os fatos mostram crescimento de ativos, ROE de 11,5% e balanço positivo em junho/2025, indicando desempenho ainda saudável.",
+    "evidencias": [
+     "F7",
+     "F8",
+     "F11",
+     "N3"
+    ]
+   },
+   {
+    "texto": "Diversas reportagens sobre processos, intimações e supostos favorecimentos (N1,N2,N5,N6,N7,N8) não se refletem em provisões ou deterioração visível nos indicadores financeiros apresentados.",
+    "evidencias": [
+     "F1",
+     "F4",
+     "N1"
+    ]
+   },
+   {
+    "texto": "A não divulgação do Índice de Basileia (F3) contrasta com a percepção de que o banco está sob controle regulatório, enquanto notícias apontam falhas de supervisão e informações falsas (N4).",
+    "evidencias": [
+     "F3",
+     "N4"
+    ]
+   }
+  ],
+  "acompanhar": [
+   "Divulgação do Índice de Basileia no próximo trimestre",
+   "Evolução da liquidez imediata sobre a captação",
+   "Variação do custo de captação anual",
+   "Desfecho dos processos judiciais e intimações"
+  ],
+  "metodo": "ia",
+  "chave": "c819eb5baf7d",
   "fatos": [
    {
     "id": "F1",
-    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%"
+    "texto": "Custo de captação de 25,7% ao ano, 2,7x a mediana dos pares"
    },
    {
     "id": "F2",
-    "texto": "72,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+    "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
    },
    {
     "id": "F3",
-    "texto": "Prejuízo em 12 meses (ROE de -58,2%)"
+    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)"
    },
    {
     "id": "F4",
-    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares"
+    "texto": "Liquidez imediata de 0,6% da captação, bem abaixo dos pares"
    },
    {
     "id": "F5",
-    "texto": "Liquidez imediata de 1,2% da captação, bem abaixo dos pares"
+    "texto": "88,4% da captação vem de depósitos a prazo (CDB)"
    },
    {
     "id": "F6",
-    "texto": "99,2% da captação vem de depósitos a prazo (CDB)"
+    "texto": "Essa fatia subiu 12,7 p.p. em 12 meses"
    },
    {
     "id": "F7",
-    "texto": "Patrimônio líquido de apenas 3,0% do ativo"
+    "texto": "Crescimento da captação em 12 meses: 34,9% (balanço de jun/2025)"
    },
    {
     "id": "F8",
-    "texto": "Índice de Basileia: 8,7% (balanço de jun/2026)"
+    "texto": "Crescimento da carteira de crédito em 12 meses: 55,6% (balanço de jun/2025)"
    },
    {
     "id": "F9",
-    "texto": "Crescimento da captação em 12 meses: 26,1% (balanço de jun/2026)"
+    "texto": "Custo de captação em 12 meses: 25,7% (balanço de jun/2025)"
    },
    {
     "id": "F10",
-    "texto": "Crescimento da carteira de crédito em 12 meses: 12,0% (balanço de jun/2026)"
+    "texto": "Liquidez imediata sobre a captação: 0,6% (balanço de jun/2025)"
    },
    {
     "id": "F11",
-    "texto": "Custo de captação em 12 meses: 16,4% (balanço de jun/2026)"
-   },
-   {
-    "id": "F12",
-    "texto": "Liquidez imediata sobre a captação: 1,2% (balanço de jun/2026)"
-   },
-   {
-    "id": "F13",
-    "texto": "ROE em 12 meses: -58,2% (balanço de jun/2026)"
+    "texto": "ROE em 12 meses: 11,5% (balanço de jun/2025)"
    }
   ],
-  "noticias": [],
-  "anomes": 202606
+  "noticias": [
+   {
+    "id": "N1",
+    "texto": "Caso Master: Defesa de Vorcaro contesta relatoria de Fachin",
+    "data": "2026-11-16",
+    "fonte": "SBT News",
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcWs2NjVITHhRQkJlMTlySHNUVkt2dGM0MVFpMFhLNXNuUlpvU0RZWXN2RUpIY1RzRlR4aWFWT2ZnQ041QlJ3ZjdQajVicFZleEYyVzJQVG44Ty1UZVB3WmVndjMxaDNIVVBOd2FsT0RESEsyTThnUDBQdFh2cnpaaWtXWlpwSy1icnNWd1lTQ2JTcHpBZVNvTDAzbTRUM0c1UnotOQ?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N2",
+    "texto": "Caso Banco Master: quem determinou o afastamento de delegados após relatórios que citavam ministros do STF?",
+    "data": "2026-11-16",
+    "fonte": "TopElegance",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOUFNXMzd6SjJRbmhUSDBWNkxRZ0s5QkJOQ1lfUGo5S2QtenM1VDRTUDhvT2RiclZYbXFzZXpRVkVHZ3JCV2xQUWUtd3AwS0tnYkRrVUE5b2pibmdXV1k4ak9Sb05MMkVMSjJpblNIMS1WR0NfRjhZYjFpRzdHTzNfRjRDazRLSUFQWkZLbGo2SGxyNFo5U2E1cTNaa1Vxa3k5c3dGaDlvOVZVSlBKVGtxZWczRGdKaFlHbVMxTnJWOGZyNFhhbko2ZVRnek5rMHVkYU1GWEg2c0RwZEVLVkE?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N3",
+    "texto": "Um ano após a liquidação, quebra do Banco Master soma perdas de R$ 76 bilhões",
+    "data": "2026-11-16",
+    "fonte": "Times Brasil | CNBC",
+    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVl9hb041akhCVVQ1Snh6SUdzT1VkSnhkWUFWSFV2UVljbjBoeXRWOVBjYi1sVDlDNzc5c0h5OVpSR1FTVFU2R2xzZHlaZ1lXd3k1bURZM0F6RHVvNU5Vb3NOYWpDZ2Z3QVpCTk94MVpldEtUbjdMbGIzWFN0VlJkeTd2OUg4Sm52Z3k4TmFuS1JBQVR3djBuM3ctUjNDdUp6em9CcmZqTWh0S0RNVU9N?oc=5",
+    "tipo": "Liquidação, intervenção ou RAET"
+   },
+   {
+    "id": "N4",
+    "texto": "CLDF recebeu informações falsas ao aprovar compra do Master, diz presidente.",
+    "data": "2026-11-16",
+    "fonte": "Metrópoles",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVmhoZGpaSWlHMFdNNEs0c0dBdGhfVjhaeVVJQTV5OEtKNHVZVkxBU1hsVDVfaExKX3VNWVNNMTZVN1ktOGVya3RpcEdiQmRrMXZVSVZQZWVjeG5DUVFFbXMxSDl3dUwzNVZ4YzZ6ZUxFZXA3NjJ5Rk9aRjZHQ2M5SmctWGVydDg5ckdMa2tJakNLYWo4QkRXUmd4SGNaVHg0SEtIbS1aMW1QVnA5a2RqcEpMam5ZU25jM1I4UUJkLWNMdw?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N5",
+    "texto": "“Cobiça a cargos estratégicos”: chefe da PF reage à crise e diz que não será intimidado",
+    "data": "2026-11-16",
+    "fonte": "NOVO Notícias",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOekFUZEhoM0hrY2ZpMFhQc3dMOXVmdDNVcUxjLXhyWHNWTWJfR3AtLUxRUl9QdS1CdTlLSTdZMm9EMnRnMm9VandxY2h1U0R6SThDS083QkpjT3lINC1TcjJXVVdtb1RqOFpGSzVKWXBCd1U1dE1JWXp4cW1kc2ZQeXVxdFlnZFJva0VGbnNrRnBYQkc4eDdMclY1cUVjTW5sUklSTXdFNWFUalhzTHJPY3dSQQ?oc=5",
+    "tipo": "Outro assunto"
+   },
+   {
+    "id": "N6",
+    "texto": "Caso Master: PF refaz relatórios sobre ministros do STF, que não foram indiciados",
+    "data": "2026-11-16",
+    "fonte": "www.correiodamanha.com.br",
+    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWGNISUpjMk1nbnBBSnBWcVQ2LTdzQ3RzVnJKckRVUjlyV3dCaWxKYmpmdGRYUUdGVDZ6S04zYWJzVl85bkY4emhtX1A5VUFQX0NSVzdBRmlBRzFGc0d2cEh6OWtWMS02ckZZNFZ0ZTM4Mm0tdmhJMkQxSXNweGtBeU1YTzFHcFBVZDBQWmo4QkRlcHdhRU1xSUZNekZjTWJ3Z09LckQ0cWMxNDYwUDJZVzh1Q3lCU0poU2hRZ2RYeENEYXQyMmdYU0lnWm1YaWFIbXNXcURVWjE1Zw?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N7",
+    "texto": "Escândalo do Banco Master: um ano após prisão de Daniel Vorcaro, caso abala o STF",
+    "data": "2026-11-16",
+    "fonte": "Gazeta do Povo",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSkVYUmlocXNVcGZSWXQ0SkgyZVdSYjZXa3lqRkQ3Rmd4LXVzRjd6Z3JTRG1hQzNCaDJIVWFMOGplYUZ5aXJfdXNOSzcxY2dvRnhNZDZMbzVkYUs1VlgycFprcVRHbGNmQ3pZbWdBdnM5a29RVWdiUWg5LVhwb0k1aFExTXZPWmZKd2ZraEtta3BObzh5RTVyY2RhbExEZG9YT01oRXpkMjFHeWZpMXphZTY5M3BLbXJUX0YzeS1xNA?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N8",
+    "texto": "PF intima Rui Costa para depor sobre suposto favorecimento ao Banco Master na Bahia",
+    "data": "2026-11-16",
+    "fonte": "O POVO",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQWkUzYlhsRG1TdlJoX1FNWmo1WWt0S1prSEpjZHh2U0laekIyYU1oeWtFQWJ5QXpOZHJXQTZmMUs5ZlNNbldaUnZ4T2xudU9JMVNQdmQtc1dGOUVBLXI5My1PYWJ5R0M1S3lrT0hqQzlhcGdoQjMzeXhOVGMyaXZvdGZlcE5FVmRLbHdGZXVYQWZ6R0hrcW5jTTJqRWlUMGhOZlpacVFjcEhVMDFUX0NPcFNnd24yM242a3Q1R3FxX25YdXVnUWc3Y2IyMDdCNnVDMC0wTXBINUtNVWNwUWdz?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   }
+  ],
+  "anomes": 202506
  },
  "C0081799": {
   "resumo": "Banco Digimais aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
@@ -168,6 +271,91 @@
    {
     "id": "F12",
     "texto": "ROE em 12 meses: -118,0% (balanço de jun/2026)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0083539": {
+  "resumo": "Banco Afinz aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -58,2%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Liquidez imediata de 1,2% da captação, bem abaixo dos pares",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "e5a641cdee19",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -58,2%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Liquidez imediata de 1,2% da captação, bem abaixo dos pares"
+   },
+   {
+    "id": "F5",
+    "texto": "99,2% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F6",
+    "texto": "Patrimônio líquido de apenas 3,0% do ativo"
+   },
+   {
+    "id": "F7",
+    "texto": "Índice de Basileia: 8,7% (balanço de jun/2026)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da captação em 12 meses: 26,1% (balanço de jun/2026)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 12,0% (balanço de jun/2026)"
+   },
+   {
+    "id": "F10",
+    "texto": "Custo de captação em 12 meses: 16,4% (balanço de jun/2026)"
+   },
+   {
+    "id": "F11",
+    "texto": "Liquidez imediata sobre a captação: 1,2% (balanço de jun/2026)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: -58,2% (balanço de jun/2026)"
    }
   ],
   "noticias": [],
@@ -335,87 +523,6 @@
   "noticias": [],
   "anomes": 202509
  },
- "C0080367": {
-  "resumo": "Banco Master aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
-  "pontos": [
-   {
-    "texto": "Custo de captação de 25,7% ao ano, 2,7x a mediana dos pares",
-    "evidencias": [
-     "F1"
-    ]
-   },
-   {
-    "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
-    "evidencias": [
-     "F2"
-    ]
-   },
-   {
-    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)",
-    "evidencias": [
-     "F3"
-    ]
-   },
-   {
-    "texto": "Liquidez imediata de 0,6% da captação, bem abaixo dos pares",
-    "evidencias": [
-     "F4"
-    ]
-   }
-  ],
-  "contradicoes": [],
-  "acompanhar": [],
-  "metodo": "regras",
-  "chave": "e3e78535aa12",
-  "fatos": [
-   {
-    "id": "F1",
-    "texto": "Custo de captação de 25,7% ao ano, 2,7x a mediana dos pares"
-   },
-   {
-    "id": "F2",
-    "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
-   },
-   {
-    "id": "F3",
-    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)"
-   },
-   {
-    "id": "F4",
-    "texto": "Liquidez imediata de 0,6% da captação, bem abaixo dos pares"
-   },
-   {
-    "id": "F5",
-    "texto": "88,4% da captação vem de depósitos a prazo (CDB)"
-   },
-   {
-    "id": "F6",
-    "texto": "Essa fatia subiu 12,7 p.p. em 12 meses"
-   },
-   {
-    "id": "F7",
-    "texto": "Crescimento da captação em 12 meses: 34,9% (balanço de jun/2025)"
-   },
-   {
-    "id": "F8",
-    "texto": "Crescimento da carteira de crédito em 12 meses: 55,6% (balanço de jun/2025)"
-   },
-   {
-    "id": "F9",
-    "texto": "Custo de captação em 12 meses: 25,7% (balanço de jun/2025)"
-   },
-   {
-    "id": "F10",
-    "texto": "Liquidez imediata sobre a captação: 0,6% (balanço de jun/2025)"
-   },
-   {
-    "id": "F11",
-    "texto": "ROE em 12 meses: 11,5% (balanço de jun/2025)"
-   }
-  ],
-  "noticias": [],
-  "anomes": 202506
- },
  "C0087810": {
   "resumo": "Entrepay aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
   "pontos": [
@@ -574,6 +681,91 @@
   "noticias": [],
   "anomes": 202606
  },
+ "03320525": {
+  "resumo": "Sicoob Aracoop aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "30,3% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Basileia de 12,7%, perto do mínimo de 10,5%",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 16,2% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 3,9 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "fbf03d49cef9",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "30,3% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F2",
+    "texto": "Basileia de 12,7%, perto do mínimo de 10,5%"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 16,2% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 3,9 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Prejuízo em 12 meses (ROE de -6,5%)"
+   },
+   {
+    "id": "F6",
+    "texto": "Essa fatia subiu 6,1 p.p. em 12 meses"
+   },
+   {
+    "id": "F7",
+    "texto": "Índice de Basileia: 12,7% (balanço de jun/2026)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da captação em 12 meses: 24,8% (balanço de jun/2026)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 11,0% (balanço de jun/2026)"
+   },
+   {
+    "id": "F10",
+    "texto": "Custo de captação em 12 meses: 16,2% (balanço de jun/2026)"
+   },
+   {
+    "id": "F11",
+    "texto": "Liquidez imediata sobre a captação: 0,5% (balanço de jun/2026)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: -6,5% (balanço de jun/2026)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
  "C0086581": {
   "resumo": "Cloudwalk aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
   "pontos": [
@@ -584,7 +776,7 @@
     ]
    },
    {
-    "texto": "Custo de captação de 92,1% ao ano, 7,1x a mediana dos pares",
+    "texto": "Custo de captação de 92,1% ao ano, 7,3x a mediana dos pares",
     "evidencias": [
      "F2"
     ]
@@ -605,7 +797,7 @@
   "contradicoes": [],
   "acompanhar": [],
   "metodo": "regras",
-  "chave": "95f1daaa7c71",
+  "chave": "71b52643d90e",
   "fatos": [
    {
     "id": "F1",
@@ -613,7 +805,7 @@
    },
    {
     "id": "F2",
-    "texto": "Custo de captação de 92,1% ao ano, 7,1x a mediana dos pares"
+    "texto": "Custo de captação de 92,1% ao ano, 7,3x a mediana dos pares"
    },
    {
     "id": "F3",
@@ -729,41 +921,60 @@
   "anomes": 202603
  },
  "C0080642": {
-  "resumo": "Porto Seguro aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "resumo": "O Banco Porto Seguro aparece no radar por apresentar custos de captação elevados, crescimento descompassado entre captação e crédito e alta concentração de ativos de difícil avaliação. Os indicadores apontam vulnerabilidade de liquidez e risco de avaliação, sem que as notícias recentes reforcem ou expliquem esses sinais.",
   "pontos": [
    {
-    "texto": "Custo de captação de 21,8% ao ano, 1,9x a mediana dos pares",
+    "texto": "Custo de captação de 21,8% ao ano, 1,7 vezes a mediana dos pares, indica pressão sobre a rentabilidade.",
     "evidencias": [
-     "F1"
+     "F1",
+     "F8"
     ]
    },
    {
-    "texto": "Captação cresceu 73,7% em 12 meses",
+    "texto": "Captação cresceu 73,7% em 12 meses, enquanto a carteira de crédito só avançou 17,8%, gerando desequilíbrio entre recursos captados e empréstimos concedidos.",
     "evidencias": [
-     "F2"
+     "F2",
+     "F4",
+     "F6",
+     "F7"
     ]
    },
    {
-    "texto": "68,1% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "texto": "68,1% do ativo está fora de caixa, em títulos e crédito de difícil avaliação, aumentando o risco de perdas não reconhecidas.",
     "evidencias": [
      "F3"
     ]
    },
    {
-    "texto": "Captação cresceu 55,8 p.p. a mais que a carteira de crédito em 12 meses",
+    "texto": "Liquidez imediata sobre a captação é de apenas 3,1%, sinalizando pouca margem para enfrentar saídas de recursos inesperadas.",
     "evidencias": [
-     "F4"
+     "F9"
+    ]
+   },
+   {
+    "texto": "Índice de Basileia de 13,9% está acima do mínimo regulatório, mas deve ser monitorado diante do alto custo de captação e da estrutura de ativos.",
+    "evidencias": [
+     "F5"
     ]
    }
   ],
-  "contradicoes": [],
-  "acompanhar": [],
-  "metodo": "regras",
-  "chave": "55e43b0c7b41",
+  "contradicoes": [
+   {
+    "texto": "A notícia N1 sobre apreensão de drogas em Porto Seguro não tem relação com os indicadores financeiros, não corroborando nem explicando os riscos apontados nos fatos.",
+    "evidencias": [
+     "N1"
+    ]
+   }
+  ],
+  "acompanhar": [
+   "Evolução do custo de captação nos próximos trimestres; taxa de crescimento da carteira de crédito versus captação; nível de liquidez imediata; participação de ativos de difícil avaliação no balanço."
+  ],
+  "metodo": "ia",
+  "chave": "7ad4cf7cc173",
   "fatos": [
    {
     "id": "F1",
-    "texto": "Custo de captação de 21,8% ao ano, 1,9x a mediana dos pares"
+    "texto": "Custo de captação de 21,8% ao ano, 1,7x a mediana dos pares"
    },
    {
     "id": "F2",
@@ -802,11 +1013,20 @@
     "texto": "ROE em 12 meses: 18,0% (balanço de jun/2026)"
    }
   ],
-  "noticias": [],
+  "noticias": [
+   {
+    "id": "N1",
+    "texto": "Mais drogas são encontradas em tonel enterrado em mansão no Xurupita, em Porto Seguro; prejuízo ao crime supera R$ 10 milhões",
+    "data": "2026-11-14",
+    "fonte": "Bahia Sul News",
+    "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPdnQ0WW5XMl96aUx3emtkdzBveVdNR3d0eTQtOXdIa1NmUXlXYVpTX2dhQ3RfTk5uVkRpRHFqX2xUR2dNUUMtTm1pY2hOajl3SmQ0bVFoc0NmbVVLM3dlOXE1M3ZQMGhlQ3dlcW9ib21FQmFudnVxTkRYSHc2WWk0QTBmcHY1TUI1cV9OVVVOYk1SRUo1MjF1Q1Z2YWY4RlBSdnRQdmNONzZHdlFaN0d2RmZQT2pnWE9aeXdIdVZyY211QmFQYzM4cHI2enJYdGx3ckRpUFpsUHRuUkRMZnd6LWtmZVNjNjgwYi1HYVhmWWZudTh6OHZ6RG4zVHdfUXJ3T0c3Z2syU29mSVB1cUsxYk5HRFg1blRDRDJjRkVHM0M2X1Rr?oc=5",
+    "tipo": "Prejuízo ou resultado ruim"
+   }
+  ],
   "anomes": 202606
  },
  "71297899": {
-  "resumo": "Sicoob Credicopa aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "resumo": "Sicoob Credicopa aparece no radar por 4 sinal(is) nos dados públicos do Banco Central e 4 notícia(s) relevante(s) recente(s).",
   "pontos": [
    {
     "texto": "Captação cresceu 58,3% em 12 meses",
@@ -836,7 +1056,7 @@
   "contradicoes": [],
   "acompanhar": [],
   "metodo": "regras",
-  "chave": "88ae31aec87a",
+  "chave": "2e6d80a8cc28",
   "fatos": [
    {
     "id": "F1",
@@ -883,7 +1103,40 @@
     "texto": "ROE em 12 meses: -48,1% (balanço de jun/2026)"
    }
   ],
-  "noticias": [],
+  "noticias": [
+   {
+    "id": "N1",
+    "texto": "Sicoob Credicopa lança campanha de consórcios com descontos nas taxas de administração até 30 de novembro",
+    "data": "2026-11-16",
+    "fonte": "Clube Notícia",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQQ2RCY2Z1N2w4U0FtVTZIU09GNGdSTDRUbTdIOVhlLXBpeUNNTmd1TEh0cVowd09vbTRLVzhhbE9reUFvTVBxaS1KcUk5MENOeC1tQVp5VUoyQkw2V0MzWUVVZXRQcWFGalR6NGpsQjRtaklnNTkyUjBWN0RUWnRFRWViNEM5eDFNLWxvWmxsVUFVRFhmT2pxbTdpemZ5ZFdjTTU4dHM2NWpCbTA0alQ2cF9QWDJ6WlhQWjhwcVhoY0RubEEtb2pteDhOQ0M4aFU?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N2",
+    "texto": "Sicoob Credicopa lança Black Friday com condições especiais para diferentes tipos de consórcios",
+    "data": "2026-11-16",
+    "fonte": "Patos Hoje",
+    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUVp5VTJCejdXZnN6SkIweWZ0RlNkMmRwdTYxaWJ0SGlwZzlzNFB5ZmFOT0pqWVhPaWc4cWRBck96Z2Q2SFgzOFBhTUxvMXlHbXBrY2JKZnFxS0h2RzJVRnVLRVZRcl9EMGxkaTYyZlJDLXpaT05fTWFVb2ZhaklxcTlzeGpCZzBzWjZkWG50SGhMVlRpTG9WOWlXQ1lxSURTX0N3elFEV0VMMGpLeG03QVM5Y1VabkhxNmNVTzljbUJTbThTd0RmdlRvVjRrdHlGdzVCMFFiRQ?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N3",
+    "texto": "Sicoob Credicopa lança campanha de consórcios com oportunidades de Black Friday",
+    "data": "2026-11-16",
+    "fonte": "Sou Patos",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTTYwSktxYTBDZmdpNS1ja1NreTZyN04yN3Q2NmN3OWQyeHV0UnNZUEhGbmp5aHJIZlZ1UXZJa1dhU3AzZVB2bXFVVWFpNG1UdVdtakdmRDlGZHhmZXFjSndyX0ZId3ZiaS1JclhheUtMQjBwMkV3Sl9NRDYwckhiUkFicGNweEk3TW5uLURiaWE5c0Q0blVUZVRnTFh3ekZ0SE9PR25kVQ?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N4",
+    "texto": "Black Friday – Sicoob Credicopa oferece condição imperdível em consórcios",
+    "data": "2026-11-16",
+    "fonte": "Patos Notícias",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTTV5b0FDRTJMU3FWclZrRVhEYVVQVURLTmJlbTNOcjRQc2Nxb0xDNWlwaDZiU19wVlhzdDFBb2hFcmFfckpkWHJrTk1jdkFtbm5uZy14QmFsbTUxdkthYU9NYnBhbXJzUlNOcDBXdS0tLWViRVAzNm1jNkhfWXd2d1VCa3pPUWNDT242NUIwRG0wQQ?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   }
+  ],
   "anomes": 202606
  },
  "C0086608": {
@@ -968,37 +1221,62 @@
   "anomes": 202606
  },
  "C0081256": {
-  "resumo": "Andbank aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "resumo": "O Andbank chama atenção pelo rápido crescimento da captação acompanhado de queda no índice de Basileia, rentabilidade negativa e custo de captação elevado. A alta dependência de depósitos a prazo e a baixa liquidez aumentam a vulnerabilidade. A notícia de expansão para planejamento de jogadores de futebol parece desconexa com esses indicadores.",
   "pontos": [
    {
-    "texto": "Captação cresceu 55,3% em 12 meses",
+    "texto": "Captação cresceu 55,3% em 12 meses, mas 82,5% vêm de depósitos a prazo (CDB), indicando concentração de passivo.",
     "evidencias": [
-     "F1"
+     "F1",
+     "F5"
     ]
    },
    {
-    "texto": "Prejuízo em 12 meses (ROE de -16,1%)",
+    "texto": "Índice de Basileia está em 12,2% e caiu 2,2 pontos percentuais, aproximando‑se do limite regulatório de 10,5%.",
     "evidencias": [
+     "F3",
+     "F4"
+    ]
+   },
+   {
+    "texto": "Rentabilidade negativa (ROE -16,1%) demonstra incapacidade de gerar lucro sobre o patrimônio.",
+    "evidencias": [
+     "F2",
+     "F11"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 15,3% é alto, pressionando margens e contribuindo para o prejuízo.",
+    "evidencias": [
+     "F9",
      "F2"
     ]
    },
    {
-    "texto": "Basileia de 12,2%, perto do mínimo de 10,5%",
+    "texto": "Liquidez imediata sobre a captação é apenas 15,8%, indicando vulnerabilidade a saques inesperados.",
     "evidencias": [
-     "F3"
-    ]
-   },
-   {
-    "texto": "Basileia caiu 2,2 p.p. em 12 meses",
-    "evidencias": [
-     "F4"
+     "F10"
     ]
    }
   ],
-  "contradicoes": [],
-  "acompanhar": [],
-  "metodo": "regras",
-  "chave": "8ead77d980cc",
+  "contradicoes": [
+   {
+    "texto": "A notícia de que o banco vai oferecer planejamento a jogadores de futebol sugere foco em clientes de alta renda, mas os indicadores mostram rentabilidade negativa, alto custo de captação e baixa liquidez, o que contradiz a capacidade de sustentar serviços premium.",
+    "evidencias": [
+     "N1",
+     "F2",
+     "F9",
+     "F11"
+    ]
+   }
+  ],
+  "acompanhar": [
+   "Evolução do índice de Basileia no próximo trimestre",
+   "Variação do ROE e margem de lucro",
+   "Alteração do custo de captação",
+   "Participação de depósitos a prazo na captação"
+  ],
+  "metodo": "ia",
+  "chave": "352b830ecfd7",
   "fatos": [
    {
     "id": "F1",
@@ -1045,7 +1323,16 @@
     "texto": "ROE em 12 meses: -16,1% (balanço de jun/2026)"
    }
   ],
-  "noticias": [],
+  "noticias": [
+   {
+    "id": "N1",
+    "texto": "Banco de gestão de fortunas vai oferecer planejamento a jogadores de futebol",
+    "data": "2026-11-16",
+    "fonte": "Estadão",
+    "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQOWFpcGo4N0hzbHh0bXJZRjQ4STlucVB2dklja0s1N2dfaHN2c192akh1MVpBRXhrcmx5VkdiVy1ReHlZVTh3QVVCTXZ6dWN4bjhIeTdGYXllandvWVhtRHBFN1BzMTdZZ0lqRldQR1RUNFNkSlFWbjM1NTI5eENrUU12TjlPOVl5NE5PSzlsaXBNbXhQXzZEdVRJMTNGdE5XV3pndlBvVmd6TGNBeHd3QmhEUlQ5Z0xobUJSb1owdFZLZnFvU1ppQl9DOXVraG9VRkQtN2ExM0xEVE80ejRjdGQ5c1NyWDR0QW1qMzQ2VVl0YU1r?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   }
+  ],
   "anomes": 202606
  },
  "C0081421": {
@@ -1125,7 +1412,7 @@
   "resumo": "Stone aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
   "pontos": [
    {
-    "texto": "Custo de captação de 18,7% ao ano, 1,6x a mediana dos pares",
+    "texto": "Custo de captação de 18,7% ao ano, 1,8x a mediana dos pares",
     "evidencias": [
      "F1"
     ]
@@ -1152,11 +1439,11 @@
   "contradicoes": [],
   "acompanhar": [],
   "metodo": "regras",
-  "chave": "5a3d2d178b91",
+  "chave": "9ddff5f95387",
   "fatos": [
    {
     "id": "F1",
-    "texto": "Custo de captação de 18,7% ao ano, 1,6x a mediana dos pares"
+    "texto": "Custo de captação de 18,7% ao ano, 1,8x a mediana dos pares"
    },
    {
     "id": "F2",

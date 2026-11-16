@@ -1,7 +1,7 @@
 # Backtest do Quarto Pilar
 
 Quebras no universo monitorado: **4**. Com alerta (score ≥ 45) antes do evento: **4**.
-Bancos que não quebraram e estavam em alerta (média dos últimos 12 trimestres): **3.7%**.
+Bancos que não quebraram e estavam em alerta (média dos últimos 12 trimestres): **3.4%**.
 
 | Banco | Evento | 1º alerta (trimestre) | Antecedência | Último score |
 |---|---|---|---|---|

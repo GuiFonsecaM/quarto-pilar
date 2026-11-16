@@ -86,6 +86,46 @@ function rotuloEv(id, d) {
   }
   return `Dado ${n} do BC`;
 }
+// Explicação de cada indicador do quadro (botão "i")
+const EXPLICA = {
+  "Score de dados": "Nota de alerta de 0 a 100 calculada só com o balanço do Banco Central. Quanto maior, mais sinais de risco. Até 24 é Normal, de 25 a 44 Atenção, de 45 a 64 Alerta e de 65 para cima Alerta alto.",
+  "Notícias": "Pontos somados por notícias negativas dos últimos 45 dias, como liquidação, fraude ou atraso de pagamento. Vai de 0 a +30 e perde peso com o tempo.",
+  "Pares": "Grupo usado na comparação: o segmento do banco na classificação do Banco Central, de S1 (os maiores) a S5 (os menores).",
+  "Basileia": "Capital próprio do banco para cada R$ 100 de risco que ele assume. A referência geral é 10,5%. Abaixo disso, ele tem pouca reserva para absorver perdas.",
+  "Capital principal": "A parte mais sólida do capital: dinheiro dos sócios e lucros guardados. O traço quer dizer que o banco não informou, o que é comum em instituições pequenas.",
+  "ROE 12m": "Lucro dos últimos 12 meses dividido pelo patrimônio. Negativo significa prejuízo. Quanto mais negativo, mais o banco consumiu do próprio capital.",
+  "Ativo": "Tamanho do banco: tudo o que ele tem, como empréstimos, títulos e dinheiro em caixa.",
+  "Captação 12m": "Quanto o dinheiro captado (CDB e depósitos) cresceu ou caiu em 12 meses. Crescimento muito rápido ou queda forte merecem atenção.",
+  "Carteira 12m": "Quanto os empréstimos do banco cresceram ou caíram em 12 meses. Se a captação cresce muito mais que a carteira, o dinheiro está indo para outro lugar.",
+  "Custo captação": "Quanto o banco paga por ano, em média, pelo dinheiro que capta. Bem acima dos pares indica que ele precisa pagar caro para atrair dinheiro, como acontecia com o Master.",
+  "Liquidez": "Dinheiro disponível na hora para cada R$ 100 captados. Muito baixo, perto de 2%, deixa o banco sem folga se muitos clientes resgatarem ao mesmo tempo.",
+  "Ativos difíceis": "Parte do ativo que não é caixa, título público nem empréstimo comum, como precatórios e direitos creditórios. São itens difíceis de avaliar e de vender rápido.",
+};
+function st(rotulo, valor) {
+  return `<div><span>${rotulo}<button class="info" data-info="${rotulo}" aria-label="O que é ${rotulo}?">i</button></span><b>${valor}</b></div>`;
+}
+function mostrarInfo(btn) {
+  const pop = document.getElementById("popover"), det = btn.closest(".det");
+  if (!pop.hidden && pop.dataset.de === btn.dataset.info) { pop.hidden = true; return; }
+  pop.innerHTML = `<b>${R.esc(btn.dataset.info)}</b><p>${R.esc(EXPLICA[btn.dataset.info] || "")}</p>`;
+  pop.dataset.de = btn.dataset.info;
+  pop.hidden = false;
+  const rb = btn.getBoundingClientRect(), rd = det.getBoundingClientRect();
+  const largura = pop.offsetWidth;
+  pop.style.top = `${rb.bottom - rd.top + 8}px`;
+  pop.style.left = `${Math.max(8, Math.min(rb.left - rd.left - 12, rd.width - largura - 8))}px`;
+}
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".info");
+  if (btn) { e.stopPropagation(); mostrarInfo(btn); return; }
+  const pop = document.getElementById("popover");
+  if (pop && !pop.hidden && !e.target.closest(".popover")) pop.hidden = true;
+});
+document.addEventListener("keydown", (e) => {
+  const pop = document.getElementById("popover");
+  if (e.key === "Escape" && pop) pop.hidden = true;
+});
+
 function evid(id, d) {
   const f = [...(d.fatos || []), ...(d.noticias || [])].find((x) => x.id === id);
   return f ? `<button class="ev" title="${R.esc(f.texto)}">${R.esc(rotuloEv(id, d))}</button>` : "";
@@ -131,19 +171,21 @@ async function abrir(cod, empurrar = true) {
     <div class="legenda" id="legenda"></div>
 
     <div class="stats">
-      <div><span>Score de dados</span><b>${b.score_dados}</b></div>
-      <div><span>Notícias</span><b>+${b.score_noticias}</b></div>
-      <div><span>Pares</span><b>${R.esc(b.grupo_pares || "—")}</b></div>
-      <div><span>Basileia</span><b>${R.pct(ult("basileia"))}</b></div>
-      <div><span>Capital principal</span><b>${R.pct(ult("indice_cp"))}</b></div>
-      <div><span>ROE 12m</span><b>${R.pct(ult("roe"))}</b></div>
-      <div><span>Ativo</span><b>${R.bi(ult("ativo_total"))}</b></div>
-      <div><span>Captação 12m</span><b>${R.pct(ult("cresc_captacoes"))}</b></div>
-      <div><span>Carteira 12m</span><b>${R.pct(ult("cresc_carteira"))}</b></div>
-      <div><span>Custo captação</span><b>${R.pct(ult("custo"))}</b></div>
-      <div><span>Liquidez</span><b>${R.pct(ult("liquidez"))}</b></div>
-      <div><span>Ativos difíceis</span><b>${R.pct(ult("ativos_outros"))}</b></div>
+      ${st("Score de dados", b.score_dados)}
+      ${st("Notícias", "+" + b.score_noticias)}
+      ${st("Pares", R.esc(b.grupo_pares || "—"))}
+      ${st("Basileia", R.pct(ult("basileia")))}
+      ${st("Capital principal", R.pct(ult("indice_cp")))}
+      ${st("ROE 12m", R.pct(ult("roe")))}
+      ${st("Ativo", R.bi(ult("ativo_total")))}
+      ${st("Captação 12m", R.pct(ult("cresc_captacoes")))}
+      ${st("Carteira 12m", R.pct(ult("cresc_carteira")))}
+      ${st("Custo captação", R.pct(ult("custo")))}
+      ${st("Liquidez", R.pct(ult("liquidez")))}
+      ${st("Ativos difíceis", R.pct(ult("ativos_outros")))}
     </div>
+    <div class="popover" id="popover" role="dialog" hidden></div>
+
 
     <div class="bloco"><h2>Sinais</h2>
       <div class="cartao">${b.sinais.length ? b.sinais.map((x) => `<div class="linha-sinal"><span>${R.esc(x.texto)}</span><b>+${x.pontos}</b></div>`).join("")

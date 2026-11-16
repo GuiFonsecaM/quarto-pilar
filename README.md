@@ -43,11 +43,11 @@ Google Notícias + GDELT ──► IA (Groq) classifica eventos ──► score 
 3. No repositório, em **Settings › Secrets and variables › Actions › New repository secret**, crie `GROQ_API_KEY` e `GEMINI_API_KEY`.
 4. Em **Settings › Pages**, escolha *Deploy from a branch*, a branch `main` e a pasta `/docs`.
 5. Em **Settings › Actions › General › Workflow permissions**, marque *Read and write permissions*.
-6. Em **Actions**, rode manualmente **Carga inicial (histórico completo)**.
-7. Agende a **Atualização diária** no [cron-job.org](https://cron-job.org) com um `POST` para
+6. Agende a **Atualização diária** no [cron-job.org](https://cron-job.org) com um `POST` para
    `https://api.github.com/repos/GuiFonsecaM/quarto-pilar/actions/workflows/diario.yml/dispatches`,
    corpo `{"ref":"main"}` e os cabeçalhos `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`
    e `X-GitHub-Api-Version: 2022-11-28`. O token deve ser *fine-grained*, só deste repositório, com permissão **Actions: Read and write**.
+   Não precisa rodar nada à mão: na primeira chamada, a rotina percebe que não há histórico e baixa tudo sozinha (leva mais tempo só nesse dia).
 
 ## Rodar no computador
 

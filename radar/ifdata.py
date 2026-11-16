@@ -143,7 +143,7 @@ def _tem(nome: str, coluna: str | None = None) -> bool:
     return coluna in pq.read_schema(p).names
 
 
-def atualizar(completo: bool = False, refazer_ultimos: int = 2) -> list[int]:
+def atualizar(completo: bool = False, refazer_ultimos: int = 2, max_periodos: int = 16) -> list[int]:
     """Baixa o que falta (relatórios novos, períodos novos ou cadastro incompleto).
     Devolve os períodos que ganharam dados novos."""
     s = sessao()
@@ -154,12 +154,19 @@ def atualizar(completo: bool = False, refazer_ultimos: int = 2) -> list[int]:
     recentes = set(periodos[-refazer_ultimos:]) if refazer_ultimos else set()
     hoje = date.today()
     novos = []
-    for per in periodos:
+    baixados = 0
+    # mais recentes primeiro; o histórico que faltar é completado aos poucos, max_periodos por rodada
+    for per in sorted(periodos, reverse=True):
+        if baixados >= max_periodos and not completo:
+            log.info("Limite de %s períodos por rodada atingido; o restante fica para a próxima.", max_periodos)
+            break
         ok = False
+        precisou = False
         for rel, tipo in esperados(per):
             nome = f"rel{rel}_{per}.parquet"
             if _tem(nome) and not completo and per not in recentes:
                 continue
+            precisou = True
             df = baixar_valores(per, rel, s, tipo)
             if df.empty:
                 log.info("Sem dados: relatório %s, %s", rel, per)
@@ -172,12 +179,15 @@ def atualizar(completo: bool = False, refazer_ultimos: int = 2) -> list[int]:
             log.info("Relatório %s (tipo %s), %s: %s linhas", rel, tipo, per, len(df))
         cad = f"cad_{per}.parquet"
         if ok or not _tem(cad, "CodConglomeradoFinanceiro"):
+            precisou = True
             c = baixar_cadastro(per, s)
             if not c.empty:
                 c.to_parquet(_arq(cad), index=False)
         if ok:
             novos.append(per)
-    return novos
+        if precisou and per not in recentes:
+            baixados += 1
+    return sorted(novos)
 
 
 def carregar_brutos() -> tuple[pd.DataFrame, pd.DataFrame]:

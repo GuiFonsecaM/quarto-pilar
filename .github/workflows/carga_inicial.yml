@@ -1,0 +1,42 @@
+name: Carga inicial (histórico completo)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  carga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Baixar todo o histórico do IF.Data (2014 em diante)
+        run: python -m radar carga-inicial
+      - name: Salvar cache dos dados brutos
+        uses: actions/cache/save@v4
+        with:
+          path: dados/brutos
+          key: ifdata-${{ github.run_id }}
+      - name: Primeira rodada diária (notícias, IA e site)
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m radar diario
+      - name: Publicar dados e site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados docs relatorios
+          git diff --cached --quiet || git commit -m "Carga inicial $(date -u +%Y-%m-%d)"
+          git push

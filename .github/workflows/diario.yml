@@ -1,0 +1,43 @@
+name: Atualização diária
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # 06:17 em Brasília (minuto quebrado evita atraso na fila do GitHub)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Restaurar cache dos dados brutos do IF.Data
+        uses: actions/cache@v4
+        with:
+          path: dados/brutos
+          key: ifdata-${{ github.run_id }}
+          restore-keys: ifdata-
+      - name: Rodar o Quarto Pilar
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m radar diario
+      - name: Publicar dados e site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados docs relatorios
+          git diff --cached --quiet || git commit -m "Atualização diária $(date -u +%Y-%m-%d)"
+          git push

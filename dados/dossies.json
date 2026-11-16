@@ -1,0 +1,1533 @@
+{
+ "C0083539": {
+  "resumo": "Banco Afinz aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "72,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -58,2%)",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "690d2e711f33",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 8,7%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "72,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F3",
+    "texto": "Prejuízo em 12 meses (ROE de -58,2%)"
+   },
+   {
+    "id": "F4",
+    "texto": "Custo de captação de 16,4% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F5",
+    "texto": "Liquidez imediata de 1,2% da captação, bem abaixo dos pares"
+   },
+   {
+    "id": "F6",
+    "texto": "99,2% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F7",
+    "texto": "Patrimônio líquido de apenas 3,0% do ativo"
+   },
+   {
+    "id": "F8",
+    "texto": "Índice de Basileia: 8,7% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da captação em 12 meses: 26,1% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 12,0% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "Custo de captação em 12 meses: 16,4% (data-base 202606)"
+   },
+   {
+    "id": "F12",
+    "texto": "Liquidez imediata sobre a captação: 1,2% (data-base 202606)"
+   },
+   {
+    "id": "F13",
+    "texto": "ROE em 12 meses: -58,2% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0086608": {
+  "resumo": "ASA aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 2175,1% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -56,2%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia de 12,1%, perto do mínimo de 10,5%",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Carteira cresceu 202561,6%, mas a receita de crédito só 3757,8% — não condiz",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "c72481a390b3",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 2175,1% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -56,2%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia de 12,1%, perto do mínimo de 10,5%"
+   },
+   {
+    "id": "F4",
+    "texto": "Carteira cresceu 202561,6%, mas a receita de crédito só 3757,8% — não condiz"
+   },
+   {
+    "id": "F5",
+    "texto": "Basileia caiu 41,3 p.p. em 12 meses"
+   },
+   {
+    "id": "F6",
+    "texto": "Ativo total cresceu 1783,4% em 12 meses"
+   },
+   {
+    "id": "F7",
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema"
+   },
+   {
+    "id": "F8",
+    "texto": "Índice de Basileia: 12,1% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da captação em 12 meses: 2175,1% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 202561,6% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "Custo de captação em 12 meses: 6,4% (data-base 202606)"
+   },
+   {
+    "id": "F12",
+    "texto": "Liquidez imediata sobre a captação: 11,5% (data-base 202606)"
+   },
+   {
+    "id": "F13",
+    "texto": "ROE em 12 meses: -56,2% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0087810": {
+  "resumo": "Entrepay aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 205,9% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 20,1% ao ano, 1,6x a mediana dos pares",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "91,7% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -54,6%)",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "54c11b4ccdcc",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 205,9% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Custo de captação de 20,1% ao ano, 1,6x a mediana dos pares"
+   },
+   {
+    "id": "F3",
+    "texto": "91,7% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F4",
+    "texto": "Prejuízo em 12 meses (ROE de -54,6%)"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)"
+   },
+   {
+    "id": "F6",
+    "texto": "Essa fatia subiu 66,1 p.p. em 12 meses"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 205,9% (data-base 202512)"
+   },
+   {
+    "id": "F8",
+    "texto": "Custo de captação em 12 meses: 20,1% (data-base 202512)"
+   },
+   {
+    "id": "F9",
+    "texto": "Liquidez imediata sobre a captação: 9,3% (data-base 202512)"
+   },
+   {
+    "id": "F10",
+    "texto": "ROE em 12 meses: -54,6% (data-base 202512)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202512
+ },
+ "C0081799": {
+  "resumo": "Banco Digimais aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de -4,6%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -118,0%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 16,5% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 23,2 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "5d4a5801af89",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de -4,6%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -118,0%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 16,5% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 23,2 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "99,8% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F6",
+    "texto": "Patrimônio líquido de apenas 3,4% do ativo"
+   },
+   {
+    "id": "F7",
+    "texto": "Índice de Basileia: -4,6% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da captação em 12 meses: 9,3% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da carteira de crédito em 12 meses: -5,6% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Custo de captação em 12 meses: 16,5% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "Liquidez imediata sobre a captação: 22,4% (data-base 202606)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: -118,0% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0084985": {
+  "resumo": "Bullla aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 10,9%, a menos de 1 p.p. do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 74,4% em 12 meses",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 3,0 p.p. em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Carteira rende 0,2x a mediana dos pares",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "a6f73d8ca1cd",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 10,9%, a menos de 1 p.p. do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Captação cresceu 74,4% em 12 meses"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia caiu 3,0 p.p. em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Carteira rende 0,2x a mediana dos pares"
+   },
+   {
+    "id": "F5",
+    "texto": "Ativo total cresceu 173,9% em 12 meses"
+   },
+   {
+    "id": "F6",
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema"
+   },
+   {
+    "id": "F7",
+    "texto": "Índice de Basileia: 10,9% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da captação em 12 meses: 74,4% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 475,0% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Custo de captação em 12 meses: 14,8% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "Liquidez imediata sobre a captação: 23,6% (data-base 202606)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: 21,9% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0080941": {
+  "resumo": "Genial aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 7,8%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -35,3%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 71,0 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 4,3 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "6ed9e995ec6d",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 7,8%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -35,3%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Captação cresceu 71,0 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 4,3 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Patrimônio líquido de apenas 2,6% do ativo"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 7,8% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 29,3% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: -41,6% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 7,8% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 22,6% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: -35,3% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "25387671": {
+  "resumo": "Sicoob Credipatos aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 8,1%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -78,1%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 14,1% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 4,7 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "c09a7f025764",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 8,1%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -78,1%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 14,1% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 4,7 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Patrimônio líquido de apenas 5,9% do ativo"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 8,1% (data-base 202509)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: -7,4% (data-base 202509)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: -12,9% (data-base 202509)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 14,1% (data-base 202509)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 12,1% (data-base 202509)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: -78,1% (data-base 202509)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202509
+ },
+ "C0080367": {
+  "resumo": "Banco Master aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Custo de captação de 25,7% ao ano, 2,7x a mediana dos pares",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Liquidez imediata de 0,6% da captação, bem abaixo dos pares",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "4a9d75743542",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Custo de captação de 25,7% ao ano, 2,7x a mediana dos pares"
+   },
+   {
+    "id": "F2",
+    "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F3",
+    "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)"
+   },
+   {
+    "id": "F4",
+    "texto": "Liquidez imediata de 0,6% da captação, bem abaixo dos pares"
+   },
+   {
+    "id": "F5",
+    "texto": "88,4% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F6",
+    "texto": "Essa fatia subiu 12,7 p.p. em 12 meses"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 34,9% (data-base 202506)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 55,6% (data-base 202506)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 25,7% (data-base 202506)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 0,6% (data-base 202506)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: 11,5% (data-base 202506)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202506
+ },
+ "C0085867": {
+  "resumo": "Agrolend aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 164,0% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 59,6 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 16,0% ao ano, 1,3x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 135,8 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "2011aab4fb20",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 164,0% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Captação cresceu 59,6 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 16,0% ao ano, 1,3x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 135,8 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Ativo total cresceu 76,3% em 12 meses"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 60,1% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 164,0% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 104,4% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 16,0% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 2,9% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: 11,4% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "08560508": {
+  "resumo": "Cresol Triunfo aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 84,9% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 39,9 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 17,1% ao ano, 1,4x a mediana dos pares",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 3,2 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "4028455714ff",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 84,9% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Captação cresceu 39,9 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F3",
+    "texto": "Custo de captação de 17,1% ao ano, 1,4x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 3,2 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Liquidez imediata de 0,3% da captação, bem abaixo dos pares"
+   },
+   {
+    "id": "F6",
+    "texto": "75,7% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F7",
+    "texto": "Índice de Basileia: 15,6% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da captação em 12 meses: 84,9% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 45,0% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Custo de captação em 12 meses: 17,1% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "Liquidez imediata sobre a captação: 0,3% (data-base 202606)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: 12,4% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0086581": {
+  "resumo": "Cloudwalk aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 122,3% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Custo de captação de 92,1% ao ano, 7,1x a mediana dos pares",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "87,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "47055454e9cb",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 122,3% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Custo de captação de 92,1% ao ano, 7,1x a mediana dos pares"
+   },
+   {
+    "id": "F3",
+    "texto": "87,4% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F4",
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia: 32,1% (data-base 202606)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da captação em 12 meses: 122,3% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 5198,0% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Custo de captação em 12 meses: 92,1% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Liquidez imediata sobre a captação: 35,0% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "ROE em 12 meses: 6,4% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "03326437": {
+  "resumo": "Sicoob União Mt/ms aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 9,2%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -30,5%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 4,0 p.p. em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Liquidez imediata de 1,3% da captação, bem abaixo dos pares",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "a4df14d3fedc",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 9,2%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -30,5%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia caiu 4,0 p.p. em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Liquidez imediata de 1,3% da captação, bem abaixo dos pares"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia: 9,2% (data-base 202603)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da captação em 12 meses: 2,3% (data-base 202603)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da carteira de crédito em 12 meses: -5,3% (data-base 202603)"
+   },
+   {
+    "id": "F8",
+    "texto": "Custo de captação em 12 meses: 13,1% (data-base 202603)"
+   },
+   {
+    "id": "F9",
+    "texto": "Liquidez imediata sobre a captação: 1,3% (data-base 202603)"
+   },
+   {
+    "id": "F10",
+    "texto": "ROE em 12 meses: -30,5% (data-base 202603)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202603
+ },
+ "C0083522": {
+  "resumo": "HS Financeira aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 146,7% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "85,3% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 125,7 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 25,2 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "e0126b80bc09",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 146,7% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "85,3% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F3",
+    "texto": "Captação cresceu 125,7 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 25,2 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Essa fatia subiu 14,3 p.p. em 12 meses"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 16,8% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 146,7% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 21,0% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 12,7% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 6,0% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: 46,1% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0080642": {
+  "resumo": "Porto Seguro aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Custo de captação de 21,8% ao ano, 1,9x a mediana dos pares",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 73,7% em 12 meses",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "68,1% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 55,8 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "cbf29a590e24",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Custo de captação de 21,8% ao ano, 1,9x a mediana dos pares"
+   },
+   {
+    "id": "F2",
+    "texto": "Captação cresceu 73,7% em 12 meses"
+   },
+   {
+    "id": "F3",
+    "texto": "68,1% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F4",
+    "texto": "Captação cresceu 55,8 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia: 13,9% (data-base 202606)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da captação em 12 meses: 73,7% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 17,8% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Custo de captação em 12 meses: 21,8% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Liquidez imediata sobre a captação: 3,1% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "ROE em 12 meses: 18,0% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "71297899": {
+  "resumo": "Sicoob Credicopa aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 58,3% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -48,1%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Captação cresceu 32,3 p.p. a mais que a carteira de crédito em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 9,1 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "ce135764a2d0",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 58,3% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -48,1%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Captação cresceu 32,3 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 9,1 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "71,9% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 13,0% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 58,3% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 26,0% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 14,3% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 5,9% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: -48,1% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0081256": {
+  "resumo": "Andbank aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 55,3% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -16,1%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia de 12,2%, perto do mínimo de 10,5%",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 2,2 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "b01fe904e524",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 55,3% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -16,1%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia de 12,2%, perto do mínimo de 10,5%"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 2,2 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "82,5% da captação vem de depósitos a prazo (CDB)"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 12,2% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 55,3% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 41,4% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 15,3% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 15,8% (data-base 202606)"
+   },
+   {
+    "id": "F11",
+    "texto": "ROE em 12 meses: -16,1% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0087346": {
+  "resumo": "Ifood Pago aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Captação cresceu 489,7% em 12 meses",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "96,8% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Ativo total cresceu 137,6% em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "dd53b7af353f",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Captação cresceu 489,7% em 12 meses"
+   },
+   {
+    "id": "F2",
+    "texto": "96,8% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F3",
+    "texto": "Ativo total cresceu 137,6% em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Combinação de indicadores atípica em relação a todo o sistema"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia: 72,3% (data-base 202606)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da captação em 12 meses: 489,7% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Custo de captação em 12 meses: 4,3% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Liquidez imediata sobre a captação: 2,4% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "ROE em 12 meses: 74,6% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0084686": {
+  "resumo": "Stone aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Custo de captação de 18,7% ao ano, 1,6x a mediana dos pares",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "87,1% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia de 12,7%, perto do mínimo de 10,5%",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 5,3 p.p. em 12 meses",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "c20c07e4541d",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Custo de captação de 18,7% ao ano, 1,6x a mediana dos pares"
+   },
+   {
+    "id": "F2",
+    "texto": "87,1% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia de 12,7%, perto do mínimo de 10,5%"
+   },
+   {
+    "id": "F4",
+    "texto": "Basileia caiu 5,3 p.p. em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Índice de Basileia: 12,7% (data-base 202606)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da captação em 12 meses: 23,3% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 108,1% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Custo de captação em 12 meses: 18,7% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "Liquidez imediata sobre a captação: 10,1% (data-base 202606)"
+   },
+   {
+    "id": "F10",
+    "texto": "ROE em 12 meses: 40,0% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ },
+ "C0081421": {
+  "resumo": "de Lage Landen Brasil aparece no radar por 4 sinal(is) nos dados públicos do Banco Central.",
+  "pontos": [
+   {
+    "texto": "Basileia de 9,1%, abaixo do mínimo de 10,5%",
+    "evidencias": [
+     "F1"
+    ]
+   },
+   {
+    "texto": "Prejuízo em 12 meses (ROE de -34,7%)",
+    "evidencias": [
+     "F2"
+    ]
+   },
+   {
+    "texto": "Basileia caiu 5,2 p.p. em 12 meses",
+    "evidencias": [
+     "F3"
+    ]
+   },
+   {
+    "texto": "Índice de Basileia: 9,1% (data-base 202606)",
+    "evidencias": [
+     "F4"
+    ]
+   }
+  ],
+  "contradicoes": [],
+  "acompanhar": [],
+  "metodo": "regras",
+  "chave": "6d04fe95e911",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Basileia de 9,1%, abaixo do mínimo de 10,5%"
+   },
+   {
+    "id": "F2",
+    "texto": "Prejuízo em 12 meses (ROE de -34,7%)"
+   },
+   {
+    "id": "F3",
+    "texto": "Basileia caiu 5,2 p.p. em 12 meses"
+   },
+   {
+    "id": "F4",
+    "texto": "Índice de Basileia: 9,1% (data-base 202606)"
+   },
+   {
+    "id": "F5",
+    "texto": "Crescimento da captação em 12 meses: -9,4% (data-base 202606)"
+   },
+   {
+    "id": "F6",
+    "texto": "Crescimento da carteira de crédito em 12 meses: -13,6% (data-base 202606)"
+   },
+   {
+    "id": "F7",
+    "texto": "Custo de captação em 12 meses: 8,1% (data-base 202606)"
+   },
+   {
+    "id": "F8",
+    "texto": "Liquidez imediata sobre a captação: 4,4% (data-base 202606)"
+   },
+   {
+    "id": "F9",
+    "texto": "ROE em 12 meses: -34,7% (data-base 202606)"
+   }
+  ],
+  "noticias": [],
+  "anomes": 202606
+ }
+}

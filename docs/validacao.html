@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validação · Quarto Pilar</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><span class="ponto" aria-hidden="true"></span>Quarto Pilar</a>
+  <nav><a href="index.html">Bancos</a><a class="ativo" href="validacao.html">Validação</a><a href="metodologia.html">Metodologia</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="manchete">
+    <div class="sobre">Backtest com dados de 2014 em diante</div>
+    <h1>O Quarto Pilar teria visto as quebras chegando?</h1>
+    <p>Rodamos o score para cada trimestre usando só o que estava publicado até ali, sem olhar o futuro, e comparamos com as instituições que entraram em liquidação extrajudicial.</p>
+  </section>
+  <section class="kpis" id="kpis"></section>
+  <section class="secao"><div class="graficos" id="casos"></div></section>
+  <section class="secao texto">
+    <h2>Como ler</h2>
+    <p><b>1º alerta</b> é o primeiro trimestre em que o score chegou a 45 (nível “Alerta”), considerando só dados já publicados antes do evento. A <b>antecedência</b> conta a partir da data em que esse balanço ficou público (cerca de 60 a 90 dias após o fim do trimestre).</p>
+    <p><b>Cuidado:</b> as regras do Quarto Pilar foram desenhadas conhecendo estes casos, então o resultado tende a ser otimista. A taxa de alertas entre instituições que não quebraram mostra o outro lado: nem todo alerta vira problema.</p>
+  </section>
+</main>
+
+<footer class="wrap"><p class="assinatura">Criado por Guilherme Fonseca</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="assets/comum.js"></script>
+<script>
+Chart.defaults.color = "rgba(235,235,245,.6)";
+Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+(async () => {
+  const bt = await R.json("data/backtest.json");
+  document.getElementById("kpis").innerHTML = [
+    [bt.total, "quebras no universo monitorado"],
+    [bt.detectados, "com alerta antes do evento"],
+    [R.pct(bt.taxa_alerta_sobreviventes), "dos bancos que não quebraram ficaram em alerta (média)"],
+    [bt.casos.filter((c) => c.antecedencia_meses >= 6).length, "alertas com 6 meses ou mais de antecedência"],
+  ].map(([v, r]) => `<div class="kpi"><div class="v">${v}</div><div class="r">${r}</div></div>`).join("");
+  const box = document.getElementById("casos");
+  bt.casos.forEach((c, i) => {
+    const div = document.createElement("div");
+    div.className = "grafico";
+    const ant = c.antecedencia_meses !== null ? `${c.antecedencia_meses} meses de antecedência` : "sem alerta prévio";
+    div.innerHTML = `<h3>${R.esc(c.nome.replace(/ - PRUDENCIAL/i, ""))}</h3>
+      <p>Evento em ${c.data_evento.split("-").reverse().join("/")} · 1º alerta: ${c.primeiro_alerta ? R.trimestre(c.primeiro_alerta) : "—"} · ${ant}</p>
+      <div class="area"><canvas id="c${i}"></canvas></div>
+      <p style="margin-top:8px">${c.sinais_ultimo.slice(0, 3).map((s) => "• " + R.esc(s.texto)).join("<br>")}</p>`;
+    box.appendChild(div);
+    new Chart(document.getElementById(`c${i}`), {
+      type: "bar",
+      data: { labels: c.serie.map((x) => R.trimestre(x.anomes)),
+        datasets: [{ data: c.serie.map((x) => x.score), backgroundColor: c.serie.map((x) =>
+          x.score >= 65 ? "#ff453a" : x.score >= 45 ? "#ff9f0a" : x.score >= 25 ? "#ffd60a" : "#30d158"), borderRadius: 4 }] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { y: { min: 0, max: 100, grid: { color: "rgba(84,84,88,.35)" }, border: { display: false } }, x: { grid: { display: false }, border: { display: false } } } },
+    });
+  });
+})();
+</script>
+</body>
+</html>

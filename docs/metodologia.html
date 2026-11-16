@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodologia · Quarto Pilar</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><span class="ponto" aria-hidden="true"></span>Quarto Pilar</a>
+  <nav><a href="index.html">Bancos</a><a href="validacao.html">Validação</a><a class="ativo" href="metodologia.html">Metodologia</a></nav>
+</div></header>
+
+<main class="wrap texto">
+  <section class="manchete">
+    <div class="sobre">Como o Quarto Pilar funciona</div>
+    <h1>Metodologia</h1>
+    <p>Tudo é calculado com dados públicos e código aberto, e atualizado automaticamente todos os dias.</p>
+  </section>
+
+  <h2>1. Dados do Banco Central</h2>
+  <p>Usamos o IF.Data, que traz o balanço trimestral de cada instituição, e trabalhamos no nível do <b>conglomerado prudencial</b>, o mesmo recorte em que o Banco Central mede o Índice de Basileia. Entram as instituições com ativo acima de R$ 1 bilhão: bancos, financeiras e cooperativas singulares. Corretoras, instituições de pagamento e centrais de cooperativas ficam de fora.</p>
+  <p>Os dados de cada trimestre são publicados 60 dias após o fechamento (90 dias em dezembro). Por isso o ranking sempre se refere a um balanço de alguns meses atrás.</p>
+
+  <h2>2. Comparação com os pares</h2>
+  <p>Cada instituição é comparada com a mediana do seu segmento prudencial (S1 a S5). As comparações usam medidas robustas (mediana e desvio absoluto), para que poucos bancos fora da curva não distorçam a referência.</p>
+
+  <h2>3. Regras do score de dados (0 a 100)</h2>
+  <table>
+    <tr><th>Sinal</th><th>Quando dispara</th><th>Pontos</th></tr>
+    <tr><td>Capital abaixo do mínimo</td><td>Basileia abaixo de 10,5%</td><td>25</td></tr>
+    <tr><td>Capital perto do mínimo</td><td>Basileia a menos de 1 p.p. (20) ou 2,5 p.p. (10) do mínimo</td><td>10–20</td></tr>
+    <tr><td>Capital não divulgado</td><td>A instituição deixou de informar o Basileia</td><td>10</td></tr>
+    <tr><td>Capital caindo</td><td>Basileia caiu mais de 2 p.p. em 12 meses</td><td>8</td></tr>
+    <tr><td>Captação acelerada</td><td>Captação cresceu mais de 50% (12) ou 100% (18) em 12 meses</td><td>12–18</td></tr>
+    <tr><td>Captação sem crédito</td><td>Captação cresceu 30 p.p. a mais que a carteira de crédito</td><td>10</td></tr>
+    <tr><td>Captação cara</td><td>Custo de captação 1,25x (10) ou 1,5x (15) a mediana dos pares</td><td>10–15</td></tr>
+    <tr><td>Dependência de CDB</td><td>Mais de 70% da captação em depósitos a prazo</td><td>6</td></tr>
+    <tr><td>Liquidez baixa</td><td>Caixa muito abaixo dos pares, ou abaixo de 2% da captação com CDB dominante</td><td>8</td></tr>
+    <tr><td>Ativos de difícil avaliação</td><td>Mais de 30% do ativo fora de caixa, títulos e crédito, bem acima dos pares (+5 se a fatia subiu 5 p.p.)</td><td>12–17</td></tr>
+    <tr><td>Crédito sem receita (“não condiz”)</td><td>Carteira cresce mais de 30%, mas a receita de crédito cresce menos da metade disso</td><td>10</td></tr>
+    <tr><td>Crédito rende pouco</td><td>Carteira rende menos da metade da mediana dos pares</td><td>8</td></tr>
+    <tr><td>Prejuízo</td><td>Lucro negativo em 12 meses (12 se o ROE ficar abaixo de −10%)</td><td>8–12</td></tr>
+    <tr><td>Ativo explosivo</td><td>Ativo total cresceu mais de 60% em 12 meses</td><td>8</td></tr>
+    <tr><td>Alavancagem</td><td>Patrimônio líquido abaixo de 6% do ativo</td><td>6</td></tr>
+    <tr><td>Anomalia</td><td>Combinação de indicadores atípica para todo o sistema (Isolation Forest, 3% mais atípicos)</td><td>8</td></tr>
+  </table>
+  <p>Níveis: <b>Normal</b> (0–24), <b>Atenção</b> (25–44), <b>Alerta</b> (45–64) e <b>Alerta alto</b> (65 ou mais).</p>
+
+  <h2>4. Notícias e IA</h2>
+  <p>Todo dia o Quarto Pilar busca no Google Notícias e no GDELT manchetes sobre as instituições com mais sinais e as maiores do sistema, além de buscas gerais (liquidação, intervenção, FGC, fraude). Um modelo de IA gratuito (Groq) classifica cada manchete por tipo de evento e gravidade. Quando a IA não está disponível, regras de palavras-chave fazem o trabalho.</p>
+  <p>Eventos recentes somam até 30 pontos ao score. O peso cai ao longo de 45 dias, rumores valem metade e o mesmo tipo de evento conta no máximo duas vezes.</p>
+  <p>Para as instituições em alerta, outro modelo (Google Gemini) escreve um dossiê que cruza números e notícias. A IA só pode usar fatos e notícias que nós fornecemos, sempre citando o código da evidência. Afirmações sem evidência são descartadas.</p>
+
+  <h2>5. Limitações</h2>
+  <ul>
+    <li>Fraudes são feitas para não aparecer nos balanços. O Quarto Pilar aponta incoerências, mas não prova nada.</li>
+    <li>Mudanças contábeis (como a Resolução 4.966, de 2025) alteram a forma de alguns relatórios e podem gerar saltos nos indicadores.</li>
+    <li>Modelos de negócio diferentes (financeiras de varejo, bancos de montadora, cooperativas) podem disparar regras sem que haja problema.</li>
+    <li>As regras foram calibradas olhando casos conhecidos, então o backtest tende a ser otimista.</li>
+  </ul>
+
+  <h2>Aviso legal</h2>
+  <p class="aviso">Este site é um projeto independente de análise de dados públicos. Não tem relação com o Banco Central, não é avaliação de risco de crédito, não acusa nenhuma instituição e não é recomendação de investimento. Para decisões financeiras, consulte as fontes oficiais e um profissional habilitado.</p>
+</main>
+
+<footer class="wrap"><p class="assinatura">Criado por Guilherme Fonseca</p><p>Fontes: IF.Data/Banco Central do Brasil, Google Notícias, GDELT. Código aberto no GitHub.</p></footer>
+</body>
+</html>

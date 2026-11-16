@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>Quarto Pilar</title>
+<script>
+  // Endereço antigo: redireciona para o app (index.html#CÓDIGO)
+  const cod = new URLSearchParams(location.search).get("cod");
+  location.replace("index.html" + (cod ? "#" + encodeURIComponent(cod) : ""));
+</script></head>
+<body style="background:#000"></body>
+</html>

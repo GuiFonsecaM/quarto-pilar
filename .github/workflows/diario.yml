@@ -1,8 +1,7 @@
 name: Atualização diária
 
+# Disparado todo dia pelo cron-job.org (chamada à API do GitHub). Também dá para rodar manualmente.
 on:
-  schedule:
-    - cron: "17 9 * * *"   # 06:17 em Brasília (minuto quebrado evita atraso na fila do GitHub)
   workflow_dispatch:
 
 permissions:

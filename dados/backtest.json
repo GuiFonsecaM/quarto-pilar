@@ -7,8 +7,8 @@
    "fonte": "cadastro IF.Data (situação LE)",
    "ultimo_score": 66,
    "ultimo_nivel": "Alerta alto",
-   "primeiro_alerta": 201503,
-   "antecedencia_meses": 58,
+   "primeiro_alerta": 201812,
+   "antecedencia_meses": 12,
    "sinais_ultimo": [
     {
      "regra": "capital_abaixo_minimo",
@@ -49,18 +49,18 @@
     },
     {
      "anomes": 201503,
-     "score": 49,
-     "nivel": "Alerta"
+     "score": 27,
+     "nivel": "Atenção"
     },
     {
      "anomes": 201506,
-     "score": 49,
-     "nivel": "Alerta"
+     "score": 27,
+     "nivel": "Atenção"
     },
     {
      "anomes": 201509,
-     "score": 50,
-     "nivel": "Alerta"
+     "score": 40,
+     "nivel": "Atenção"
     },
     {
      "anomes": 201709,
@@ -104,8 +104,8 @@
    "nome": "BRK S.A. CFI - PRUDENCIAL",
    "data_evento": "2023-03-31",
    "fonte": "cadastro IF.Data (situação LE)",
-   "ultimo_score": 72,
-   "ultimo_nivel": "Alerta alto",
+   "ultimo_score": 64,
+   "ultimo_nivel": "Alerta",
    "primeiro_alerta": 202203,
    "antecedencia_meses": 10,
    "sinais_ultimo": [
@@ -128,28 +128,28 @@
      "valor": 0.8194740991510319
     },
     {
-     "regra": "ativo_explosivo",
-     "pontos": 8,
-     "texto": "Ativo total cresceu 102,4% em 12 meses",
-     "valor": 1.0239291796608243
-    },
-    {
      "regra": "dependencia_cdb",
      "pontos": 6,
      "texto": "92,1% da captação vem de depósitos a prazo (CDB)",
      "valor": 0.9209248682780392
+    },
+    {
+     "regra": "alavancagem",
+     "pontos": 6,
+     "texto": "Patrimônio líquido de apenas 3,3% do ativo",
+     "valor": 0.03334261647183872
     }
    ],
    "serie": [
     {
      "anomes": 202203,
-     "score": 100,
+     "score": 75,
      "nivel": "Alerta alto"
     },
     {
      "anomes": 202206,
-     "score": 100,
-     "nivel": "Alerta alto"
+     "score": 64,
+     "nivel": "Alerta"
     },
     {
      "anomes": 202209,
@@ -158,8 +158,8 @@
     },
     {
      "anomes": 202212,
-     "score": 72,
-     "nivel": "Alerta alto"
+     "score": 64,
+     "nivel": "Alerta"
     }
    ]
   },
@@ -272,17 +272,11 @@
    "nome": "ENTREPAY IP - PRUDENCIAL",
    "data_evento": "2026-03-31",
    "fonte": "cadastro IF.Data (situação LE)",
-   "ultimo_score": 72,
-   "ultimo_nivel": "Alerta alto",
+   "ultimo_score": 54,
+   "ultimo_nivel": "Alerta",
    "primeiro_alerta": 202512,
    "antecedencia_meses": 0,
    "sinais_ultimo": [
-    {
-     "regra": "captacao_acelerada",
-     "pontos": 18,
-     "texto": "Captação cresceu 205,9% em 12 meses",
-     "valor": 2.0592131676988057
-    },
     {
      "regra": "captacao_cara",
      "pontos": 15,
@@ -306,6 +300,12 @@
      "pontos": 10,
      "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)",
      "valor": null
+    },
+    {
+     "regra": "ativos_dificeis_subindo",
+     "pontos": 5,
+     "texto": "Essa fatia subiu 66,1 p.p. em 12 meses",
+     "valor": 0.6605964751589997
     }
    ],
    "serie": [
@@ -326,13 +326,13 @@
     },
     {
      "anomes": 202512,
-     "score": 72,
-     "nivel": "Alerta alto"
+     "score": 54,
+     "nivel": "Alerta"
     }
    ]
   }
  ],
  "detectados": 4,
  "total": 4,
- "taxa_alerta_sobreviventes": 0.0497
+ "taxa_alerta_sobreviventes": 0.0371
 }

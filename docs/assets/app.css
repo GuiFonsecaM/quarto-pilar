@@ -153,3 +153,6 @@ button { font-family: inherit; }
 .texto th, .texto td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--sep); vertical-align: top; }
 .texto th { color: var(--txt-2); font-weight: 600; }
 footer { padding: 24px 0 40px; color: var(--txt-3); font-size: .8rem; }
+.dossie ul.fontes { list-style: none; padding-left: 0; }
+.dossie ul.fontes li { margin: 8px 0; color: rgba(235,235,245,.85); }
+.dossie ul.fontes .ev { cursor: default; margin: 0 6px 0 0; }

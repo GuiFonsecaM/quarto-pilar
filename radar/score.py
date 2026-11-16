@@ -93,10 +93,13 @@ def pontuar_trimestre(t: pd.DataFrame) -> pd.DataFrame:
                 add(20, "capital_minimo", f"Basileia de {_pct(r['basileia'])}, a menos de 1 p.p. do mínimo de 10,5%", r["basileia"])
             elif b < 0.025:
                 add(10, "capital_baixo", f"Basileia de {_pct(r['basileia'])}, perto do mínimo de 10,5%", r["basileia"])
-        if pd.notna(r["delta_basileia_12m"]) and r["delta_basileia_12m"] < -0.02:
+        # queda só preocupa se o capital já não estiver muito acima do mínimo
+        if pd.notna(r["delta_basileia_12m"]) and r["delta_basileia_12m"] < -0.02 and pd.notna(b) and b < 0.08:
             add(8, "capital_caindo", f"Basileia caiu {_pp(-r['delta_basileia_12m'])} em 12 meses", r["delta_basileia_12m"])
 
-        cc = r["cresc_captacoes_12m"]
+        # crescimento sobre base pequena (menos de R$ 500 mi há 12 meses) distorce o percentual
+        base_ok = pd.notna(r.get("captacoes_12m_atras")) and r["captacoes_12m_atras"] >= 5e8
+        cc = r["cresc_captacoes_12m"] if base_ok else np.nan
         if pd.notna(cc) and cc > 0.5:
             add(18 if cc > 1 else 12, "captacao_acelerada", f"Captação cresceu {_pct(cc)} em 12 meses", cc)
         gap = r["gap_captacao_carteira"]
@@ -129,7 +132,7 @@ def pontuar_trimestre(t: pd.DataFrame) -> pd.DataFrame:
         roe = r["roe"]
         if pd.notna(roe) and roe < 0:
             add(12 if roe < -0.1 else 8, "prejuizo", f"Prejuízo em 12 meses (ROE de {_pct(roe)})", roe)
-        ca = r["cresc_ativo_12m"]
+        ca = r["cresc_ativo_12m"] if pd.notna(r.get("ativo_12m_atras")) and r["ativo_12m_atras"] >= 1e9 else np.nan
         if pd.notna(ca) and ca > 0.6:
             add(8, "ativo_explosivo", f"Ativo total cresceu {_pct(ca)} em 12 meses", ca)
         if pd.notna(r["pl_ativo"]) and r["pl_ativo"] < 0.06:

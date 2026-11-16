@@ -53,7 +53,9 @@ def _fatos(linha: pd.Series) -> list[dict]:
     ]
     for nome, v in extras:
         if v is not None:
-            fatos.append({"id": f"F{len(fatos) + 1}", "texto": f"{nome}: {v} (data-base {linha['anomes']})"})
+            a = int(linha["anomes"])
+            mes = {3: "mar", 6: "jun", 9: "set", 12: "dez"}[a % 100]
+            fatos.append({"id": f"F{len(fatos) + 1}", "texto": f"{nome}: {v} (balanço de {mes}/{a // 100})"})
     return fatos
 
 

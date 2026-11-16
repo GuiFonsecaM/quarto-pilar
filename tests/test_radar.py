@@ -36,7 +36,7 @@ def _indicadores_base(n=40):
     rng = np.random.default_rng(0)
     return pd.DataFrame({
         "cod": [f"C{i}" for i in range(n)], "anomes": 202506, "nome": "X", "segmento": "S3", "tcb": "B1",
-        "ativo_total": 5e9, "captacoes": 4e9, "carteira": 2e9, "patrimonio_liquido": 5e8,
+        "ativo_total": 5e9, "captacoes": 4e9, "captacoes_12m_atras": 2e9, "ativo_12m_atras": 4e9, "carteira": 2e9, "patrimonio_liquido": 5e8,
         "basileia": rng.uniform(0.14, 0.2, n), "folga_basileia": 0.05, "indice_capital_principal": 0.12,
         "razao_alavancagem": 0.08, "delta_basileia_12m": 0.0, "pl_ativo": 0.1, "cresc_ativo_12m": 0.1,
         "cresc_captacoes_12m": 0.1, "cresc_carteira_12m": 0.1, "cresc_dep_prazo_12m": 0.1,

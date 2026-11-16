@@ -77,9 +77,18 @@ function graficoPrincipal(b) {
     `<span><i style="border-color:${d.borderColor};${d.borderDash.length ? "border-top-style:dashed" : ""}"></i>${R.esc(d.label)}</span>`).join("");
 }
 
+// Evidências: F = dado do Banco Central, N = notícia. Mostradas com nomes legíveis.
+function rotuloEv(id, d) {
+  const n = id.slice(1);
+  if (id[0] === "N") {
+    const x = (d.noticias || []).find((y) => y.id === id);
+    return `Notícia ${n}${x && x.fonte ? " · " + x.fonte : ""}`;
+  }
+  return `Dado ${n} do BC`;
+}
 function evid(id, d) {
   const f = [...(d.fatos || []), ...(d.noticias || [])].find((x) => x.id === id);
-  return f ? `<button class="ev" title="${R.esc(f.texto)}">${id}</button>` : "";
+  return f ? `<button class="ev" title="${R.esc(f.texto)}">${R.esc(rotuloEv(id, d))}</button>` : "";
 }
 
 async function abrir(cod, empurrar = true) {
@@ -141,14 +150,14 @@ async function abrir(cod, empurrar = true) {
         : '<div class="vazio">Nenhuma regra de alerta disparou neste trimestre.</div>'}</div></div>
 
     ${d ? `<div class="bloco"><h2>Dossiê</h2>
-      <p class="desc">${d.metodo === "ia" ? "Escrito por IA a partir das evidências abaixo. Toque no código para ver a fonte." : "Resumo automático a partir das regras do Quarto Pilar."}</p>
+      <p class="desc">${d.metodo === "ia" ? "Escrito por IA usando só as fontes listadas no fim. Cada frase indica de onde veio; passe o mouse ou toque para ver." : "Resumo automático a partir das regras do Quarto Pilar."}</p>
       <div class="dossie">
         <p class="resumo">${R.esc(d.resumo)}</p>
         ${d.pontos.length ? `<h3>Por que está no radar</h3><ul>${lista(d.pontos)}</ul>` : ""}
         ${(d.contradicoes || []).length ? `<h3>O que não condiz</h3><ul>${lista(d.contradicoes)}</ul>` : ""}
         ${(d.acompanhar || []).length ? `<h3>O que acompanhar</h3><ul>${d.acompanhar.map((a) => `<li>${R.esc(a)}</li>`).join("")}</ul>` : ""}
-        <h3>Evidências</h3><ul>${(d.fatos || []).map((f) => `<li><b>${f.id}</b> ${R.esc(f.texto)}</li>`).join("")}
-        ${(d.noticias || []).map((n) => `<li><b>${n.id}</b> <a href="${R.esc(n.link)}" target="_blank" rel="noopener">${R.esc(n.texto)}</a></li>`).join("")}</ul>
+        <h3>Fontes usadas</h3><ul class="fontes">${(d.fatos || []).map((f) => `<li><span class="ev">${R.esc(rotuloEv(f.id, d))}</span> ${R.esc(f.texto)}</li>`).join("")}
+        ${(d.noticias || []).map((n) => `<li><span class="ev">${R.esc(rotuloEv(n.id, d))}</span> <a href="${R.esc(n.link)}" target="_blank" rel="noopener">${R.esc(n.texto)}</a></li>`).join("")}</ul>
         <div class="nota">Números da data-base ${R.trimestre(d.anomes)}.</div>
       </div></div>` : ""}
 

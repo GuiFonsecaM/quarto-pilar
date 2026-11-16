@@ -57,6 +57,8 @@ def calcular(p: pd.DataFrame) -> pd.DataFrame:
     i["cresc_captacoes_12m"] = cresc("captacoes")
     i["cresc_carteira_12m"] = cresc("carteira")
     i["cresc_dep_prazo_12m"] = cresc("depositos_prazo")
+    i["captacoes_12m_atras"] = lag("captacoes", 4)
+    i["ativo_12m_atras"] = lag("ativo_total", 4)
     i["gap_captacao_carteira"] = i["cresc_captacoes_12m"] - i["cresc_carteira_12m"]
 
     # Custo e rentabilidade (12 meses)

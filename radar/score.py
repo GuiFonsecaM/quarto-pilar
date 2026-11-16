@@ -62,6 +62,11 @@ def pontuar_trimestre(t: pd.DataFrame) -> pd.DataFrame:
     t["custo_rel"] = t["custo_captacao"] / med_custo
     t["rend_rel"] = t["rend_carteira"] / med_rend
     _, z_outros = _robusto(t["share_ativos_outros"], t["grupo"])
+    if "inadimplencia" not in t:
+        t["inadimplencia"] = np.nan
+        t["delta_inadimplencia_12m"] = np.nan
+    med_inad, _ = _robusto(t["inadimplencia"], t["grupo"])
+    t["inad_rel"] = t["inadimplencia"] / med_inad.replace(0, np.nan)
 
     # anomalia multivariada
     t["anomalia"] = False
@@ -135,6 +140,12 @@ def pontuar_trimestre(t: pd.DataFrame) -> pd.DataFrame:
         ca = r["cresc_ativo_12m"] if pd.notna(r.get("ativo_12m_atras")) and r["ativo_12m_atras"] >= 1e9 else np.nan
         if pd.notna(ca) and ca > 0.6:
             add(8, "ativo_explosivo", f"Ativo total cresceu {_pct(ca)} em 12 meses", ca)
+        ina, inr = r["inadimplencia"], r["inad_rel"]
+        if pd.notna(ina) and pd.notna(inr) and ina > 0.08 and inr > 2.5:
+            add(12 if inr > 4 else 8, "inadimplencia_alta",
+                f"Inadimplência de {_pct(ina)} da carteira, " + f"{inr:.1f}".replace(".", ",") + "x a mediana dos pares", ina)
+        if pd.notna(r["delta_inadimplencia_12m"]) and r["delta_inadimplencia_12m"] > 0.03 and pd.notna(ina) and ina > 0.06:
+            add(5, "inadimplencia_subindo", f"Inadimplência subiu {_pp(r['delta_inadimplencia_12m'])} em 12 meses", r["delta_inadimplencia_12m"])
         if pd.notna(r["pl_ativo"]) and r["pl_ativo"] < 0.06:
             add(6, "alavancagem", f"Patrimônio líquido de apenas {_pct(r['pl_ativo'])} do ativo", r["pl_ativo"])
         if r["anomalia"]:

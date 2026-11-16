@@ -49,6 +49,7 @@ def _fatos(linha: pd.Series) -> list[dict]:
         ("Crescimento da carteira de crédito em 12 meses", pct(linha.get("cresc_carteira_12m"))),
         ("Custo de captação em 12 meses", pct(linha.get("custo_captacao"))),
         ("Liquidez imediata sobre a captação", pct(linha.get("liquidez_imediata"))),
+        ("Inadimplência (carteira vencida há mais de 15 dias)", pct(linha.get("inadimplencia"))),
         ("ROE em 12 meses", pct(linha.get("roe"))),
     ]
     for nome, v in extras:

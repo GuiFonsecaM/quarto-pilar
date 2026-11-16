@@ -16,14 +16,20 @@ from .http import get, sessao
 
 log = logging.getLogger("radar.ifdata")
 
-COLS_VALORES = ["AnoMes", "CodInst", "NumeroRelatorio", "Grupo", "Conta", "NomeColuna", "Saldo"]
+COLS_VALORES = ["AnoMes", "CodInst", "NumeroRelatorio", "Grupo", "Conta", "NomeColuna", "Saldo", "TipoInstituicao"]
 COLS_CADASTRO = ["AnoMes", "CodInst", "NomeInstituicao", "Segmento", "Situacao",
-                 "CodConglomeradoPrudencial", "UF", "Tcb"]
+                 "CodConglomeradoPrudencial", "CodConglomeradoFinanceiro", "UF", "Tcb"]
+
+# Carteira de crédito por modalidade e prazo (traz o "vencido a partir de 15 dias"):
+# 11 = pessoa física, 13 = pessoa jurídica. Até dez/2024 o BC publica só para conglomerados
+# financeiros (tipo 2); a partir de mar/2025, para conglomerados prudenciais (tipo 1).
+RELATORIOS_CREDITO = {"11": "Carteira PF por modalidade e prazo", "13": "Carteira PJ por modalidade e prazo"}
+INICIO_CREDITO = 201406
 
 # Mapeamento das colunas do arquivo de cadastro do portal (fallback REST)
 REST_CADASTRO = {
     "c0": "CodInst", "c1": "Data", "c2": "NomeInstituicao", "c3": "Tcb", "c7": "UF",
-    "c9": "Segmento", "c12": "CodConglomeradoPrudencial", "c17": "Situacao",
+    "c9": "Segmento", "c11": "CodConglomeradoFinanceiro", "c12": "CodConglomeradoPrudencial", "c17": "Situacao",
 }
 
 
@@ -59,11 +65,11 @@ def _paginar(s, url: str, params: dict, top: int = 10000) -> pd.DataFrame:
     return pd.concat(partes, ignore_index=True) if partes else pd.DataFrame()
 
 
-def baixar_valores(periodo: int, relatorio: str, s=None) -> pd.DataFrame:
+def baixar_valores(periodo: int, relatorio: str, s=None, tipo: int = C.TIPO_PRUDENCIAL) -> pd.DataFrame:
     s = s or sessao()
     df = _paginar(s, C.OLINDA_VALORES, {
         "@AnoMes": str(periodo),
-        "@TipoInstituicao": str(C.TIPO_PRUDENCIAL),
+        "@TipoInstituicao": str(tipo),
         "@Relatorio": f"'{relatorio}'",
         "$format": "json",
     })
@@ -75,9 +81,21 @@ def baixar_valores(periodo: int, relatorio: str, s=None) -> pd.DataFrame:
     df = df[COLS_VALORES].copy()
     df["AnoMes"] = int(periodo)
     df["NumeroRelatorio"] = str(relatorio)
+    df["TipoInstituicao"] = str(tipo)
     df["CodInst"] = df["CodInst"].astype(str)
     df["Saldo"] = pd.to_numeric(df["Saldo"], errors="coerce")
+    if relatorio in RELATORIOS_CREDITO:  # só o que o radar usa, para o cache não crescer à toa
+        df = df[df["NomeColuna"].astype(str).str.contains("Vencido a Partir de 15 Dias|Total da Carteira", regex=True)]
     return df
+
+
+def esperados(periodo: int) -> list[tuple[str, int]]:
+    """Relatórios (e tipo de instituição) que devem existir para um período."""
+    out = [(r, C.TIPO_PRUDENCIAL) for r in C.RELATORIOS if not (r == "5" and periodo < 201503)]
+    if periodo >= INICIO_CREDITO:
+        tipo = C.TIPO_PRUDENCIAL if periodo >= 202503 else 2
+        out += [(r, tipo) for r in RELATORIOS_CREDITO]
+    return out
 
 
 def baixar_cadastro(periodo: int, s=None) -> pd.DataFrame:
@@ -115,39 +133,49 @@ def _arq(nome: str):
     return C.BRUTOS / nome
 
 
+def _tem(nome: str, coluna: str | None = None) -> bool:
+    p = C.BRUTOS / nome
+    if not p.exists():
+        return False
+    if coluna is None:
+        return True
+    import pyarrow.parquet as pq
+    return coluna in pq.read_schema(p).names
+
+
 def atualizar(completo: bool = False, refazer_ultimos: int = 2) -> list[int]:
-    """Baixa o que falta. Devolve os períodos que ganharam dados novos."""
+    """Baixa o que falta (relatórios novos, períodos novos ou cadastro incompleto).
+    Devolve os períodos que ganharam dados novos."""
     s = sessao()
     if get(s, C.OLINDA + "/ListaDeRelatorio()", params={"$format": "json"}, tentativas=3) is None:
         log.error("API do IF.Data fora do ar ou inacessível. Mantendo os dados atuais.")
         return []
     periodos = trimestres()
-    existentes = sorted({int(p.stem.split("_")[1]) for p in C.BRUTOS.glob("rel1_*.parquet")}) \
-        if C.BRUTOS.exists() else []
-    if completo or not existentes:
-        alvo = periodos
-    else:
-        faltando = [p for p in periodos if p not in existentes]
-        refazer = existentes[-refazer_ultimos:] if refazer_ultimos else []
-        alvo = sorted(set(faltando) | set(refazer))
-
+    recentes = set(periodos[-refazer_ultimos:]) if refazer_ultimos else set()
+    hoje = date.today()
     novos = []
-    for per in alvo:
+    for per in periodos:
         ok = False
-        for rel in C.RELATORIOS:
-            if rel == "5" and per < 201503:
-                continue  # Informações de Capital só existem para prudenciais a partir de 2015
-            df = baixar_valores(per, rel, s)
+        for rel, tipo in esperados(per):
+            nome = f"rel{rel}_{per}.parquet"
+            if _tem(nome) and not completo and per not in recentes:
+                continue
+            df = baixar_valores(per, rel, s, tipo)
             if df.empty:
                 log.info("Sem dados: relatório %s, %s", rel, per)
+                # período antigo sem dados: grava vazio para não tentar de novo todo dia
+                if (hoje - date(per // 100, per % 100, 28)).days > 200:
+                    pd.DataFrame(columns=COLS_VALORES).to_parquet(_arq(nome), index=False)
                 continue
-            df.to_parquet(_arq(f"rel{rel}_{per}.parquet"), index=False)
+            df.to_parquet(_arq(nome), index=False)
             ok = True
-            log.info("Relatório %s, %s: %s linhas", rel, per, len(df))
+            log.info("Relatório %s (tipo %s), %s: %s linhas", rel, tipo, per, len(df))
+        cad = f"cad_{per}.parquet"
+        if ok or not _tem(cad, "CodConglomeradoFinanceiro"):
+            c = baixar_cadastro(per, s)
+            if not c.empty:
+                c.to_parquet(_arq(cad), index=False)
         if ok:
-            cad = baixar_cadastro(per, s)
-            if not cad.empty:
-                cad.to_parquet(_arq(f"cad_{per}.parquet"), index=False)
             novos.append(per)
     return novos
 

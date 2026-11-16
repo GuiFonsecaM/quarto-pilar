@@ -74,6 +74,15 @@ def calcular(p: pd.DataFrame) -> pd.DataFrame:
     i["pdd_carteira"] = div(-ttm("resultado_pdd"), media("carteira"))
     i["rendas_tvm_ativo"] = div(ttm("rendas_tvm"), media("ativo_total"))
 
+    # Inadimplência: carteira vencida há mais de 15 dias sobre a carteira de PF e PJ
+    if "vencido_15d" in p:
+        p["inadimplencia"] = div(p["vencido_15d"], p["carteira_pf_pj"])
+        i["inadimplencia"] = p["inadimplencia"]
+        i["delta_inadimplencia_12m"] = p["inadimplencia"] - lag("inadimplencia", 4)
+    else:
+        i["inadimplencia"] = np.nan
+        i["delta_inadimplencia_12m"] = np.nan
+
     # Estrutura do balanço
     i["share_dep_prazo"] = div(p["depositos_prazo"], p["captacoes"])
     liq = p["disponibilidades"].fillna(0) + p["aplicacoes_interfinanceiras"].fillna(0)

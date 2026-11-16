@@ -100,7 +100,7 @@ def montar(valores: pd.DataFrame, cadastro: pd.DataFrame | None = None) -> pd.Da
     v["grupo_n"] = v["Grupo"].map(_grupo_nucleo)
     v["Saldo"] = pd.to_numeric(v["Saldo"], errors="coerce")
 
-    base = v[["CodInst", "AnoMes"]].drop_duplicates()
+    base = v.loc[v["rel"].isin(["1", "2", "3", "4", "5"]), ["CodInst", "AnoMes"]].drop_duplicates()
     out = base.set_index(["CodInst", "AnoMes"])
     for campo, cands in MAPA.items():
         serie = pd.Series(np.nan, index=out.index)
@@ -116,10 +116,51 @@ def montar(valores: pd.DataFrame, cadastro: pd.DataFrame | None = None) -> pd.Da
     out = out.reset_index().rename(columns={"CodInst": "cod", "AnoMes": "anomes"})
     out["anomes"] = out["anomes"].astype(int)
     out["lci_lca"] = out["lci_lca"].fillna(0) + out.pop("lca").fillna(0)
+    inad = inadimplencia(valores, cadastro)
+    if not inad.empty:
+        out = out.merge(inad, on=["cod", "anomes"], how="left")
+    else:
+        out["vencido_15d"] = np.nan
+        out["carteira_pf_pj"] = np.nan
     out = trimestralizar(out)
     if cadastro is not None and not cadastro.empty:
         out = anexar_cadastro(out, cadastro)
     return out.sort_values(["cod", "anomes"]).reset_index(drop=True)
+
+
+def _mapa_financeiro(cad: pd.DataFrame) -> dict:
+    """(anomes, código do conglomerado financeiro ou da instituição) -> código prudencial."""
+    if cad is None or cad.empty or "CodConglomeradoFinanceiro" not in cad:
+        return {}
+    c = cad[cad["CodConglomeradoPrudencial"].astype(str).str.startswith("C")]
+    mapa = {}
+    fin = c[c["CodConglomeradoFinanceiro"].astype(str).str.startswith("C")]
+    for (per, cf), g in fin.groupby(["AnoMes", "CodConglomeradoFinanceiro"]):
+        mapa[(int(per), str(cf))] = g["CodConglomeradoPrudencial"].mode().iloc[0]
+    for r in c[["AnoMes", "CodInst", "CodConglomeradoPrudencial"]].itertuples():
+        mapa.setdefault((int(r.AnoMes), str(r.CodInst)), r.CodConglomeradoPrudencial)
+    return mapa
+
+
+def inadimplencia(valores: pd.DataFrame, cadastro: pd.DataFrame | None) -> pd.DataFrame:
+    """Carteira vencida há mais de 15 dias (PF + PJ) por conglomerado prudencial.
+    Até 2024 o BC publica esses relatórios por conglomerado financeiro, que é traduzido
+    para o prudencial pelo cadastro."""
+    v = valores[valores["NumeroRelatorio"].astype(str).isin(["11", "13"])].copy()
+    if v.empty:
+        return pd.DataFrame()
+    nome = v["NomeColuna"].astype(str)
+    v["venc"] = np.where(nome.str.startswith("Vencido a Partir de 15 Dias"), v["Saldo"], 0.0)
+    v["tot"] = np.where(nome.str.startswith("Total da Carteira"), v["Saldo"], 0.0)
+    g = v.groupby(["CodInst", "AnoMes", "TipoInstituicao"], as_index=False)[["venc", "tot"]].sum()
+    mapa = _mapa_financeiro(cadastro)
+    tipo2 = g["TipoInstituicao"].astype(str) == "2"
+    g["cod"] = [mapa.get((int(a), str(c)), c) if t else c
+                for c, a, t in zip(g["CodInst"], g["AnoMes"], tipo2)]
+    g = g.groupby(["cod", "AnoMes"], as_index=False)[["venc", "tot"]].sum()
+    g = g[g["tot"] > 0].rename(columns={"AnoMes": "anomes", "venc": "vencido_15d", "tot": "carteira_pf_pj"})
+    g["anomes"] = g["anomes"].astype(int)
+    return g
 
 
 def trimestralizar(p: pd.DataFrame) -> pd.DataFrame:

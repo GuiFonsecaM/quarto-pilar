@@ -18,10 +18,10 @@ SERIES = {
     "basileia": "basileia", "indice_cp": "indice_capital_principal", "cresc_captacoes": "cresc_captacoes_12m",
     "cresc_carteira": "cresc_carteira_12m", "custo": "custo_captacao", "liquidez": "liquidez_imediata",
     "ativos_outros": "share_ativos_outros", "roe": "roe", "ativo_total": "ativo_total", "captacoes": "captacoes",
-    "score": "score_dados",
+    "score": "score_dados", "inadimplencia": "inadimplencia",
 }
 PARES = {"basileia_pares": "basileia", "custo_pares": "custo_captacao", "liquidez_pares": "liquidez_imediata",
-         "cresc_captacoes_pares": "cresc_captacoes_12m"}
+         "cresc_captacoes_pares": "cresc_captacoes_12m", "inadimplencia_pares": "inadimplencia"}
 
 
 def _limpo(v):
@@ -56,7 +56,7 @@ def construir(scores: pd.DataFrame, atual: pd.DataFrame, ev: pd.DataFrame, dossi
     no_site = set(atual["cod"])
     agora = datetime.now(timezone.utc)
     ref = int(atual["anomes"].max())
-    medianas = scores.groupby(["anomes", "grupo"])[list(set(PARES.values()))].median()
+    medianas = scores.groupby(["anomes", "grupo"])[[c for c in set(PARES.values()) if c in scores]].median()
 
     ev = ev.copy() if ev is not None else pd.DataFrame()
     if not ev.empty:
@@ -68,9 +68,9 @@ def construir(scores: pd.DataFrame, atual: pd.DataFrame, ev: pd.DataFrame, dossi
         h = scores[scores["cod"] == cod].sort_values("anomes").tail(32)
         serie = {"anomes": [int(x) for x in h["anomes"]]}
         for k, col in SERIES.items():
-            serie[k] = _lista(h[col])
+            serie[k] = _lista(h[col]) if col in h else [None] * len(h)
         for k, col in PARES.items():
-            serie[k] = [_limpo(medianas.loc[(a, g), col]) if (a, g) in medianas.index else None
+            serie[k] = [_limpo(medianas.loc[(a, g), col]) if (a, g) in medianas.index and col in medianas else None
                         for a, g in zip(h["anomes"], h["grupo"])]
         notis = []
         n30 = graves = 0

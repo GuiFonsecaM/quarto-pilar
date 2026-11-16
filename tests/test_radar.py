@@ -122,3 +122,19 @@ def test_relacoes_ponto_de_vista_e_regras():
     assert any(r["outro_cod"] == "C1" and "Banco Alfa" in r["descricao"] for r in beta)
     master = relacoes.do_banco(rel, "C0080367", {"C0080367"})
     assert any("BRB" in r["outro"] for r in master)   # vem da lista verificada
+
+
+def test_inadimplencia_mapeia_conglomerado_financeiro():
+    cad = pd.DataFrame([{"AnoMes": 202412, "CodInst": "111", "CodConglomeradoFinanceiro": "C0050201",
+                         "CodConglomeradoPrudencial": "C0080367"}])
+    vals = pd.DataFrame([
+        {"AnoMes": 202412, "CodInst": "C0050201", "NumeroRelatorio": "11", "TipoInstituicao": "2",
+         "NomeColuna": "Vencido a Partir de 15 Dias", "Saldo": 5.0},
+        {"AnoMes": 202412, "CodInst": "C0050201", "NumeroRelatorio": "11", "TipoInstituicao": "2",
+         "NomeColuna": "Total da Carteira de Pessoa Física", "Saldo": 100.0},
+        {"AnoMes": 202503, "CodInst": "C0080367", "NumeroRelatorio": "13", "TipoInstituicao": "1",
+         "NomeColuna": "Total da Carteira de Pessoa Jurídica", "Saldo": 50.0},
+    ])
+    r = painel.inadimplencia(vals, cad).set_index("anomes")
+    assert r.loc[202412, "cod"] == "C0080367" and r.loc[202412, "vencido_15d"] == 5.0
+    assert r.loc[202503, "carteira_pf_pj"] == 50.0

@@ -11,6 +11,7 @@ const METRICAS = {
   captacao: { nome: "Captação", serie: (s) => [{ d: s.cresc_captacoes, nome: "Captação 12m" }, { d: s.cresc_carteira, nome: "Carteira 12m", cor: "#0a84ff" }, { d: s.cresc_captacoes_pares, nome: "Captação dos pares", pares: true }] },
   custo: { nome: "Custo", serie: (s) => [{ d: s.custo, nome: "Custo de captação" }, { d: s.custo_pares, nome: "Pares", pares: true }] },
   liquidez: { nome: "Liquidez", serie: (s) => [{ d: s.liquidez, nome: "Liquidez imediata" }, { d: s.liquidez_pares, nome: "Pares", pares: true }] },
+  inad: { nome: "Inadimplência", serie: (s) => [{ d: s.inadimplencia || [], nome: "Inadimplência" }, { d: s.inadimplencia_pares || [], nome: "Pares", pares: true }] },
   ativos: { nome: "Ativos difíceis", serie: (s) => [{ d: s.ativos_outros, nome: "Ativos de difícil avaliação" }] },
   tamanho: { nome: "Tamanho", bi: true, serie: (s) => [{ d: s.ativo_total, nome: "Ativo total" }, { d: s.captacoes, nome: "Captação", cor: "#0a84ff" }] },
 };
@@ -99,6 +100,7 @@ const EXPLICA = {
   "Carteira 12m": "Quanto os empréstimos do banco cresceram ou caíram em 12 meses. Se a captação cresce muito mais que a carteira, o dinheiro está indo para outro lugar.",
   "Custo captação": "Quanto o banco paga por ano, em média, pelo dinheiro que capta. Bem acima dos pares indica que ele precisa pagar caro para atrair dinheiro, como acontecia com o Master.",
   "Liquidez": "Dinheiro disponível na hora para cada R$ 100 captados. Muito baixo, perto de 2%, deixa o banco sem folga se muitos clientes resgatarem ao mesmo tempo.",
+  "Inadimplência": "Parte dos empréstimos a pessoas e empresas com parcela atrasada há mais de 15 dias. Nos grandes bancos fica perto de 2% a 4%. Bem acima dos pares indica que o banco está emprestando para quem não consegue pagar.",
   "Ativos difíceis": "Parte do ativo que não é caixa, título público nem empréstimo comum, como precatórios e direitos creditórios. São itens difíceis de avaliar e de vender rápido.",
 };
 function st(rotulo, valor) {
@@ -142,7 +144,7 @@ async function abrir(cod, empurrar = true) {
   estado.banco = b;
   document.getElementById("app").classList.add("aberto");
   document.title = `${b.nome} · Quarto Pilar`;
-  const s = b.serie, ult = (k) => s[k][s[k].length - 1];
+  const s = b.serie, ult = (k) => (s[k] || []).at(-1);
   const sc = s.score.filter((x) => x !== null);
   const delta = sc.length > 1 ? sc[sc.length - 1] - sc[sc.length - 2] : null;
   const corDelta = delta > 0 ? "vermelho" : delta < 0 ? "verde" : "cinza";
@@ -182,6 +184,7 @@ async function abrir(cod, empurrar = true) {
       ${st("Carteira 12m", R.pct(ult("cresc_carteira")))}
       ${st("Custo captação", R.pct(ult("custo")))}
       ${st("Liquidez", R.pct(ult("liquidez")))}
+      ${st("Inadimplência", R.pct(ult("inadimplencia")))}
       ${st("Ativos difíceis", R.pct(ult("ativos_outros")))}
     </div>
     <div class="popover" id="popover" role="dialog" hidden></div>

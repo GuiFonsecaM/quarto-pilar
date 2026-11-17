@@ -143,6 +143,31 @@ def _tem(nome: str, coluna: str | None = None) -> bool:
     return coluna in pq.read_schema(p).names
 
 
+def _cadastro_completo(nome: str) -> bool:
+    if not _tem(nome, "CodConglomeradoFinanceiro"):
+        return False
+    c = pd.read_parquet(C.BRUTOS / nome, columns=["Situacao"])
+    return c["Situacao"].notna().any()
+
+
+def _mesclar_cadastro(novo: pd.DataFrame, nome: str) -> pd.DataFrame:
+    """O arquivo reserva do portal às vezes vem sem alguns campos (ex.: situação).
+    Mantém o que já se sabia em vez de apagar."""
+    p = C.BRUTOS / nome
+    if not p.exists():
+        return novo
+    velho = pd.read_parquet(p)
+    velho["CodInst"] = velho["CodInst"].astype(str)
+    v = velho.set_index("CodInst")
+    n = novo.set_index("CodInst")
+    for col in n.columns:
+        if col in v.columns:
+            vazio = n[col].isna() | (n[col].astype(str).str.strip() == "")
+            n.loc[vazio, col] = v[col].reindex(n.index)[vazio]
+    extra = v.loc[~v.index.isin(n.index)]
+    return pd.concat([n, extra.reindex(columns=n.columns)]).reset_index()
+
+
 def atualizar(completo: bool = False, refazer_ultimos: int = 2, max_periodos: int = 16) -> list[int]:
     """Baixa o que falta (relatórios novos, períodos novos ou cadastro incompleto).
     Devolve os períodos que ganharam dados novos."""
@@ -178,11 +203,11 @@ def atualizar(completo: bool = False, refazer_ultimos: int = 2, max_periodos: in
             ok = True
             log.info("Relatório %s (tipo %s), %s: %s linhas", rel, tipo, per, len(df))
         cad = f"cad_{per}.parquet"
-        if ok or not _tem(cad, "CodConglomeradoFinanceiro"):
+        if ok or not _cadastro_completo(cad):
             precisou = True
             c = baixar_cadastro(per, s)
             if not c.empty:
-                c.to_parquet(_arq(cad), index=False)
+                _mesclar_cadastro(c, cad).to_parquet(_arq(cad), index=False)
         if ok:
             novos.append(per)
         if precisou and per not in recentes:

@@ -36,9 +36,20 @@ def _limpo(v):
     return v
 
 
+def _sanear(o):
+    """Troca NaN/inf por None em qualquer nível (o navegador não aceita NaN em JSON)."""
+    if isinstance(o, dict):
+        return {k: _sanear(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_sanear(v) for v in o]
+    if isinstance(o, float) or hasattr(o, "item"):
+        return _limpo(o)
+    return o
+
+
 def _escrever(caminho, obj) -> bool:
     caminho.parent.mkdir(parents=True, exist_ok=True)
-    txt = json.dumps(obj, ensure_ascii=False, separators=(",", ":"), default=_limpo)
+    txt = json.dumps(_sanear(obj), ensure_ascii=False, separators=(",", ":"), default=_limpo, allow_nan=False)
     if caminho.exists() and caminho.read_text(encoding="utf-8") == txt:
         return False
     caminho.write_text(txt, encoding="utf-8")

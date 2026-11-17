@@ -10,13 +10,16 @@
 <meta name="description" content="Sinais de alerta sobre a saúde financeira dos bancos brasileiros, a partir de dados públicos do Banco Central e notícias, atualizados todos os dias.">
 <link rel="stylesheet" href="assets/app.css">
 </head>
-<body>
+<body class="com-app">
+<header class="topo"><div class="wrap wrap-larga">
+  <a class="marca" href="index.html"><span class="ponto" aria-hidden="true"></span><span class="nome-marca">Quarto Pilar</span></a>
+  <nav><a class="ativo" href="index.html" aria-current="page">Bancos</a><a href="cdbs.html">CDBs</a><a href="validacao.html">Validação</a><a href="metodologia.html">Metodologia</a></nav>
+</div></header>
 <div class="app" id="app">
   <aside class="lateral">
     <div class="cab">
-      <div class="marca"><span class="ponto" aria-hidden="true"></span>Quarto Pilar</div>
-      <div class="data" id="data">Bancos</div>
-      <div class="links"><a href="cdbs.html">CDBs</a><a href="validacao.html">Validação</a><a href="metodologia.html">Metodologia</a></div>
+      <h1 class="titulo">Bancos</h1>
+      <div class="data" id="data"></div>
     </div>
     <label class="busca">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>

@@ -168,7 +168,7 @@
    "nome": "BANCO MASTER - PRUDENCIAL",
    "data_evento": "2025-11-18",
    "fonte": "Liquidação extrajudicial decretada pelo Banco Central",
-   "ultimo_score": 56,
+   "ultimo_score": 61,
    "ultimo_nivel": "Alerta",
    "primeiro_alerta": 202209,
    "antecedencia_meses": 36,
@@ -182,8 +182,8 @@
     {
      "regra": "ativos_dificeis",
      "pontos": 12,
-     "texto": "46,2% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
-     "valor": 0.4616829320561087
+     "texto": "40,2% do ativo fora de caixa, títulos, crédito e cartão (ativos de difícil avaliação)",
+     "valor": 0.4017731791135981
     },
     {
      "regra": "capital_nao_divulgado",
@@ -247,8 +247,8 @@
     },
     {
      "anomes": 202409,
-     "score": 62,
-     "nivel": "Alerta"
+     "score": 67,
+     "nivel": "Alerta alto"
     },
     {
      "anomes": 202412,
@@ -257,82 +257,18 @@
     },
     {
      "anomes": 202503,
-     "score": 87,
+     "score": 82,
      "nivel": "Alerta alto"
     },
     {
      "anomes": 202506,
-     "score": 56,
-     "nivel": "Alerta"
-    }
-   ]
-  },
-  {
-   "cod": "C0087810",
-   "nome": "ENTREPAY IP - PRUDENCIAL",
-   "data_evento": "2026-03-31",
-   "fonte": "cadastro IF.Data (situação LE)",
-   "ultimo_score": 54,
-   "ultimo_nivel": "Alerta",
-   "primeiro_alerta": 202512,
-   "antecedencia_meses": 0,
-   "sinais_ultimo": [
-    {
-     "regra": "captacao_cara",
-     "pontos": 15,
-     "texto": "Custo de captação de 20,1% ao ano, 1,6x a mediana dos pares",
-     "valor": 1.6279902319106005
-    },
-    {
-     "regra": "ativos_dificeis",
-     "pontos": 12,
-     "texto": "91,7% do ativo fora de caixa, títulos e crédito (ativos de difícil avaliação)",
-     "valor": 0.9172756347011057
-    },
-    {
-     "regra": "prejuizo",
-     "pontos": 12,
-     "texto": "Prejuízo em 12 meses (ROE de -54,6%)",
-     "valor": -0.5463033876861876
-    },
-    {
-     "regra": "capital_nao_divulgado",
-     "pontos": 10,
-     "texto": "Índice de Basileia não divulgado neste trimestre (era divulgado antes)",
-     "valor": null
-    },
-    {
-     "regra": "ativos_dificeis_subindo",
-     "pontos": 5,
-     "texto": "Essa fatia subiu 66,1 p.p. em 12 meses",
-     "valor": 0.6605964751589997
-    }
-   ],
-   "serie": [
-    {
-     "anomes": 202503,
-     "score": 25,
-     "nivel": "Atenção"
-    },
-    {
-     "anomes": 202506,
-     "score": 12,
-     "nivel": "Normal"
-    },
-    {
-     "anomes": 202509,
-     "score": 35,
-     "nivel": "Atenção"
-    },
-    {
-     "anomes": 202512,
-     "score": 54,
+     "score": 61,
      "nivel": "Alerta"
     }
    ]
   }
  ],
- "detectados": 4,
- "total": 4,
- "taxa_alerta_sobreviventes": 0.0344
+ "detectados": 3,
+ "total": 3,
+ "taxa_alerta_sobreviventes": 0.0525
 }

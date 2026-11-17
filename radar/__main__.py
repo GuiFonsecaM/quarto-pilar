@@ -88,7 +88,7 @@ def montar_site(atual: pd.DataFrame, s: pd.DataFrame, ev: pd.DataFrame, buscar_i
     rel = relacoes.montar(ev, nomes)
     meta = site.construir(s, atual, ev, dossies, bt, nomes, h, liquidadas, rel)
     try:
-        site._escrever(C.SITE_DADOS / "cdbs.json", cdbs.montar(atual, nomes, liquidadas, site.TIPO_INST))
+        site._escrever(C.SITE_DADOS / "cdbs.json", cdbs.montar(atual, nomes, liquidadas, site.TIPO_INST, s, dossies))
     except Exception as e:  # a página de CDBs nunca derruba a rodada
         log.warning("Página de CDBs não foi atualizada: %s", e)
     meta["uso_ia"] = llm.uso()

@@ -13,7 +13,6 @@
   const emAlerta = (b) => b.nivel === "Alerta" || b.nivel === "Alerta alto";
   const vezes = (v) => (v === null || v === undefined ? "—" : v.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "x");
   const pctCdi = (v) => (v === null || v === undefined ? "—" : Math.round(v * 100) + "%");
-  const brl = (v) => "R$ " + Math.round(v).toLocaleString("pt-BR");
   const classeX = (v) => (v === null ? "" : v >= 1.5 ? "v-alto" : v >= 1.25 ? "v-medio" : "");
   const sinalPct = (v) => (v === null || v === undefined ? "—" : (v > 0 ? "+" : "") + R.pct(v, 0));
 
@@ -75,7 +74,7 @@
       case "nome": {
         // o custo já aparece nas colunas; mostra o outro sinal mais forte ligado a quem compra CDB
         const s = b.sinais.find((t) => !/^Custo de captação/i.test(t));
-        return `<div class="nome">${R.esc(b.nome)}</div><div class="tipo">${R.esc(b.tipo)}</div>` +
+        return `<div class="nome"><span class="seta" aria-hidden="true"></span>${R.esc(b.nome)}</div><div class="tipo">${R.esc(b.tipo)}</div>` +
           (s && (caro(b) || emAlerta(b)) ? `<div class="sinal">${R.esc(s)}</div>` : "");
       }
       case "score": return `<span class="pilula c-${R.classeNivel(b.nivel)}" title="${R.esc(b.nivel)}">${b.score}</span>`;
@@ -90,16 +89,32 @@
     return "";
   }
 
+  const abertos = new Set();
+  const TOM = { ruim: "Ponto fraco", atencao: "Atenção", neutro: "Neutro", bom: "Favorável" };
+  function dossie(b) {
+    const a = b.analise || { itens: [] };
+    const itens = a.itens.map((i) => `<li class="tom-${i.tom}"><div class="it-topo"><span class="bolinha"></span><b>${R.esc(i.titulo)}</b><span class="tom">${TOM[i.tom]}</span></div><p>${R.esc(i.texto)}</p></li>`).join("");
+    return `<div class="dossie-box">
+      <div class="dossie-cab"><span class="rotulo">Dossiê para quem compra CDB</span><span class="resumo">${R.esc(a.resumo || "")}</span></div>
+      ${a.ia ? `<p class="dossie-ia"><span class="rotulo">Análise geral do banco (IA)</span>${R.esc(a.ia)}</p>` : ""}
+      <ul class="dossie-itens">${itens}</ul>
+      <div class="dossie-pe"><a href="index.html#${R.esc(b.cod)}">Abrir a página completa do banco →</a><span>Gerado automaticamente a partir do balanço entregue ao Banco Central. Não é recomendação.</span></div>
+    </div>`;
+  }
+
   function desenhar() {
     const v = linhas();
     const cab = cols.map((c) =>
       `<th><button data-k="${c.k}" class="${ordem.k === c.k ? "ord" + (ordem.asc ? " asc" : "") : ""}">${c.t}</button></th>`).join("");
-    const corpo = v.length ? v.map((b) =>
-      `<tr data-cod="${R.esc(b.cod)}">${cols.map((c) => `<td>${celula(b, c.k)}</td>`).join("")}</tr>`).join("")
+    const corpo = v.length ? v.map((b) => {
+      const ab = abertos.has(b.cod);
+      return `<tr class="linha${ab ? " aberta" : ""}" data-cod="${R.esc(b.cod)}" aria-expanded="${ab}">${cols.map((c) => `<td>${celula(b, c.k)}</td>`).join("")}</tr>` +
+        (ab ? `<tr class="dossie-cdb"><td colspan="${cols.length}">${dossie(b)}</td></tr>` : "");
+    }).join("")
       : `<tr><td colspan="${cols.length}"><div class="vazio">Nenhum banco neste filtro.</div></td></tr>`;
     document.getElementById("tabela").innerHTML = `<table><thead><tr>${cab}</tr></thead><tbody>${corpo}</tbody></table>`;
     document.getElementById("nota").textContent =
-      `${v.length} de ${ativos.length} instituições · balanço de ${R.trimestre(d.anomes_ref)} · clique numa linha para ver o banco completo.`;
+      `${v.length} de ${ativos.length} instituições · balanço de ${R.trimestre(d.anomes_ref)} · clique num banco para abrir o dossiê.`;
   }
 
   document.getElementById("tabela").addEventListener("click", (e) => {
@@ -110,8 +125,12 @@
       desenhar();
       return;
     }
+    if (e.target.closest(".dossie-cdb")) return;
     const tr = e.target.closest("tbody tr[data-cod]");
-    if (tr) location.href = "index.html#" + tr.dataset.cod;
+    if (!tr) return;
+    const cod = tr.dataset.cod;
+    abertos.has(cod) ? abertos.delete(cod) : abertos.add(cod);
+    desenhar();
   });
   document.querySelectorAll(".segmentado button").forEach((b) => b.addEventListener("click", () => {
     filtro = b.dataset.f;
@@ -121,79 +140,4 @@
   document.getElementById("busca").addEventListener("input", (e) => { busca = norm(e.target.value.trim()); desenhar(); });
   desenhar();
 
-  // ---------- calculadora do FGC ----------
-  const LIM = d.fgc_por_conglomerado, TETO = d.fgc_teto_4_anos;
-  const porNome = new Map(ativos.map((b) => [norm(b.nome), b]));
-  const lista = document.createElement("datalist");
-  lista.id = "bancos-lista";
-  lista.innerHTML = ativos.map((b) => `<option value="${R.esc(b.nome)}">`).join("");
-  document.body.appendChild(lista);
-
-  const guardar = (v) => { try { localStorage.setItem("qp_fgc", JSON.stringify(v)); } catch (e) { /* sem armazenamento */ } };
-  const ler = () => { try { return JSON.parse(localStorage.getItem("qp_fgc")) || null; } catch (e) { return null; } };
-  const valorNum = (t) => {
-    const s = String(t).replace(/[^\d,]/g, "").replace(",", ".");
-    const n = parseFloat(s);
-    return Number.isFinite(n) ? n : 0;
-  };
-  const caixa = document.getElementById("linhas");
-
-  function novaLinha(nome = "", valor = "") {
-    const div = document.createElement("div");
-    div.className = "fgc-linha";
-    div.innerHTML = `<input class="banco" list="bancos-lista" placeholder="Banco (ex.: Banco Digimais)" aria-label="Banco" value="${R.esc(nome)}">
-      <input class="valor" inputmode="decimal" placeholder="R$ 0" aria-label="Valor aplicado" value="${R.esc(valor)}">
-      <button class="tirar" type="button" aria-label="Remover">×</button>`;
-    caixa.appendChild(div);
-  }
-
-  function calcular() {
-    const itens = [...caixa.querySelectorAll(".fgc-linha")].map((l) => ({
-      nome: l.querySelector(".banco").value.trim(), valor: valorNum(l.querySelector(".valor").value),
-    }));
-    guardar(itens.map((i) => [i.nome, i.valor ? String(i.valor).replace(".", ",") : ""]));
-    const grupos = new Map();
-    for (const i of itens) {
-      if (!i.valor) continue;
-      const b = porNome.get(norm(i.nome));
-      const chave = b ? b.cod : norm(i.nome) || "?";
-      const g = grupos.get(chave) || { nome: b ? b.nome : (i.nome || "Sem nome"), banco: b, valor: 0 };
-      g.valor += i.valor;
-      grupos.set(chave, g);
-    }
-    const res = document.getElementById("resultado");
-    if (!grupos.size) { res.innerHTML = ""; return; }
-    let total = 0, coberto = 0, desc = 0, descAlerta = 0;
-    const det = [...grupos.values()].map((g) => {
-      const c = Math.min(g.valor, LIM), x = g.valor - c;
-      total += g.valor; coberto += c; desc += x;
-      if (g.banco && emAlerta(g.banco)) descAlerta += x;
-      const pil = g.banco ? `<span class="pilula c-${R.classeNivel(g.banco.nivel)}" style="min-width:0;font-size:.78rem;padding:2px 7px;display:inline-block">${R.esc(g.banco.nivel)}</span>` : '<span class="cinza">—</span>';
-      return `<tr><td>${R.esc(g.nome)}</td><td>${brl(g.valor)}</td><td>${brl(c)}</td><td class="${x ? "v-alto" : ""}">${brl(x)}</td><td>${pil}</td></tr>`;
-    }).join("");
-    const pc = total ? (coberto / total) * 100 : 0;
-    const msgs = [];
-    if (descAlerta > 0) msgs.push(`${brl(descAlerta)} ficam acima do limite em instituições que o Quarto Pilar marca como Alerta.`);
-    if (coberto > TETO) msgs.push(`Se mais de um desses bancos quebrar dentro de 4 anos, o FGC paga no máximo ${brl(TETO)} no total.`);
-    res.innerHTML = `<div class="fgc-res">
-      <div class="fgc-barra" role="img" aria-label="${Math.round(pc)}% coberto pelo FGC"><div class="c" style="width:${pc}%"></div><div class="d" style="width:${100 - pc}%"></div></div>
-      <div class="fgc-legenda"><span><i style="background:var(--verde)"></i>Coberto <b>${brl(coberto)}</b></span>
-        <span><i style="background:var(--vermelho)"></i>Fora da garantia <b>${brl(desc)}</b></span>
-        <span>Total <b>${brl(total)}</b></span></div>
-      <table class="fgc-det"><thead><tr><th>Banco</th><th>Aplicado</th><th>Coberto</th><th>Fora</th><th>Quarto Pilar</th></tr></thead><tbody>${det}</tbody></table>
-      ${msgs.map((m) => `<div class="fgc-msg">${m}</div>`).join("")}</div>`;
-  }
-
-  caixa.addEventListener("input", calcular);
-  caixa.addEventListener("change", calcular);
-  caixa.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("tirar")) return;
-    e.target.closest(".fgc-linha").remove();
-    if (!caixa.children.length) novaLinha();
-    calcular();
-  });
-  document.getElementById("add").addEventListener("click", () => { novaLinha(); caixa.lastElementChild.querySelector(".banco").focus(); });
-  const salvos = ler();
-  if (salvos && salvos.length) salvos.forEach(([n, v]) => novaLinha(n, v)); else { novaLinha(); novaLinha(); }
-  calcular();
 })();

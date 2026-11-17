@@ -184,3 +184,9 @@ footer { padding: 24px 0 40px; color: var(--txt-3); font-size: .8rem; }
 .popover[hidden] { display: none; }
 .popover b { display: block; margin-bottom: 4px; }
 .popover p { margin: 0; color: rgba(235,235,245,.85); }
+@media (max-width: 600px) {
+  .topo .wrap { gap: 10px; padding: 0 14px; }
+  .topo .marca { font-size: .95rem; white-space: nowrap; }
+  .topo nav { gap: 12px; font-size: .8rem; overflow-x: auto; scrollbar-width: none; }
+  .topo nav::-webkit-scrollbar { display: none; }
+}

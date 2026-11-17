@@ -1,0 +1,68 @@
+/* Página de CDBs */
+.cdb-controles { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 6px 0 12px; }
+.cdb-controles .busca { margin: 0; flex: 1 1 220px; max-width: 320px; }
+.cdb-controles .segmentado { margin: 0; flex: 0 1 520px; }
+.cdb-controles .segmentado button { padding: 6px 10px; }
+
+.tabela-cdb { background: var(--painel); border-radius: 14px; overflow: auto; max-height: 600px; scrollbar-width: thin; scrollbar-color: #48484a transparent; }
+.tabela-cdb table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 860px; }
+.tabela-cdb th, .tabela-cdb td { padding: 10px 12px; border-bottom: 1px solid var(--sep); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tabela-cdb th:first-child, .tabela-cdb td:first-child { text-align: left; white-space: normal; min-width: 250px; max-width: 320px; }
+.tabela-cdb thead th { color: var(--txt-2); font-weight: 600; font-size: .78rem; position: sticky; top: 0; z-index: 1; background: var(--painel); box-shadow: inset 0 -1px 0 var(--sep); }
+.tabela-cdb thead button { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; text-align: inherit; }
+.tabela-cdb thead button:hover, .tabela-cdb thead button.ord { color: var(--txt); }
+.tabela-cdb thead button.ord::after { content: " ↓"; }
+.tabela-cdb thead button.ord.asc::after { content: " ↑"; }
+.tabela-cdb tbody tr { cursor: pointer; }
+.tabela-cdb tbody tr:hover { background: #242426; }
+.tabela-cdb tbody tr:last-child td { border-bottom: 0; }
+.tabela-cdb .nome { font-weight: 700; font-size: .95rem; }
+.tabela-cdb .tipo { color: var(--txt-2); font-size: .76rem; margin-top: 1px; }
+.tabela-cdb .sinal { color: #ffd18a; font-size: .76rem; margin-top: 3px; }
+.tabela-cdb .pilula { display: inline-block; min-width: 46px; font-size: .9rem; padding: 3px 8px; text-align: center; }
+.v-alto { color: var(--vermelho); font-weight: 600; }
+.v-medio { color: var(--laranja); font-weight: 600; }
+.vazio { padding: 26px; text-align: center; color: var(--txt-2); }
+.nota { color: var(--txt-3); font-size: .78rem; margin: 10px 2px 0; }
+.nota-sub { color: var(--txt-2); max-width: 760px; margin: 0 0 14px; }
+.titulo-secao { font-size: 1.35rem; margin: 26px 0 8px; }
+
+.cards-ler { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cards-ler p { font-size: .86rem; line-height: 1.45; color: rgba(235,235,245,.8); }
+@media (max-width: 820px) { .cards-ler { grid-template-columns: 1fr; } }
+
+/* calculadora do FGC */
+.fgc-caixa { background: var(--painel); border-radius: 14px; padding: 14px 16px 16px; }
+.fgc-linha { display: grid; grid-template-columns: 1fr 180px 34px; gap: 8px; margin-bottom: 8px; }
+.fgc-linha input { background: var(--painel-2); border: 1px solid transparent; border-radius: 9px; color: var(--txt); font: 1rem var(--sys); padding: 9px 11px; outline: none; min-width: 0; }
+.fgc-linha input:focus { border-color: var(--azul); }
+.fgc-linha .valor { text-align: right; font-variant-numeric: tabular-nums; }
+.fgc-linha .tirar { background: none; border: 0; color: var(--txt-2); font-size: 1.3rem; cursor: pointer; border-radius: 8px; }
+.fgc-linha .tirar:hover { color: var(--vermelho); background: var(--painel-2); }
+.botao-sec { background: none; border: 0; color: var(--azul); font: 600 .92rem var(--sys); cursor: pointer; padding: 6px 0; }
+.fgc-res { margin-top: 14px; border-top: 1px solid var(--sep); padding-top: 14px; }
+.fgc-barra { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--painel-2); margin: 10px 0 8px; }
+.fgc-barra .c { background: var(--verde); }
+.fgc-barra .d { background: var(--vermelho); }
+.fgc-legenda { display: flex; gap: 18px; flex-wrap: wrap; font-size: .85rem; color: var(--txt-2); }
+.fgc-legenda b { color: var(--txt); font-variant-numeric: tabular-nums; }
+.fgc-legenda i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 6px; vertical-align: 0; }
+.fgc-det { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: .86rem; }
+.fgc-det td, .fgc-det th { padding: 7px 4px; border-bottom: 1px solid var(--sep); text-align: right; font-variant-numeric: tabular-nums; }
+.fgc-det th { color: var(--txt-2); font-weight: 600; font-size: .78rem; }
+.fgc-det td:first-child, .fgc-det th:first-child { text-align: left; }
+.fgc-det tr:last-child td { border-bottom: 0; }
+.fgc-msg { margin-top: 10px; font-size: .86rem; color: #ffd18a; }
+@media (max-width: 560px) { .fgc-linha { grid-template-columns: 1fr 120px 30px; } }
+/* nome do banco fixo ao rolar a tabela para o lado */
+.tabela-cdb td:first-child, .tabela-cdb th:first-child { position: sticky; left: 0; background: var(--painel); z-index: 1; }
+.tabela-cdb thead th:first-child { z-index: 2; }
+.tabela-cdb tbody tr:hover td:first-child { background: #242426; }
+@media (max-width: 600px) {
+  .cdb-controles .segmentado { flex: 1 1 100%; overflow-x: auto; scrollbar-width: none; }
+  .cdb-controles .segmentado::-webkit-scrollbar { display: none; }
+  .cdb-controles .segmentado button { flex: none; }
+  .cdb-controles .busca { max-width: none; }
+  .tabela-cdb th:first-child, .tabela-cdb td:first-child { min-width: 165px; max-width: 190px; box-shadow: 1px 0 0 var(--sep); }
+  .tabela-cdb .sinal { display: none; }
+}

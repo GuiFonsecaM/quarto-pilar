@@ -155,3 +155,10 @@ def test_inadimplencia_mapeia_conglomerado_financeiro():
     r = painel.inadimplencia(vals, cad).set_index("anomes")
     assert r.loc[202412, "cod"] == "C0080367" and r.loc[202412, "vencido_15d"] == 5.0
     assert r.loc[202503, "carteira_pf_pj"] == 50.0
+
+
+def test_cdi_12m_acumula_doze_meses():
+    from radar import cdbs
+    mensal = {f"{a}-{m:02d}": 0.01 for a in (2025, 2026) for m in range(1, 13)}
+    assert abs(cdbs.cdi_12m(202606, mensal) - (1.01 ** 12 - 1)) < 1e-9
+    assert cdbs.cdi_12m(202506, {"2025-06": 0.01}) is None  # faltam meses: não inventa

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDBs · Quarto Pilar</title>
+<meta name="description" content="Quanto cada banco paga para captar, comparado ao CDI e aos pares, e quanto do seu dinheiro o FGC cobre.">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/cdbs.css">
+</head>
+<body>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><span class="ponto" aria-hidden="true"></span>Quarto Pilar</a>
+  <nav><a href="index.html">Bancos</a><a class="ativo" href="cdbs.html">CDBs</a><a href="validacao.html">Validação</a><a href="metodologia.html">Metodologia</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="manchete">
+    <div class="sobre">Renda fixa bancária</div>
+    <h1>CDBs: quem paga caro para captar</h1>
+    <p>Quando um banco oferece CDB muito acima do mercado, é porque precisa de dinheiro e tem dificuldade de conseguir mais barato. Aqui está o custo médio que cada banco realmente pagou, tirado do balanço entregue ao Banco Central.</p>
+  </section>
+
+  <div class="kpis" id="kpis"></div>
+  <div class="aviso forte" id="referencia" hidden></div>
+
+  <section class="secao">
+    <div class="cdb-controles">
+      <label class="busca"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M11 11l3.6 3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <input id="busca" type="search" placeholder="Buscar banco" autocomplete="off" aria-label="Buscar banco"></label>
+      <div class="segmentado" role="group" aria-label="Filtro">
+        <button data-f="todos" aria-pressed="true">Todos</button>
+        <button data-f="caro" aria-pressed="false">Acima dos pares</button>
+        <button data-f="acelerada" aria-pressed="false">Captação acelerada</button>
+        <button data-f="alerta" aria-pressed="false">Em alerta</button>
+      </div>
+    </div>
+    <div class="tabela-cdb" id="tabela"></div>
+    <p class="nota" id="nota"></p>
+  </section>
+
+  <section class="secao" id="fgc">
+    <h2 class="titulo-secao">Quanto do meu dinheiro o FGC cobre?</h2>
+    <p class="nota-sub">O Fundo Garantidor de Créditos cobre CDB, RDB, LCI, LCA, poupança e conta corrente até <b>R$ 250 mil por CPF em cada conglomerado</b> (bancos do mesmo grupo somam juntos) e até <b>R$ 1 milhão por CPF a cada 4 anos</b>, somando todas as quebras. O valor considerado inclui os juros até a data da quebra.</p>
+    <div class="fgc-caixa">
+      <div id="linhas"></div>
+      <button class="botao-sec" id="add" type="button">+ Adicionar banco</button>
+      <div id="resultado"></div>
+    </div>
+    <p class="nota">Simulação educativa. Ela usa o conglomerado prudencial do Banco Central, que pode juntar mais ou menos bancos do que o conglomerado considerado pelo FGC. Na dúvida, confira em fgc.org.br. Os valores digitados ficam só no seu navegador.</p>
+  </section>
+
+  <section class="secao">
+    <h2 class="titulo-secao">Como ler esta página</h2>
+    <div class="cards-ler">
+      <div class="grafico"><h3>Custo de captação</h3><p>Quanto o banco pagou em juros no último ano, dividido por tudo o que ele captou (CDB, poupança, letras, conta corrente). É uma média: a taxa do CDB vendido na corretora costuma ser maior, porque bancos grandes captam muito em conta corrente, que custa quase nada.</p></div>
+      <div class="grafico"><h3>% do CDI e x pares</h3><p>"% do CDI" compara esse custo com o CDI acumulado nos 12 meses do balanço. "x pares" compara com a mediana de bancos parecidos: 1,5x quer dizer pagar 50% a mais que os concorrentes. Acima de 1,25x o sistema acende um sinal.</p></div>
+      <div class="grafico"><h3>Por que isso importa</h3><p>Pagar muito caro, depender quase só de CDB, captar rápido demais sem emprestar no mesmo ritmo e ter pouco caixa formam o padrão que apareceu nos balanços do Banco Master anos antes da liquidação.</p></div>
+    </div>
+  </section>
+
+  <p class="aviso">O Quarto Pilar não recomenda investimentos. Taxa alta remunera risco, e os dados do balanço são de meses atrás. Antes de investir, confira o emissor, o prazo e a cobertura do FGC.</p>
+</main>
+<footer class="wrap"><p class="assinatura">Criado por Guilherme Fonseca</p><p>Fontes: IF.Data e SGS (Banco Central do Brasil), regulamento do FGC.</p></footer>
+
+<script src="assets/comum.js"></script>
+<script src="assets/cdbs.js"></script>
+</body>
+</html>

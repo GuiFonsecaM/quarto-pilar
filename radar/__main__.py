@@ -14,7 +14,7 @@ from datetime import date, datetime, timezone
 
 import pandas as pd
 
-from . import backtest, config as C, dossie, eventos, ifdata, indicadores, llm, noticias, painel, relacoes, score, site
+from . import backtest, cdbs, config as C, dossie, eventos, ifdata, indicadores, llm, noticias, painel, relacoes, score, site
 
 log = logging.getLogger("radar")
 ARQ_SCORES = C.DADOS / "scores.parquet"
@@ -87,6 +87,10 @@ def montar_site(atual: pd.DataFrame, s: pd.DataFrame, ev: pd.DataFrame, buscar_i
     liquidadas = {c["cod"] for c in (bt or {}).get("casos", [])}
     rel = relacoes.montar(ev, nomes)
     meta = site.construir(s, atual, ev, dossies, bt, nomes, h, liquidadas, rel)
+    try:
+        site._escrever(C.SITE_DADOS / "cdbs.json", cdbs.montar(atual, nomes, liquidadas, site.TIPO_INST))
+    except Exception as e:  # a página de CDBs nunca derruba a rodada
+        log.warning("Página de CDBs não foi atualizada: %s", e)
     meta["uso_ia"] = llm.uso()
     return meta
 

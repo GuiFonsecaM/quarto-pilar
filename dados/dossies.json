@@ -1,9 +1,9 @@
 {
  "C0081799": {
-  "resumo": "O Banco Digimais entrou no radar de risco devido ao seu Índice de Basileia negativo, forte prejuízo e inadimplência muito acima da média dos pares. Para conter a degradação do capital, notícias apontam que o controlador realizou um aporte bilionário na instituição. O cenário inspira atenção pela alta dependência de depósitos a prazo com custos elevados.",
+  "resumo": "O Banco Digimais chamou a atenção no radar do regulador por apresentar indicadores de capital e rentabilidade em níveis extremamente críticos. O balanço oficial registra índice de capitalização negativo e elevadas perdas operacionais, o que motivou notícias sobre um forte aporte emergencial por parte do seu acionista controlador.",
   "pontos": [
    {
-    "texto": "O Índice de Basileia atingiu -4,6%, ficando muito abaixo do mínimo exigido de 10,5%, após registrar uma queda de 23,2 p.p. em 12 meses.",
+    "texto": "O banco opera com o Índice de Basileia negativo em -4,6%, ficando totalmente abaixo do limite mínimo regulatório exigido de 10,5%.",
     "evidencias": [
      "F1",
      "F5",
@@ -11,65 +11,62 @@
     ]
    },
    {
-    "texto": "O banco apresenta expressivo prejuízo acumulado em 12 meses, com ROE de -118,0%.",
+    "texto": "A instituição registra forte prejuízo acumulado com ROE de -118,0% e uma inadimplência de 10,3% na carteira de crédito, valor 4,3 vezes maior que a mediana dos seus pares.",
     "evidencias": [
      "F2",
+     "F3",
+     "F8",
+     "F14",
      "F15"
     ]
    },
    {
-    "texto": "A taxa de inadimplência atingiu 10,3% da carteira, valor 4,3 vezes superior à mediana dos pares, após subir 5,5 p.p. em 12 meses.",
-    "evidencias": [
-     "F3",
-     "F8",
-     "F14"
-    ]
-   },
-   {
-    "texto": "Quase a totalidade da captação de recursos (99,8%) provém de depósitos a prazo (CDB), a um custo de 16,5% ao ano, sendo 1,4 vez a mediana do mercado.",
+    "texto": "A estrutura de captação é dependente de depósitos a prazo (CDBs representam 99,8%), cobrando um custo elevado de 16,5% ao ano enquanto a carteira de crédito encolheu 5,6%.",
     "evidencias": [
      "F4",
      "F6",
+     "F10",
+     "F11",
      "F12"
     ]
    },
    {
-    "texto": "Notícias indicam que Edir Macedo injetou R$ 1,7 bilhão (ou R$ 1,714 bilhão) para recompor o capital e evitar o colapso do banco.",
+    "texto": "Veículos de imprensa reportam que o controlador Edir Macedo injetou cerca de R$ 1,7 bilhão na instituição para tentar cobrir prejuízos e conter a crise de capital.",
     "evidencias": [
      "N1",
-     "N2",
      "N3",
-     "N5",
-     "N7",
-     "N8"
+     "N4",
+     "N6"
     ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "Enquanto reportagens citam a expansão dos negócios do grupo, os dados financeiros mostram retração de -5,6% na carteira de crédito e prejuízo severo com ROE de -118,0%.",
-    "evidencias": [
-     "F2",
-     "F11",
-     "N4"
-    ]
-   },
-   {
-    "texto": "A captação de recursos cresceu 9,3% com um alto custo de 16,5% ao ano, apesar de a carteira de crédito ter encolhido -5,6% no mesmo período.",
+    "texto": "Embora a captação do banco tenha crescido 9,3% no período analisado, a carteira de crédito encolheu 5,6%, indicando que o recurso captado a alto custo não gerou expansão de crédito.",
     "evidencias": [
      "F4",
      "F10",
      "F11",
      "F12"
     ]
+   },
+   {
+    "texto": "As notícias destacam um aporte bilionário recente na casa de R$ 1,7 bilhão para salvar o banco, ao passo que os dados oficiais de balanço de jun/2026 ainda mostram um patrimônio líquido de apenas 3,4% do ativo e Basileia negativa.",
+    "evidencias": [
+     "F1",
+     "F7",
+     "N1",
+     "N3"
+    ]
    }
   ],
   "acompanhar": [
-   "Reflexo do aporte anunciado na recuperação do Índice de Basileia e do Patrimônio Líquido.",
-   "Evolução dos índices de inadimplência e do custo de captação de depósitos a prazo nos próximos balanços."
+   "Reflexo e efetivação do aporte bilionário do controlador na recomposição do Índice de Basileia e do Patrimônio Líquido nos próximos balanços oficiais.",
+   "Trajetória da taxa de inadimplência da carteira de crédito nos trimestres seguintes.",
+   "Evolução do resultado operacional e do ROE para verificar se o banco conseguirá estancar os prejuízos."
   ],
   "metodo": "ia",
-  "chave": "19dc31918082",
+  "chave": "a02c34361a42",
   "fatos": [
    {
     "id": "F1",
@@ -135,6 +132,30 @@
   "noticias": [
    {
     "id": "N1",
+    "texto": "Crise no Digimais: Edir Macedo injeta R$ 1,7 bilhão para tentar salvar banco",
+    "data": "2026-11-21",
+    "fonte": "Plantão Brasil",
+    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVHVGNk9wWXg5cWZKMlNSVWxzMjc5LWhMakx6WVZoZFVUczBSQXZscjlnOXFkX2VjS3ktVlEtV1FKVzVGS1ptNEE4UG4wa3ZtRGhzLUNzZ0U4R2ZKNFhDVGZuN3ZZMFJQMWpEX0NNSDctQWdMSHpmNGtDOW5ETW9neDFJVnpaZXlVSkh4bmRlZXNTY01NZlNaVGRIM0FYVXl6Ui1hUWpsckc2UExKVnZUWWliU0JxeksydmNHVA?oc=5",
+    "tipo": "Venda do banco, busca de comprador ou aporte de capital"
+   },
+   {
+    "id": "N2",
+    "texto": "Edir Macedo faz aporte bilionário para tentar salvar o Digimais",
+    "data": "2026-11-21",
+    "fonte": "Brasil 247",
+    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMndxVm5zRHdVSUNwYTBTUkVWTTc2blFBUDJrNFJoaUVfNU9CdVR2S2VRSE81cXlLWjVkamNhd0ZkOVZmRzhENC0yX0YxZTFic0RMdmJyOURDS29wdEJ6dkVHdFVHV1pUTWtDN3VIcEs0ZmZXcG5JZXpRdGJSdy1EblZUbi1mQjdqMmVNZWZiVzdtcE9KYi1YS01QbHJwWTJC?oc=5",
+    "tipo": "Venda do banco, busca de comprador ou aporte de capital"
+   },
+   {
+    "id": "N3",
+    "texto": "Edir Macedo injeta R$ 1,714 bilhão no Digimais",
+    "data": "2026-11-21",
+    "fonte": "Jornal do Brasil",
+    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYjJycjRTUWFvMXlOTXR3RnpreFB5UlNzUDNpZ1dmbzlqRnQteXlVc3c2UndxcHFjSnkzdmdsYWxZOWpRSXNCcUNLTTZxaGJ1dmppbnRSWDRhT1o0TlNKSGNVSjJzb2VyejNpQ1RmZjVXbUs0eXpXYVVRTmxLaUEydk1BNENTTllJWGVwdU5JMzd3RFpzdVZOeTdBRE5YODN0Z2hvTE530gGrAUFVX3lxTE5PREdVRXZNellpNVNOYTBnMWhnRkdkQUs3SUZqd2lUa1NPU3hLOEVYVW9ZYlpXWHE3UFRJYV9pUTlpOTJTd0YxSWZBMzctbHdSWk50UmItVDVFYVFCQUp2LTlvejlkVzZRV3M5VDA5aHZma1Z1cnFrUVNHZXV2aHJ0U2pQa2IzbTV6MGRQVlVKN2NTMjZXTlVESnpfeEJJT3l4RDZZa1l4Z1BYUQ?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N4",
     "texto": "Edir Macedo injeta R$ 1,7 bilhão no Digimais para cobrir prejuízo",
     "data": "2026-11-21",
     "fonte": "politiza brasil",
@@ -142,7 +163,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N2",
+    "id": "N5",
     "texto": "Edir Macedo injeta R$ 1,7 bilhão no Digimais para tentar salvar o banco",
     "data": "2026-11-19",
     "fonte": "Diário do Centro do Mundo",
@@ -150,7 +171,7 @@
     "tipo": "Problema de liquidez, saques ou corrida"
    },
    {
-    "id": "N3",
+    "id": "N6",
     "texto": "Edir Macedo põe R$ 1,7 bilhão no Digimais para evitar colapso do banco",
     "data": "2026-11-19",
     "fonte": "Metrópoles",
@@ -158,7 +179,7 @@
     "tipo": "Problema de liquidez, saques ou corrida"
    },
    {
-    "id": "N4",
+    "id": "N7",
     "texto": "Igreja, banco e helicópteros: Universal expande negócios e faz aporte bilionário",
     "data": "2026-11-19",
     "fonte": "ncnews.com.br",
@@ -166,45 +187,21 @@
     "tipo": "Venda do banco, busca de comprador ou aporte de capital"
    },
    {
-    "id": "N5",
+    "id": "N8",
     "texto": "A fortuna por trás do banco de Edir Macedo: bispo aporta R$ 1,7 bilhão no Digimais",
     "data": "2026-11-19",
     "fonte": "Brasil 247",
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeE5IeFhsS1QwVGtYN093YkVqNUR4S19zSDVZUllCei1nUmU1a0pkR1RoOU1pYVlfS1BpT3BYb2F1RVBndEdPZ1BHSFUtVVRkTVE3SWt4RUpSWHJiNnZiZkg4U1pPd2cyMTVBTFByanp2U3gybFFoLWtIcVhBV2hQUVFhUjJBbGZhTGE4WXgzSU9MaWREWTNEdlh4ZzJ6Y1BCM1pHaE84OVR0SU9FR0xCTlBYWmtsWEtmUHJ6QmsyZWUtdUJmNWkyeQ?oc=5",
     "tipo": "Problema de liquidez, saques ou corrida"
-   },
-   {
-    "id": "N6",
-    "texto": "Para defender o Itaú, Piauí mente, recua e erra - PAIPEE -",
-    "data": "2026-11-19",
-    "fonte": "PAIPEE -",
-    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUnhkMXN6d19yM3FPT19JN2VFQkY1Z3VpLUlCR0dQRnRxQWNfdlI4WE9MWk4wYllNalpybm5LQ25yOU9OUzB0SEdVSjdXUnk3YWpHS2xuYU0zMXJEamhCc0d2bGRTbWRIQmtlNjdzNUdzX0JfR1I5OVl5LWM2VUlpajRRSkJvdw?oc=5",
-    "tipo": "Outro assunto"
-   },
-   {
-    "id": "N7",
-    "texto": "Bispo Edir Macedo faz aporte bilionário no Banco Digimais: entenda a operação",
-    "data": "2026-11-18",
-    "fonte": "ContraFatos",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQjZsSGUyZG0zV0xDb2d6SWdLY3lNVVo5QzU3TVlvVHRMRlVBU0t0b0s4NU9JM1ZSd0JZdG55emlqTGtTQWlZaG5tdlNTWmxPVkpFa0lDc21lMVZMbmJPVy1CaTRzcjV3cWNsLW5YS1d2cW5DTzFIWll6QnNEdmI4bUFGYmo5cGpHY3JaRXhseVM1cUlTUXoxci03d0VOWG5TLTFKWC1BUGpHYUo2?oc=5",
-    "tipo": "Venda do banco, busca de comprador ou aporte de capital"
-   },
-   {
-    "id": "N8",
-    "texto": "Edir Macedo injeta R$ 1,714 bilhão para recompor capital do banco Digimais",
-    "data": "2026-11-18",
-    "fonte": "Portal VV8",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPNzJ2NHgyUGpveVl0T2RCZ3p6NldKQkM5TzlTb29pdmpJMXByWlV4OVBGelhSa3ZWYVUzUkpTLVZibmtYSVc0MEJDR3ducTJoLXFUNWJmSkw2RXAwUVVxNUd2cmx5bFhuRnJ0V1VaWl93RUFZUGVWbEdXZjFkOWdMNUhPbjVRZ1lqektURHhVdml4dkVBbDlKTENCSFRMODg3LUZQTHVpZ3R2bDJERW10QVF3?oc=5",
-    "tipo": "Venda do banco, busca de comprador ou aporte de capital"
    }
   ],
   "anomes": 202606
  },
  "C0080367": {
-  "resumo": "O Banco Master atrai atenção do mercado devido a indicadores de liquidez reduzidos, alto custo de captação e parcela relevante de ativos de difícil avaliação, além da ausência de divulgação do Índice de Basileia. Esse quadro financeiro sensível é acompanhado por notícias sobre investigações da Polícia Federal, questionamentos do Banco Central e processos judiciais.",
+  "resumo": "O Banco Master gera atenção por combinar alto custo de captação (25,7% ao ano) e baixa liquidez imediata (0,6%) com a falta de divulgação do Índice de Basileia no trimestre. Além disso, a instituição enfrenta investigações da Polícia Federal e o cancelamento de negociações de compra devido à opacidade em seus ativos.",
   "pontos": [
    {
-    "texto": "O custo de captação atinge 25,7% ao ano, sendo 2,7 vezes a mediana dos pares, com 88,4% dos recursos vindo de depósitos a prazo (CDB).",
+    "texto": "O custo de captação do banco atingiu 25,7% ao ano, valor que representa 2,7 vezes a mediana dos pares, concentrando 88,4% da sua captação em depósitos a prazo (CDB).",
     "evidencias": [
      "F1",
      "F5",
@@ -212,8 +209,9 @@
     ]
    },
    {
-    "texto": "A liquidez imediata está em 0,6% da captação, em um momento em que a inadimplência aumentou 5,5 p.p. no período de 12 meses, chegando a 6,8%.",
+    "texto": "A liquidez imediata é de apenas 0,6% da captação e o Índice de Basileia não foi divulgado no último trimestre, em meio ao aumento da inadimplência para 6,8%.",
     "evidencias": [
+     "F3",
      "F4",
      "F7",
      "F11",
@@ -221,51 +219,47 @@
     ]
    },
    {
-    "texto": "O banco possui 40,2% do seu ativo em itens fora de caixa, títulos ou crédito, e deixou de divulgar o Índice de Basileia no trimestre.",
-    "evidencias": [
-     "F2",
-     "F3"
-    ]
-   },
-   {
-    "texto": "Notícias récem-publicadas mencionam questionamentos do Banco Central sobre R$ 11,5 bilhões em ativos, investigações da Polícia Federal e decisões judiciais sobre executivos da instituição.",
+    "texto": "O banco é alvo de apurações da Polícia Federal e desdobramentos no STF, incluindo relatos de acesso a dados sigilosos do Banco Central e manutenção da prisão de seu controlador.",
     "evidencias": [
      "N1",
      "N3",
-     "N4",
+     "N5",
      "N7"
+    ]
+   },
+   {
+    "texto": "Houve a desistência de aquisição do banco por outra instituição financeira (BTG Pactual), citando a opacidade nos ativos, dos quais 40,2% estão fora de caixa, títulos ou crédito tradicional.",
+    "evidencias": [
+     "F2",
+     "N8"
     ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "Apesar do balanço apontar um ROE positivo de 11,5% e crescimento de captação de 34,9%, as notícias relatam questionamentos de R$ 11,5 bilhões em ativos pelo BC, investigações policiais e pendências de credores com o FGC.",
+    "texto": "Apesar do forte crescimento na captação (34,9%) e na carteira de crédito (55,6%), a inadimplência subiu 5,5 p.p. no período, sinalizando avanço do risco em meio à expansão.",
     "evidencias": [
+     "F7",
      "F8",
-     "F13",
-     "N3",
-     "N4",
-     "N8"
+     "F9"
     ]
    },
    {
-    "texto": "A captação de recursos cresceu 34,9% e a carteira de crédito subiu 55,6%, mas a liquidez imediata permaneceu em um nível baixo de 0,6%, indicando que a expansão do crédito não foi acompanhada pelo fortalecimento do caixa imediato.",
+    "texto": "Enquanto a instituição registra crescimento operacional e rentabilidade (ROE de 11,5%), o mercado aponta opacidade nos balanços e o banco omite o Índice de Basileia do trimestre.",
     "evidencias": [
-     "F4",
-     "F8",
-     "F9",
-     "F11"
+     "F3",
+     "F13",
+     "N8"
     ]
    }
   ],
   "acompanhar": [
-   "Volta da divulgação e patamar do Índice de Basileia",
-   "Avaliação e eventuais reclassificações pelo Banco Central da parcela de 40,2% de ativos de difícil mensuração",
-   "Evolução dos índices de liquidez imediata e custo de captação nos próximos balanços",
-   "Desdobramentos das investigações judiciais e o impacto nas demandas de credores junto ao FGC"
+   "Volta da divulgação do Índice de Basileia nos próximos balanços.",
+   "Evolução do indicador de liquidez imediata e do custo de captação.",
+   "Desdobramentos e impactos operacionais decorrentes das investigações da Polícia Federal e das decisões do STF."
   ],
   "metodo": "ia",
-  "chave": "8f1f8b2254cc",
+  "chave": "47b250a3f568",
   "fatos": [
    {
     "id": "F1",
@@ -323,67 +317,67 @@
   "noticias": [
    {
     "id": "N1",
-    "texto": "Caso Master: relatório da PF cita encontro de Mendonça e Vorcaro",
-    "data": "2026-11-21",
-    "fonte": "TV Brasil |",
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNMnN3Z2E2cWdaMU1jWDgzMi10WUY0RnBNbDJPdjViM1NBdWZjc3dZY042dTVrdU1yQ1ZpRUJ1Ynl1QnpRbDhCblQ5QzlnWTZkTHE2QXRFekFtRWY0OTBic082VVpUOExsSGpLeWZOcXB1WEVSUXFZVURwVE5RNU9Da2NCUGZnS1J6QU5mRkxfT2pwbmFyak1VcExsVTJtcTc0TXhhTUZJekNhZTFuV0FlWU90QkxRQQ?oc=5",
+    "texto": "Ministros do STF x Master: o que acontece após a PF entregar 4 relatórios",
+    "data": "2026-11-22",
+    "fonte": "UOL Notícias",
+    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSjd4YWhzMmFrRHNYN0FfeDJMQ3owRzVtTHFjRE4xeDBNVjlyaDYzRU82VEI2ZElzdlNuWXNkN205MHREU2xKRVFjTndod3VYWENXZTYwb0hGeWF3UDE3ODVDblV1a0d5NWFxdDlsQU1Ya1hVWTlHX1kwY1IzRHQ1WmgwWUR4VGFQUlV3aldLYmZNeUxJeGxiMzJsc1FlU1VvN1g4WDFWbDBXT3dOMnhPR29NTHdQZ0lIUGxtaw?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N2",
-    "texto": "Gilmar diz que abrir sigilo não basta no caso Master",
-    "data": "2026-11-21",
-    "fonte": "Poder360",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPN0dnZ0hDcU95VlAzNmJxMHZncXlHQkdjNXdLekdJNm44N2V0WUFScW94eFRsdHZZS1VZdEQyakJGVXJFVTE5S0RHUkp0QjA3SzZyTVJ3eUdUNUJlaUNnWHR6cEpQN0Z6eEhSbkVLM2MxTDVjLVJ4Q3pxUFJ3bnVyTWhFWXJHWTlMcHI4MENpM1Bwc1ZNemNXQVNBZw?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
+    "texto": "Caso Master pode definir relação de Lula com Congresso, diz professor",
+    "data": "2026-11-22",
+    "fonte": "CNN Brasil",
+    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWVhST0ZhSldLdFVtSW5LUDJTWXJRSjExNnpMZkkzTjFsZmhjQUFZWVVSYWp4SlBnOFdGSXJicFdpc2QzeFN6WTMzSnpYRUVHX0FPUjRxdXd6eENNVGZwVlpqSUZ5U2dvMlhaTWJ4a19DaE5hT0w2ajVoWTFHRFJFcm0zNUtPRUZyS2NBazRuUXBTeTBsam9DLWRSNUQ3YVRDcS1Nd2tTNjZVaWM?oc=5",
+    "tipo": "Outro assunto"
    },
    {
     "id": "N3",
-    "texto": "BC questionou R$ 11,5 bi em ativos do Master seis meses antes da liquidação",
-    "data": "2026-11-20",
-    "fonte": "Valor Econômico",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQR1hmeUZldFRCU2lFS2Y5TW45Y18tR0hCbFh0MW5udW5oSW1EMFJEQ1BEMUl1bDlDdGE5Wlo2b01VVF9PbnpySzR0M3NwZzdiSHVIZ0tpOUZmQzI0d20yQ01ycVNjQ3dBOGVGTmx6bkJEQVkyTUxZdVdUS3RHUjdha0tXUlJYQkxXS2xoTTdJMnNQMURLd29GS1VNQnNSU1MzSWFUeWNpbFFBQ0tURlZrbDFFMkxSOUtQSnd2ZHFFanpoY3FuaF9maNIB1wFBVV95cUxOTlZMb3FWZ0hKUGdBZ092Q0JiaHZIYXNCalh5MF9GeGJvOWx1aWlqblVnalNwYzdxcHVRLThmVl9BS3dHSzNqdjdHdFFIeVhUQ2x0ZmtwX20xR1EzeTIzXzN0UzJjejc0TVhzRnEyQ1h3ODdRLU9xYWZTU1lfS0w4RzZNWXVZUVc0LXNWVzhvc012RVA1cDVzX3l6Ym5WTUNDMEN6TWFmZHNENy1BaVhJMVJUbXl5cEI3RzVVOVVVNzV1cklSWjdENEd0cWFLZllJS01sNWRuRQ?oc=5",
-    "tipo": "Liquidação, intervenção ou RAET"
-   },
-   {
-    "id": "N4",
-    "texto": "Daniel Vorcaro, do Banco Master, seguirá preso? Ministro do STF toma decisão",
-    "data": "2026-11-20",
-    "fonte": "Investidor10",
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZGQzZmV2aUZFR2pTc3hqejNUN2QxLTlfd3NOb2ZIcDNqLUxmeGRtNGxNNHhBMVRUdFppN21TcUtSTTdxWWFjakVlTFNQMERWSDFZaHhmYVhKMTJGZHJ3NDhPT3B5amJGMHJKaHBxVUdWbVdJbkI3bzE1dGI4ZUZlOHZnUmtBamRDQlYzTzdhX2ZWam8tYmwxcnBadW9CREdQV2pEOEZvRWN4dmFHQklLbVVlMUVmODdIMDlwSEIwNNIBvwFBVV95cUxQZGQzZmV2aUZFR2pTc3hqejNUN2QxLTlfd3NOb2ZIcDNqLUxmeGRtNGxNNHhBMVRUdFppN21TcUtSTTdxWWFjakVlTFNQMERWSDFZaHhmYVhKMTJGZHJ3NDhPT3B5amJGMHJKaHBxVUdWbVdJbkI3bzE1dGI4ZUZlOHZnUmtBamRDQlYzTzdhX2ZWam8tYmwxcnBadW9CREdQV2pEOEZvRWN4dmFHQklLbVVlMUVmODdIMDlwSEIwNA?oc=5",
+    "texto": "Documentos da PF acirram disputa no STF sobre relatoria do caso Master",
+    "data": "2026-11-22",
+    "fonte": "Folha de S.Paulo",
+    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNTU1SVBkTGNZUWlZVU5UM2x3UE9sU2xtTmVWYXBZQ29vdERrZE83cEtuZDBjZTRYd0U2ZXltSDJxODdRZGZDalFvLVJLd2xQMmp6RkNLUWIxUDd2MzhhZENNZUxERFdCcjVIMFZXS2FFeko3Q09jSV9jQzhnMzJrTFNmNEgxMXh6bnFhb1NFNW5CRDBDNGE5Q3FWd1RGYWVBMnR4RE9Xakg5Vlk0SnhLb29UeUpZU3FyeHVlQQ?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
+    "id": "N4",
+    "texto": "Editorial d'O Globo cobra agilidade nas investigações do caso Banco Master e defende apuração sobre Moraes",
+    "data": "2026-11-22",
+    "fonte": "sentidohorario.com.br",
+    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVV9NWjZrM01ZLTFDWk1RSWF4RE1uOFRBRDNYRnRFaUgyWjNlT3I5SEtiMEJsSEkzbjZsSVpRdTVPRzB6YkNEdFFoTFdZRnZKTzByUVlMNDhyNmd3ZUwtT1dHNHJxUkdLVlZDS3dScHNuLTBfN24xaERmemxFZDhXclFRbENhbl8yWjFLdElvM2tzamlrcUROc1EwaEtRM1c1NG9TSDE5QUNvX1dOaUZlcWpyMU42ZjNlUVpYVWc0TVNBcXY3NU9mSHpxY3Q4c3BzV1E?oc=5",
+    "tipo": "Outro assunto"
+   },
+   {
     "id": "N5",
-    "texto": "Gilmar Mendes não se opõe à divulgação de relatórios sobre STF e Banco Master",
-    "data": "2026-11-20",
-    "fonte": "Vero Notícias",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbElxVUFNTWdFSmlUSl9iR2tFZzdPMWtMX3NxRkdlQm5YaFVZXzFsVTFTT3NDVEQ4Wmd4SlI4LUZrQlRmT0VmTnhiemVjWkJuaU1KNmtjZXFNMHo2WkZRbXEyaTdhMXhnblFDWkxnbTR2cldTb0V3bVoyaERxWE5mZVdNTjI3TkpZaW1uYndaMjNQdEVzbzZGQTN4YWV3TUJabUtqaFlfTnNoZ2I4VXFVVUtR?oc=5",
+    "texto": "Gabriel Galípolo relata à Polícia Federal que Banco Master tinha acesso a dados sigilosos do BC",
+    "data": "2026-11-22",
+    "fonte": "Fato Paulista",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBmdmVvYzlqMWlGb1ZfSVB1bWMxUVQ0VmtNQzJxc0J0UjdDZ2tXdk9tSWZUVW9BWkFtYWk0UE1kZHBJX3hrck5uYWZlN0lZU2phdHBEc2ZFNFRIdVdpRS1nU2xPaXNIOHpjNlNqRmFsb1QwR1U2Z0M2d0ZrQ2Q5OWM?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N6",
-    "texto": "Inclusão de Mendonça em relatório sobre Master integra estratégia da PF de questionar volta de ministro à relatoria, avaliam investigadores",
-    "data": "2026-11-20",
-    "fonte": "O GLOBO",
-    "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPWGE5VnhDODFVVXY5RWtXalFpTFc2eEFaYm5kWDE0Mk94Z3NFaktKNmtGWFdGMVhVOWxqc01uTTR2VzVCbnVhT3hpOHhJY2JNQ0t6N1pzYm90TjhFV0E2Y3QxbVdJSHV3NnNBZG9rT3ltSnJaUEpqekh6MElGS3Q3eEhKYldNQTFoSVRPQ3BLb3NNaUpNS2hEd3E5Q016b0RVMVpvZXYwalFVd2tJc3ptRWhNSHNEby1tNFhYcXZiUFFvUzZocWo5SElITUJhOWE4VUFpb1VDOWJydWJJZnBLTEZrNW1ld3psT0M3OFZlZXlId2pMaURvQ3h4Y0FaeG1JcFV3WXRueWVKdVltdDZJa0lRTmJvTUNTVjQwRXNMb3AyQXPSAbICQVVfeXFMT1d4c1QzRXFpX0pvenllMk1nLS1PbjJ0Q0lpOE5XNHJrUnJVaUlZTXkzTXdfYzdGYXp2TDExQUJCZ0tidXRMQzhLMHJXX0FublpKTGVfWU02V2p2VzA2cGJzc01Edi1GMDRmMEd2TFdRU016Vi1ua3NnNm1UOHpYQ1BSekpaMTBacVgxRkZEZ2VOb3VacWtBUDlWdTBTUmxtR0FsSkxqT2VVaERqTk9oUUtNcUpRYjE4WGFNdUU1ZFJxaEhNMTVPQi1VUFVvQ2dzQXVtSnROMGJkYTU5TFVoTFNhNmVmOFllZTFMdGo0Yk02MEMtbVJXUWFUcmE5OGVnazRLNm1Qb3lsUzgxN0NtVHctVmpmYkFxcmJpVEl0SzRPMGdobmVWZVo2dF9uU2FhRG93?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
+    "texto": "Crise do Master: quem fiscaliza os fiscais? Por: Bosco Martins",
+    "data": "2026-11-21",
+    "fonte": "Fronteira News",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbzg5aTVoM0FxNnBVSFNYUGVrWkZoMUREM2dWdk1qd09ZVFNRSkIwNS1PYkQ0cUpOXzlhLW9uSkRTZVJwNWR4dUtxWHVrcFhWOGNZQWR2RVQwS1JtNEVzdVdJaXRXcFh0OVhZLXcyVmJ3SGdoN2RyR0owY05rUVhWZ0tsOUZkVXA0RThMZ1E4MA?oc=5",
+    "tipo": "Outro assunto"
    },
    {
     "id": "N7",
-    "texto": "Caso Master: veja o que mensagens apreendidas pela PF dizem sobre Mendonça",
-    "data": "2026-11-20",
-    "fonte": "CNN Brasil",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTklqNFFiMU5tRGQ4RUthREZ6ZDVCQVc3bW0yWVlVcVR2WmMybjRDb0pHYkExUlpYWF9JWGQzNmgyeEg0X2hObDZzVzRzdVl6X3V6UGdyRUE0Q25rZ1BZWHI5bUk3VlVrYzZQbXAxLWFFdWVJY0w3Wk9EVGEwY2FELWpDRzl3VktEUWc4TzJfSTFxejRnVkl1ZXp0N3ltNGVZeXdzcEx2eHlpUWlqcjVIdll3?oc=5",
+    "texto": "STF aponta Vorcaro como ameaça às investigações e o mantém na prisão",
+    "data": "2026-11-21",
+    "fonte": "Hora do Povo",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONWlzSEtXb2NRdFhJYXVxYVJoRzA0cFJYWFBSMmhDenVHV201WC05SWhydXk0a0VPaWdUalF0UHBxT25MX0RiUnBvTTR4czRWUGdlWnhQYlVwU201U25kSVFuUFFHdHZOMlhBcmJIVUwyYVhXeEFyc1JOdzJVamRJaE1FWl9USWFucW9aSFpHX3BURWxiQlZIZWQwTQ?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N8",
-    "texto": "FGC Ainda Deve R$ 600 Milhões a Credores de Bancos Liquidatos, Incluindo Clientes do Will Bank e Master, Com Demandas Pendentes e Valores Baixos a Receber.",
-    "data": "2026-11-20",
-    "fonte": "Repórter Maceió",
-    "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxObWM1bGlzdTVpZUVwaWxjN0Y3UXJzRUFOcjY3VG53TlkzRC1iRTl2YXBGR083WGhwcWpuOGtVNnJMMWZRb0xKZmx4VDZWRF9nOWF2WkV5emh1NnByWThJMWs1UXQ0NW1qQ1VsRmo1cHduTXJabmZ1WUpYYUlHVmVJanJnZEVJdGJtUUZVZUJzY2VmU3FqQ09zWXE2WEpJd3gxSmFlTFBROGNNX01lZFc2cW5DTXozUkc0U1NGczhoLUlGX0tpcnBtZHd5dkwyYm5XXzFKbzExVUpZbnBpUGVQYlN3b3R2SlhoakgxZndONEtWWmpBNklicjBxNXl0RGxUQlhiVHpEX0pobHd4RGtN?oc=5",
-    "tipo": "Liquidação, intervenção ou RAET"
+    "texto": "BTG Pactual desiste de comprar Banco Master por opacidade de ativos",
+    "data": "2026-11-21",
+    "fonte": "Правда.Ру",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOME1LMWxucGNxWEQtOTN6dlgwN0p3aE5FS2xCWDF2VUgwOW5Kem9TNTFnTkI4RkdvSHJsOHpUdlQ1U3hBR1ozY0NoSk1idTlkS09QdmdWM0hXMDlrRVlQRFQwN2N2Y1ZXcUotQVhjX090bGU5T0VQdEJ6X1FIMGgzV0tKOXg3S0RudmstR1UwU09UVmFvYkFDYg?oc=5",
+    "tipo": "Outro assunto"
    }
   ],
   "anomes": 202506
@@ -507,6 +501,179 @@
     "fonte": "bra1.com.br",
     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQaE1ldmFCWXRJRjJOdzlGSFFXdjhWckRZRzBXRk1jZzk1OUd4MjdjVXZWR2dERFE2WDJnZ3JhMkxGWEZrcC05TGxUS215RlZKQUFYNnp4M3F6XzFPSmtkNl9oaHc1ZDJ2S2FtcWdaaXdzb3FQT21hdXYxdkUyWkdLZjlYcjJnNlB3ZmtQaVdEZzRidUs1alZGZlJpREluZmM?oc=5",
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   }
+  ],
+  "anomes": 202606
+ },
+ "C0080642": {
+  "resumo": "O banco aparece no radar devido a uma inadimplência significativamente superior à mediana do mercado e a um forte crescimento na captação de recursos a um custo elevado. Apesar desses pontos de atenção, a instituição mantém rentabilidade elevada e segue distribuindo dividendos aos acionistas.",
+  "pontos": [
+   {
+    "texto": "A inadimplência alcançou 13,8% da carteira (acima de 15 dias), valor 5,8 vezes maior que a mediana dos pares, tendo subido 3,8 pontos percentuais em 12 meses.",
+    "evidencias": [
+     "F3",
+     "F5",
+     "F11"
+    ]
+   },
+   {
+    "texto": "A captação cresceu 73,7% em 12 meses, expansão 55,8 pontos percentuais superior à da carteira de crédito, enquanto o custo dessa captação ficou em 21,8% ao ano (1,8 vezes a mediana dos pares).",
+    "evidencias": [
+     "F1",
+     "F2",
+     "F4",
+     "F7",
+     "F8",
+     "F9"
+    ]
+   },
+   {
+    "texto": "A liquidez imediata em relação à captação encontra-se em 3,1%.",
+    "evidencias": [
+     "F10"
+    ]
+   }
+  ],
+  "contradicoes": [
+   {
+    "texto": "O banco registra um ROE alto de 18,0% e distribui dividendos adicionais mesmo enfrentando alta taxa de inadimplência e custo de captação elevado.",
+    "evidencias": [
+     "F1",
+     "F3",
+     "F12",
+     "N2"
+    ]
+   },
+   {
+    "texto": "Certas notícias abordam fatos ocorridos na cidade de Porto Seguro (como fuga de presos e eventos de turismo) que não têm relação com as finanças ou operações do banco.",
+    "evidencias": [
+     "N1",
+     "N5",
+     "N7"
+    ]
+   }
+  ],
+  "acompanhar": [
+   "Trajetória do indicador de inadimplência nos próximos trimestres.",
+   "Equilíbrio entre o ritmo de captação de recursos e a expansão da carteira de crédito.",
+   "Comportamento da liquidez imediata e dos custos de captação."
+  ],
+  "metodo": "ia",
+  "chave": "37542963df5d",
+  "fatos": [
+   {
+    "id": "F1",
+    "texto": "Custo de captação de 21,8% ao ano, 1,8x a mediana dos pares"
+   },
+   {
+    "id": "F2",
+    "texto": "Captação cresceu 73,7% em 12 meses"
+   },
+   {
+    "id": "F3",
+    "texto": "Inadimplência de 13,8% da carteira, 5,8x a mediana dos pares"
+   },
+   {
+    "id": "F4",
+    "texto": "Captação cresceu 55,8 p.p. a mais que a carteira de crédito em 12 meses"
+   },
+   {
+    "id": "F5",
+    "texto": "Inadimplência subiu 3,8 p.p. em 12 meses"
+   },
+   {
+    "id": "F6",
+    "texto": "Índice de Basileia: 13,9% (balanço de jun/2026)"
+   },
+   {
+    "id": "F7",
+    "texto": "Crescimento da captação em 12 meses: 73,7% (balanço de jun/2026)"
+   },
+   {
+    "id": "F8",
+    "texto": "Crescimento da carteira de crédito em 12 meses: 17,8% (balanço de jun/2026)"
+   },
+   {
+    "id": "F9",
+    "texto": "Custo de captação em 12 meses: 21,8% (balanço de jun/2026)"
+   },
+   {
+    "id": "F10",
+    "texto": "Liquidez imediata sobre a captação: 3,1% (balanço de jun/2026)"
+   },
+   {
+    "id": "F11",
+    "texto": "Inadimplência (carteira vencida há mais de 15 dias): 13,8% (balanço de jun/2026)"
+   },
+   {
+    "id": "F12",
+    "texto": "ROE em 12 meses: 18,0% (balanço de jun/2026)"
+   }
+  ],
+  "noticias": [
+   {
+    "id": "N1",
+    "texto": "Polícia Civil prende carcereiro suspeito de facilitar fuga de quatro presos em Cabrália ; Veja vídeo",
+    "data": "2026-11-20",
+    "fonte": "Bahia Sul News",
+    "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONkF3V01fYkMxMm5wSGtGRzZDVGtpQVpGWWU3Tm5xZWVid01hY18wbGVRdDVHM1k4Qm5nRFFaSmdVZDNkcnFST0FzZW4wT0xsdWZJczd4azZBOFJXT1BhZGdmMnNVOHhlbVF6UWhjaTBMQUlGdkR5blNWNzc3OXlVQ01IOVJqZTl4aFMwT3FkTy04cFR2LVh1emN5VnRoTUgxQnV0MVp0WHpyZHFIMGk3a2tVNWdTQWw4WjVMUFh2YmFaQVl0YmNfLVU3ZXZyWE1rc21Zc3JuSjhZcDdDSUJEVTFqVFhuckp0S1JaYTJlVUxHa2VpS2pxaDhlWC1zX2c?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N2",
+    "texto": "Porto Seguro (PSSA3) paga R$ 0,8861 por ação em dividendos adicionais",
+    "data": "2026-11-19",
+    "fonte": "Visno Invest",
+    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVjc3MDVkN3k1aUN3enZEV0RLc2RMQ053TWxKQXBxeFA3SW4xVFZmRWYxS1NxMC05eGFTSmtnQUt2a3UtdFVuSnIwZGJIbFpNRzJ2N3g3a21kYTB1cVNDSkpOZ3NNa3I3N1JBTXM4WDZNYi1nV2JlYmxnb00yOEV2cVFIVXlNOGhNMmxjeS1iRi0zaVl5M3ZLc2dmR3kxQzBsRnZtd2hn?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N3",
+    "texto": "Porto fortalece parceria com corretores e destaca oportunidades em seguro de vida em BH",
+    "data": "2026-11-19",
+    "fonte": "CQCS",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0ZSY3R2VUtwY3lKOTJSbFRaXzQ4b0wyT2l1a0VpQU9ZLXJKT2JzNU02MWxLdTh6Uk4tSHlYRmVrazk5MDJvUlR6dTN6Wm5URF9zamxlWUxwTGdKTkFyajV5aFExeERzSTdNSWdqbEZwaW1JbElQZ05sLWVJckFwNnlHMTlUTUtHNWVKMzJGS09OZXgwTWtLcEdHVFE3U1Nud3F2cm1WQ184RXJ3ODR3TXpZdjVlZE5LYWVIc3ViYnk4N2d4bGVCOXJR?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N4",
+    "texto": "Porto Seguro leva inovações em seguro de vida para corretores cariocas",
+    "data": "2026-11-19",
+    "fonte": "CQCS",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQjJ6c1RIc1laRUxmZ1F0WThwSnJMSl93VzhLYkJTblpuc1E5NzEtbUlHZ1lPdTlWNm41S1BxcWxubllacXRNcUl3T21YQ0V1WEpUVUJHVm9NeHZiTW05NUJEdFRZOTZ2N29tSFpsU2tEazJIMTJOcm1TU2w3anBmRnJNZEJWSjVDbnN5amtZVlFOdHhuMVQyQW5sVXJpTGEzUTJlbW5LT3NXUExtc2w2elJLNA?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N5",
+    "texto": "Três presos fugiram carceragem da delegacia de Porto Seguro, no sul da Bahia. A situação aconteceu na madrugada de terça-feira (17) e foi descoberta durante a conferência dos custodiados, realizada pela manhã. Equipes de segurança fazem buscas par",
+    "data": "2026-11-18",
+    "fonte": "Instagram",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zek5pa0EtT2tWMjN5Z1lXeHlaMlNrTlJtYUtzRmNXRE5GMXpUUmdqVTNIS1dyTmNQdnZCQzM3Y2Q2a1BKeEtZSEsyMk1XdmRLZ0E?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N6",
+    "texto": "Porto Seguro (PSSA3): Aprova emissão de R$ 200 milhões",
+    "data": "2026-11-18",
+    "fonte": "Acionista.com.br",
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVWFza0xHWGJRclZFa1d6MGE4ZlFrOW5ISlZlZU0tektIeERDYng0b2pIdnJZcGo4VV9ENVpkVURvY0R3bXB0X2NPU05hcWFIT3ZOSVdXNjkxLWlDMEJ0R09yMGw1TDdRc0pyRm5WV3J5dkt3cFBkZUgtSTJlR3hoZkJn?oc=5",
+    "tipo": "Outro assunto"
+   },
+   {
+    "id": "N7",
+    "texto": "Porto Seguro leva turismo de casamentos ao Festuris 2026 e aposta em novos negócios",
+    "data": "2026-11-18",
+    "fonte": "Jornal Turismo & Eventos",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQkpkVnpGVFktQ0E1elNnaXByRGZuZ29nb09hS1Z4WXoza1kwTWZueG9qXzhveWJSdTlYRU0tLUVuOWpvV1dxRXBHQzAwNWMxa3FUWHVkSUxNOEpIbU0yNkt6VlVtWHN0Nzl3ajRyaWZRM0VpTGJuM09EMk9jRV9oN1p1QUV6WjNGendVOGppdWtaSnc?oc=5",
+    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
+   },
+   {
+    "id": "N8",
+    "texto": "Fato relevante Porto Seguro (PSSA3): a decisão da CVM sobre a controlada",
+    "data": "2026-11-18",
+    "fonte": "ativovirtual.com.br",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMmNtblZJLVh0Zzk0RTE1a2pDWG5LaVNEXzhvZWVkTTR2MTd0OUZLUjE4bWlvN2Z3THJFaFduUjBzU3RyRlkxdzFRYnRCQmFfbUR5ZHpFQWRCaEMxbnl4cGlpaUNldXVXa3BTZzRZVjVzUFpQNjBWRTVscUhnVFlLOXZFRHpfQlNvN1JtVGwtc183Q3Q1Z2I0bEpsUHhsZ0lEQkNjZHh6YmZYcnpXaDdsOGJGMHFvbm8?oc=5",
+    "tipo": "Outro assunto"
    }
   ],
   "anomes": 202606
@@ -646,243 +813,67 @@
   ],
   "anomes": 202606
  },
- "C0080642": {
-  "resumo": "A Porto Seguro chama a atenção devido ao elevado custo de captação e ao patamar alto de inadimplência em relação à média dos concorrentes. Apesar de registrar uma taxa de retorno sobre patrimônio de 18,0% e aprovar a distribuição de dividendos adicionais, a empresa teve um crescimento de captação muito superior ao da sua carteira de crédito. O cenário exige atenção quanto ao equilíbrio entre atração de recursos, custo financeiro e qualidade da carteira.",
+ "C0084820": {
+  "resumo": "O Mercado Pago está no radar de risco devido ao forte crescimento da sua carteira de crédito e da captação de recursos acompanhado por uma alta taxa de inadimplência e baixa liquidez imediata. Além disso, uma fração significativa dos ativos do banco está concentrada em contas de mais difícil avaliação. Notícias sobre concorrência acirrada no crédito e mudanças de parceiros operacionais em criptoativos reforçam o momento de atenção.",
   "pontos": [
    {
-    "texto": "A inadimplência da carteira chegou a 13,8%, representando 5,8 vezes a mediana dos pares, após subir 3,8 pontos percentuais em 12 meses.",
+    "texto": "Forte avanço no crédito e na captação acompanhado de elevada inadimplência, que está em 17,6% (7,9 vezes a mediana do mercado), enquanto a carteira de crédito cresceu 89,4% e a captação 65,4%.",
     "evidencias": [
+     "F1",
      "F3",
-     "F5",
+     "F7",
+     "F8",
      "F11"
     ]
    },
    {
-    "texto": "O custo de captação subiu para 21,8% ao ano (1,8 vez a mediana dos pares), enquanto o volume de captação cresceu 73,7% em 12 meses.",
+    "texto": "Baixa liquidez imediata sobre a captação (1,1%) e patrimônio líquido de apenas 5,6% em relação ao total de ativos da instituição.",
     "evidencias": [
-     "F1",
-     "F2",
-     "F9"
+     "F4",
+     "F10"
     ]
    },
    {
-    "texto": "A captação de recursos cresceu 55,8 pontos percentuais a mais do que a própria carteira de crédito no período de 12 meses.",
+    "texto": "Alta concentração de ativos de difícil avaliação (68,2%), fatia que cresceu 17,3 pontos percentuais em 12 meses.",
     "evidencias": [
-     "F4",
-     "F7",
-     "F8"
+     "F2",
+     "F5"
+    ]
+   },
+   {
+    "texto": "Alertas operacionais e concorrenciais no mercado, destacando a troca de parceiro de custódia de criptomoedas (da Paxos para a Ripio) e o avanço de concorrentes no setor de crédito.",
+    "evidencias": [
+     "N1",
+     "N3",
+     "N4"
     ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "A instituição aprovou pagamento de dividendos adicionais e nova emissão de R$ 200 milhões em um momento em que a inadimplência está em 13,8% e a liquidez imediata sobre a captação é de 3,1%.",
+    "texto": "Enquanto a instituição concede incentivos como cupons de compra para movimentar sua base, os dados financeiros mostram uma inadimplência expressiva de 17,6% e liquidez imediata de apenas 1,1%, o que contrasta com a necessidade de maior controle de risco.",
     "evidencias": [
      "F3",
      "F10",
-     "N1",
+     "F11",
      "N5"
     ]
    },
    {
-    "texto": "O volume captado cresce a um ritmo elevado e com custo de 21,8% ao ano, embora a expansão da carteira de crédito tenha ficado em 17,8%.",
+    "texto": "O expressivo crescimento de 89,4% na carteira de crédito do banco contrasta com a pressão de concorrentes diretos que expandiram suas carteiras em ritmo ainda maior (159%), o que pode pressionar a rentabilidade em um cenário de inadimplência já elevada.",
     "evidencias": [
-     "F1",
-     "F2",
-     "F8"
-    ]
-   }
-  ],
-  "acompanhar": [
-   "Evolução da inadimplência e da liquidez imediata no próximo balanço",
-   "Impacto do custo de captação sobre o indicador de rentabilidade (ROE)",
-   "Destinação da nova emissão de R$ 200 milhões aprovada pela companhia"
-  ],
-  "metodo": "ia",
-  "chave": "992ab0fe91e1",
-  "fatos": [
-   {
-    "id": "F1",
-    "texto": "Custo de captação de 21,8% ao ano, 1,8x a mediana dos pares"
-   },
-   {
-    "id": "F2",
-    "texto": "Captação cresceu 73,7% em 12 meses"
-   },
-   {
-    "id": "F3",
-    "texto": "Inadimplência de 13,8% da carteira, 5,8x a mediana dos pares"
-   },
-   {
-    "id": "F4",
-    "texto": "Captação cresceu 55,8 p.p. a mais que a carteira de crédito em 12 meses"
-   },
-   {
-    "id": "F5",
-    "texto": "Inadimplência subiu 3,8 p.p. em 12 meses"
-   },
-   {
-    "id": "F6",
-    "texto": "Índice de Basileia: 13,9% (balanço de jun/2026)"
-   },
-   {
-    "id": "F7",
-    "texto": "Crescimento da captação em 12 meses: 73,7% (balanço de jun/2026)"
-   },
-   {
-    "id": "F8",
-    "texto": "Crescimento da carteira de crédito em 12 meses: 17,8% (balanço de jun/2026)"
-   },
-   {
-    "id": "F9",
-    "texto": "Custo de captação em 12 meses: 21,8% (balanço de jun/2026)"
-   },
-   {
-    "id": "F10",
-    "texto": "Liquidez imediata sobre a captação: 3,1% (balanço de jun/2026)"
-   },
-   {
-    "id": "F11",
-    "texto": "Inadimplência (carteira vencida há mais de 15 dias): 13,8% (balanço de jun/2026)"
-   },
-   {
-    "id": "F12",
-    "texto": "ROE em 12 meses: 18,0% (balanço de jun/2026)"
-   }
-  ],
-  "noticias": [
-   {
-    "id": "N1",
-    "texto": "Porto Seguro (PSSA3) paga R$ 0,8861 por ação em dividendos adicionais",
-    "data": "2026-11-19",
-    "fonte": "Visno Invest",
-    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVjc3MDVkN3k1aUN3enZEV0RLc2RMQ053TWxKQXBxeFA3SW4xVFZmRWYxS1NxMC05eGFTSmtnQUt2a3UtdFVuSnIwZGJIbFpNRzJ2N3g3a21kYTB1cVNDSkpOZ3NNa3I3N1JBTXM4WDZNYi1nV2JlYmxnb00yOEV2cVFIVXlNOGhNMmxjeS1iRi0zaVl5M3ZLc2dmR3kxQzBsRnZtd2hn?oc=5",
-    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
-   },
-   {
-    "id": "N2",
-    "texto": "Porto fortalece parceria com corretores e destaca oportunidades em seguro de vida em BH",
-    "data": "2026-11-19",
-    "fonte": "CQCS",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0ZSY3R2VUtwY3lKOTJSbFRaXzQ4b0wyT2l1a0VpQU9ZLXJKT2JzNU02MWxLdTh6Uk4tSHlYRmVrazk5MDJvUlR6dTN6Wm5URF9zamxlWUxwTGdKTkFyajV5aFExeERzSTdNSWdqbEZwaW1JbElQZ05sLWVJckFwNnlHMTlUTUtHNWVKMzJGS09OZXgwTWtLcEdHVFE3U1Nud3F2cm1WQ184RXJ3ODR3TXpZdjVlZE5LYWVIc3ViYnk4N2d4bGVCOXJR?oc=5",
-    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
-   },
-   {
-    "id": "N3",
-    "texto": "Porto Seguro leva inovações em seguro de vida para corretores cariocas",
-    "data": "2026-11-19",
-    "fonte": "CQCS",
-    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQjJ6c1RIc1laRUxmZ1F0WThwSnJMSl93VzhLYkJTblpuc1E5NzEtbUlHZ1lPdTlWNm41S1BxcWxubllacXRNcUl3T21YQ0V1WEpUVUJHVm9NeHZiTW05NUJEdFRZOTZ2N29tSFpsU2tEazJIMTJOcm1TU2w3anBmRnJNZEJWSjVDbnN5amtZVlFOdHhuMVQyQW5sVXJpTGEzUTJlbW5LT3NXUExtc2w2elJLNA?oc=5",
-    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
-   },
-   {
-    "id": "N4",
-    "texto": "Três presos fugiram carceragem da delegacia de Porto Seguro, no sul da Bahia. A situação aconteceu na madrugada de terça-feira (17) e foi descoberta durante a conferência dos custodiados, realizada pela manhã. Equipes de segurança fazem buscas par",
-    "data": "2026-11-18",
-    "fonte": "Instagram",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zek5pa0EtT2tWMjN5Z1lXeHlaMlNrTlJtYUtzRmNXRE5GMXpUUmdqVTNIS1dyTmNQdnZCQzM3Y2Q2a1BKeEtZSEsyMk1XdmRLZ0E?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
-   },
-   {
-    "id": "N5",
-    "texto": "Porto Seguro (PSSA3): Aprova emissão de R$ 200 milhões",
-    "data": "2026-11-18",
-    "fonte": "Acionista.com.br",
-    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNVWFza0xHWGJRclZFa1d6MGE4ZlFrOW5ISlZlZU0tektIeERDYng0b2pIdnJZcGo4VV9ENVpkVURvY0R3bXB0X2NPU05hcWFIT3ZOSVdXNjkxLWlDMEJ0R09yMGw1TDdRc0pyRm5WV3J5dkt3cFBkZUgtSTJlR3hoZkJn?oc=5",
-    "tipo": "Outro assunto"
-   },
-   {
-    "id": "N6",
-    "texto": "Porto Seguro leva turismo de casamentos ao Festuris 2026 e aposta em novos negócios",
-    "data": "2026-11-18",
-    "fonte": "Jornal Turismo & Eventos",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQkpkVnpGVFktQ0E1elNnaXByRGZuZ29nb09hS1Z4WXoza1kwTWZueG9qXzhveWJSdTlYRU0tLUVuOWpvV1dxRXBHQzAwNWMxa3FUWHVkSUxNOEpIbU0yNkt6VlVtWHN0Nzl3ajRyaWZRM0VpTGJuM09EMk9jRV9oN1p1QUV6WjNGendVOGppdWtaSnc?oc=5",
-    "tipo": "Notícia positiva (lucro, captação, rating melhor)"
-   },
-   {
-    "id": "N7",
-    "texto": "Fato relevante Porto Seguro (PSSA3): a decisão da CVM sobre a controlada",
-    "data": "2026-11-18",
-    "fonte": "ativovirtual.com.br",
-    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMmNtblZJLVh0Zzk0RTE1a2pDWG5LaVNEXzhvZWVkTTR2MTd0OUZLUjE4bWlvN2Z3THJFaFduUjBzU3RyRlkxdzFRYnRCQmFfbUR5ZHpFQWRCaEMxbnl4cGlpaUNldXVXa3BTZzRZVjVzUFpQNjBWRTVscUhnVFlLOXZFRHpfQlNvN1JtVGwtc183Q3Q1Z2I0bEpsUHhsZ0lEQkNjZHh6YmZYcnpXaDdsOGJGMHFvbm8?oc=5",
-    "tipo": "Outro assunto"
-   },
-   {
-    "id": "N8",
-    "texto": "Mais drogas são encontradas em tonel enterrado em mansão no Xurupita, em Porto Seguro; prejuízo ao crime supera R$ 10 milhões",
-    "data": "2026-11-14",
-    "fonte": "Bahia Sul News",
-    "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPdnQ0WW5XMl96aUx3emtkdzBveVdNR3d0eTQtOXdIa1NmUXlXYVpTX2dhQ3RfTk5uVkRpRHFqX2xUR2dNUUMtTm1pY2hOajl3SmQ0bVFoc0NmbVVLM3dlOXE1M3ZQMGhlQ3dlcW9ib21FQmFudnVxTkRYSHc2WWk0QTBmcHY1TUI1cV9OVVVOYk1SRUo1MjF1Q1Z2YWY4RlBSdnRQdmNONzZHdlFaN0d2RmZQT2pnWE9aeXdIdVZyY211QmFQYzM4cHI2enJYdGx3ckRpUFpsUHRuUkRMZnd6LWtmZVNjNjgwYi1HYVhmWWZudTh6OHZ6RG4zVHdfUXJ3T0c3Z2syU29mSVB1cUsxYk5HRFg1blRDRDJjRkVHM0M2X1Rr?oc=5",
-    "tipo": "Prejuízo ou resultado ruim"
-   }
-  ],
-  "anomes": 202606
- },
- "C0084820": {
-  "resumo": "O Mercado Pago aparece no radar por apresentar crescimento acelerado de captação e crédito aliado a indicadores de risco como alta inadimplência, baixa participação de patrimônio líquido e liquidez imediata muito reduzida. As notícias divulgadas não explicam nem justificam esses sinais de vulnerabilidade, gerando incoerência entre a percepção de força operacional e os números de risco.",
-  "pontos": [
-   {
-    "texto": "Crescimento de captação de 65,4% e da carteira de crédito de 89,4% em 12 meses, porém o patrimônio líquido representa apenas 5,6% do ativo, indicando alavancagem elevada.",
-    "evidencias": [
-     "F1",
      "F8",
-     "F4"
-    ]
-   },
-   {
-    "texto": "17,6% de inadimplência, 7,9 vezes a mediana dos pares, sinalizando risco de crédito significativo.",
-    "evidencias": [
-     "F3",
-     "F11"
-    ]
-   },
-   {
-    "texto": "68,2% do ativo está em títulos, crédito e cartão – ativos de difícil avaliação – reduzindo a qualidade do balanço.",
-    "evidencias": [
-     "F2"
-    ]
-   },
-   {
-    "texto": "Liquidez imediata sobre a captação de apenas 1,1% demonstra fragilidade para honrar saques ou demandas de curto prazo.",
-    "evidencias": [
-     "F10"
-    ]
-   },
-   {
-    "texto": "Índice de Basileia de 13,8% está dentro do mínimo regulatório, mas pode ser insuficiente frente ao alto risco de crédito e baixa cobertura de capital próprio.",
-    "evidencias": [
-     "F6"
-    ]
-   }
-  ],
-  "contradicoes": [
-   {
-    "texto": "A divulgação de cupons de até R$1.000 (N2) sugere disponibilidade de caixa para incentivos, porém a liquidez imediata é de apenas 1,1% (F10), indicando que o banco pode não ter recursos líquidos suficientes para sustentar tais promoções.",
-    "evidencias": [
-     "N2",
-     "F10"
-    ]
-   },
-   {
-    "texto": "As investigações da Apple sobre bloqueio ao Pix (N3,N4,N5,N6) tratam de questões operacionais externas, sem relação com os indicadores de inadimplência e baixa cobertura de capital (F3,F4), mostrando um descompasso entre o foco das notícias e os reais riscos financeiros.",
-    "evidencias": [
-     "N3",
-     "N4",
-     "N5",
-     "N6",
-     "F3",
-     "F4"
+     "F12",
+     "N4"
     ]
    }
   ],
   "acompanhar": [
-   "Evolução da taxa de inadimplência nos próximos relatórios trimestrais",
-   "Variação da liquidez imediata sobre a captação",
-   "Ajustes no patrimônio líquido e no índice de Basileia",
-   "Impacto das campanhas de cupons na margem de custo de captação"
+   "Trajetória da inadimplência e da liquidez imediata nos próximos balanços.",
+   "Evolução dos ativos de difícil avaliação e o impacto da mudança do parceiro de criptoativos na operação."
   ],
   "metodo": "ia",
-  "chave": "d5bcdf568f7c",
+  "chave": "03d6d9ca8346",
   "fatos": [
    {
     "id": "F1",
@@ -936,6 +927,30 @@
   "noticias": [
    {
     "id": "N1",
+    "texto": "Mercado Pago troca Paxos por Ripio: o risco que ninguem esta vendo",
+    "data": "2026-11-21",
+    "fonte": "BlockTrends",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPU19OSjhrUXU2bTdrTi1QSUNtWDFnYTJoanVrZWN3bzJLZ1BadTZrSnloRFRmVGlLN2JySDUwbGhzM3M4cEppSFBTMkJYOENtMWtJcEdyTjZCcEwwUERBWVUtWjNDRmZfMHJtNDJXX0xoMXI1VkdwcF8tTVhJZ1NYZjNYWQ?oc=5",
+    "tipo": "Outro assunto"
+   },
+   {
+    "id": "N2",
+    "texto": "Uma mão segurando um celular com aplicativo bancário ilustra o caso de um idoso que perdeu R$ 16,6 mil em Anápolis. Criminosos se passaram por funcionários do Mercado Livre e do Mercado Pago. O homem, de 74 anos, recebeu as ligações na quinta-f",
+    "data": "2026-11-21",
+    "fonte": "Instagram",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBZNXV4bzRoeVdCRFdneDRUSkhyanNURS1ZZkRVamRMOFEwRThOQjlsa2NmU2dIdEVXZ0VNdm9EZEQxYUtOMXBjRjhUUnlNSHVJZ2c?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
+   },
+   {
+    "id": "N3",
+    "texto": "Mercado Pago troca Paxos pela Ripio, muda endereços de bitcoin e alerta para risco de perda",
+    "data": "2026-11-21",
+    "fonte": "Livecoins",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOc3JodkRISTRiLUJQUGEtbGN4MDQ5WjJCWG03NFJ6bUM1eWF6QmpJWjBrbmNUSEp2RWczVkdvNThSY2hxUWswVENHazJKd2twU1ppZTV2eEhWajZNTENFeEd1NUF0dnNGMWdkdDgtaXdyRTN6SXc1NWloUzYzZWZ0RlRFbFdiOTFQN09hbFZ2Mjg1cjFZOUhiMms0aEJxMGx6ZzF1Y0pXNmFuRC1tWXJjUkNBVGNZRVHSAbwBQVVfeXFMTkw3NG05T2xIN29aeWtZcFdWRjR5TGFseFNyTVlSWDRJWDYtQjVLNndyMld5QnA2NkF5bm1mZ3QyRmhNOG85d2piX19vUWp4TnJhNFRwbW9lVDVIWFVWcG5ReWl4bTYyX2lYdE9fSWxyYnVIUW5RZDg0ekxuR2xTcHpNR2FVRHphbmtra2FKWFVTS21VZ09Ec2xhR2FPaVF3TEdvX1JRcTB4V3o0b1paUXdMTlBMWFluN2pLMkE?oc=5",
+    "tipo": "Outro assunto"
+   },
+   {
+    "id": "N4",
     "texto": "Shopee amplia carteira de crédito em 159% e acirra disputa com Mercado Livre",
     "data": "2026-11-18",
     "fonte": "Mercado&Consumo",
@@ -943,7 +958,7 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N2",
+    "id": "N5",
     "texto": "Mercado Pago libera cupons de até R$ 1.000 para compras no Mercado Livre",
     "data": "2026-11-17",
     "fonte": "Seletronic",
@@ -951,7 +966,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N3",
+    "id": "N6",
     "texto": "Apple pode ser multada por dificultar Pix por aproximação no iPhone? Entenda investigação",
     "data": "2026-11-17",
     "fonte": "Estadão",
@@ -959,7 +974,7 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N4",
+    "id": "N7",
     "texto": "Cade investiga Apple por bloqueio ao PIX por aproximação",
     "data": "2026-11-16",
     "fonte": "SpaceMoney",
@@ -967,28 +982,12 @@
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
-    "id": "N5",
+    "id": "N8",
     "texto": "Cade investiga restrições da Apple ao Pix por aproximação no iPhone",
     "data": "2026-11-16",
     "fonte": "Jornal Diário do Povo",
     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdWY3WUQxNkpMdXpXVTlDRlZRUnpubDU3ZlRpTFo3M19TOUtacHl4Si1zV0IyRTJFWEYxaGlOc1JXdnczbEo1NVppX1hUS05nUUNtcnJBM3Q0ODM1TEdOY21yb0Fjb20xbmhKRXhWbjVyOFBGYzRKN2hyY05rOXdlRGVTOW53OWd6TlZPT2lmQkFnbThucVVGYU9sZFlPdV9zbW4zZ1RvbVBwejM0?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
-   },
-   {
-    "id": "N6",
-    "texto": "Apple é investigada no Cade por barrar PIX por aproximação no iPhone; entenda a disputa",
-    "data": "2026-11-16",
-    "fonte": "G1",
-    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMEQyWU1oLWd6MEItaEF6ankyWlBKa2dfSzBkVlc1T1I4V0Z4cXE3VTFCRGkxNnN2ZUNuTWpLX0hCaC02b3BvX2pweE9pelp6RFBNODZHdURGOF95YkpqY013Ty1XdkY4cXRWSVFuVHZlSGJOb3J6eWQ5Y0Y5RVRIYi1JVzlfb3dha2pZUEdVZnNzTlhyZUJsS3RlQjh4dWQ2N2lId0pRNzJJR3JMNXZxS202MDg0ZVF2VHVwZFJSekl4TEV4cHhvMWJlMHNRaGZBcWtoUjVyVVLSAecBQVVfeXFMT09QN2pfYW1aYWw1V3d4T3pvSXRZc2VSNDQxZklMcVY4NzM5TDJUT3BFZi04ZlZqa2J6MktvdGxCa1NubWMyTjlpdVBMNWFXbWNvYlF3ZXVzTXFibXlZU1RhemVaRldyQlJRbm91dGdDMjNqSUZIc3dlUUdtWGg2eTVVaGRod0djSEZmN0Y2bXZHR3JNQ3pzUS1Wbmk4S3JTM3dwTEZRYkxRMEY2Z3dETjZTOWJvMXU5N2JRLWJEa20tYzN2cHNuY1EtZ1V0ZTV1QmliaTJJNWlubEpDYVpTRnAwZ1dFVnc0?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
-   },
-   {
-    "id": "N7",
-    "texto": "Licença bancária do Nubank sai com aval do BC; veja o que muda para clientes",
-    "data": "2026-11-16",
-    "fonte": "melhorinvestimento.net",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPc0gtdkUtdXVPSm01Qm1aeDJ4b3ZtcXNGYmE3VDdIc19TSDBJcnF3R0d0d19DM09HU2NNZW8yM2JISnU2aGhSalZoMTRFcndYbXhreklqck40Q0lFN3FfbkgwcXc4SS1OUWRBZks3RHFicFo5a2dIenFjU1otQmdiVjNVZGI?oc=5",
-    "tipo": "Outro assunto"
    }
   ],
   "anomes": 202606

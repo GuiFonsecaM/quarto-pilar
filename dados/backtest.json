@@ -5,10 +5,10 @@
    "nome": "DACASA FINANCEIRA - PRUDENCIAL",
    "data_evento": "2020-03-31",
    "fonte": "cadastro IF.Data (situação LE)",
-   "ultimo_score": 66,
+   "ultimo_score": 78,
    "ultimo_nivel": "Alerta alto",
-   "primeiro_alerta": 201812,
-   "antecedencia_meses": 12,
+   "primeiro_alerta": 201806,
+   "antecedencia_meses": 19,
    "sinais_ultimo": [
     {
      "regra": "capital_abaixo_minimo",
@@ -29,16 +29,16 @@
      "valor": -3.2549374211252298
     },
     {
+     "regra": "inadimplencia_alta",
+     "pontos": 12,
+     "texto": "Inadimplência de 21,7% da carteira, 16,0x a mediana dos pares",
+     "valor": 0.21695927681316549
+    },
+    {
      "regra": "capital_caindo",
      "pontos": 8,
      "texto": "Basileia caiu 24,7 p.p. em 12 meses",
      "valor": -0.246574330978649
-    },
-    {
-     "regra": "alavancagem",
-     "pontos": 6,
-     "texto": "Patrimônio líquido de apenas -2,8% do ativo",
-     "valor": -0.028027973860311105
     }
    ],
    "serie": [
@@ -64,37 +64,37 @@
     },
     {
      "anomes": 201709,
-     "score": 25,
+     "score": 37,
      "nivel": "Atenção"
     },
     {
      "anomes": 201806,
-     "score": 35,
-     "nivel": "Atenção"
+     "score": 47,
+     "nivel": "Alerta"
     },
     {
      "anomes": 201809,
-     "score": 40,
-     "nivel": "Atenção"
+     "score": 52,
+     "nivel": "Alerta"
     },
     {
      "anomes": 201812,
-     "score": 66,
+     "score": 78,
      "nivel": "Alerta alto"
     },
     {
      "anomes": 201903,
-     "score": 70,
+     "score": 82,
      "nivel": "Alerta alto"
     },
     {
      "anomes": 201906,
-     "score": 66,
+     "score": 78,
      "nivel": "Alerta alto"
     },
     {
      "anomes": 201909,
-     "score": 66,
+     "score": 78,
      "nivel": "Alerta alto"
     }
    ]
@@ -270,5 +270,5 @@
  ],
  "detectados": 3,
  "total": 3,
- "taxa_alerta_sobreviventes": 0.0525
+ "taxa_alerta_sobreviventes": 0.0512
 }

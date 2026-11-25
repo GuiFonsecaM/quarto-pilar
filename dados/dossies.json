@@ -1,9 +1,9 @@
 {
  "C0081799": {
-  "resumo": "O Banco Digimais entrou no radar de risco devido à forte deterioração de seus indicadores de capital e rentabilidade registrados no balanço de junho de 2026. Ao mesmo tempo, notícias de novembro de 2026 relatam aportes bilionários para conter a crise e cobrir prejuízos da instituição.",
+  "resumo": "O Banco Digimais entrou no radar devido a um severo enquadramento regulatório, com Índice de Basileia em campo negativo e expressivo prejuízo acumulado. Notícias do final de 2026 apontam tentativas de resgate via aportes bilionários pelo seu acionista para conter a crise e restaurar a solvência do banco.",
   "pontos": [
    {
-    "texto": "O Índice de Basileia ficou em -4,6%, descumprindo o mínimo exigido de 10,5%, após sofrer uma queda de 23,2 p.p. em 12 meses.",
+    "texto": "O Índice de Basileia registrou -4,6%, ficando abaixo do nível mínimo exigido de 10,5% após uma queda de 23,2 p.p. em 12 meses.",
     "evidencias": [
      "F1",
      "F4",
@@ -11,43 +11,68 @@
     ]
    },
    {
-    "texto": "A instituição registra expressivo prejuízo, com ROE de -118,0%, acompanhado de inadimplência de 10,3% da carteira, valor 3,3 vezes superior à mediana dos pares.",
+    "texto": "A instituição apresentou forte rentabilidade negativa, com ROE de -118,0% em 12 meses, acompanhada de notícias sobre prejuízos e dívidas de empresas ligadas.",
     "evidencias": [
      "F2",
-     "F5",
-     "F8",
-     "F14",
-     "F15"
+     "F15",
+     "N1"
     ]
    },
    {
-    "texto": "A estrutura de financiamento é quase totalmente dependente de depósitos a prazo (99,8%), com um custo de captação elevado de 16,5% ao ano.",
+    "texto": "A inadimplência atingiu 10,3% da carteira (3,3 vezes a mediana dos pares), com alta de 5,5 p.p. em 12 meses, enquanto a carteira de crédito encolheu 5,6%.",
+    "evidencias": [
+     "F5",
+     "F8",
+     "F11",
+     "F14"
+    ]
+   },
+   {
+    "texto": "A captação de recursos é altamente concentrada em depósitos a prazo (CDBs), representando 99,8% do total, com custo elevado de 16,5% ao ano (1,3 vezes a mediana dos pares).",
     "evidencias": [
      "F3",
      "F6",
      "F12"
     ]
+   },
+   {
+    "texto": "O patrimônio líquido do banco ficou reduzido a apenas 3,4% do total do ativo.",
+    "evidencias": [
+     "F7"
+    ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "Enquanto notícias de novembro de 2026 reportam um aporte de R$ 1,7 bilhão pelo controlador para salvar o banco e cobrir prejuízos, os dados oficiais do balanço de junho de 2026 mostram um patrimônio líquido de apenas 3,4% do ativo e Basileia negativa (-4,6%), além de matérias citarem que a auditoria ainda coloca em dúvida a sobrevivência da instituição.",
+    "texto": "Os dados oficiais de jun/2026 indicam índice de Basileia negativo (-4,6%) e forte deterioração de capital, enquanto as notícias de nov/2026 informam uma injeção de cerca de R$ 1,7 bilhão por Edir Macedo para tentar salvar a instituição do colapso.",
     "evidencias": [
      "F1",
-     "F7",
      "F9",
-     "N1",
+     "N2",
+     "N3",
      "N4",
-     "N5"
+     "N5",
+     "N6",
+     "N7",
+     "N8"
+    ]
+   },
+   {
+    "texto": "Apesar das notícias reportarem o aporte bilionário recente para cobrir prejuízos, reportagens indicam que pareceres de auditoria ainda colocam em dúvida a continuidade das operações do banco.",
+    "evidencias": [
+     "N2",
+     "N6",
+     "N8"
     ]
    }
   ],
   "acompanhar": [
-   "A entrada efetiva do aporte reportado nas notícias nos balanços oficiais e a consequente recuperação do Índice de Basileia acima do limite regulatório.",
-   "A trajetória da taxa de inadimplência e do resultado financeiro (ROE) nos trimestres seguintes."
+   "A reconstituição do Índice de Basileia e do Patrimônio Líquido após a formalização dos aportes reportados nas notícias",
+   "A trajetória da inadimplência e o ritmo de contração ou recuperação da carteira de crédito",
+   "A capacidade de redução do custo de captação em depósitos a prazo nos próximos balanços"
   ],
   "metodo": "ia",
-  "chave": "d0f48287926a",
+  "chave": "4532e89b18dc",
   "fatos": [
    {
     "id": "F1",
@@ -113,6 +138,14 @@
   "noticias": [
    {
     "id": "N1",
+    "texto": "O Globo relata dívidas de empresas e igrejas ligadas a líderes evangélicos e prejuízo no Digimais",
+    "data": "2026-11-24",
+    "fonte": "Jornal Diário do Povo",
+    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNXc0X3FfUUpydU9lbHhjYmRjTHRQLVp0RVBZbGlDZTZGRVltQkJwRFB3LXFpclhma1RvUGNEWFVaUHZNbXQxLUIyeW03YkFTb2FpcmNySmZMWUJ5MXdXUE9oU0dPOFJaTy1tM21SOG80c2tubE1ZU3NPdTlSY0FfVHNYLVR4V21SNmNRLUNjU0FXdW1ycW9MeXcycTdVeHJJal9qWDBVZHhUOW16VTZvMXJWdWlSU3RUNlJpQU00TmU1NFYxSlZJLUVPZXdvdlVCUDB1dQ?oc=5",
+    "tipo": "Prejuízo ou resultado ruim"
+   },
+   {
+    "id": "N2",
     "texto": "Edir Macedo injeta R$ 1,7 bilhão no Banco Digimais, mas auditoria põe em dúvida a sobrevivência do banco - Ver-o-Fato",
     "data": "2026-11-22",
     "fonte": "Ver-o-Fato",
@@ -120,7 +153,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N2",
+    "id": "N3",
     "texto": "Crise no Digimais: Edir Macedo injeta R$ 1,7 bilhão para tentar salvar banco",
     "data": "2026-11-21",
     "fonte": "Plantão Brasil",
@@ -128,7 +161,7 @@
     "tipo": "Venda do banco, busca de comprador ou aporte de capital"
    },
    {
-    "id": "N3",
+    "id": "N4",
     "texto": "Edir Macedo faz aporte bilionário para tentar salvar o Digimais",
     "data": "2026-11-21",
     "fonte": "Brasil 247",
@@ -136,7 +169,7 @@
     "tipo": "Venda do banco, busca de comprador ou aporte de capital"
    },
    {
-    "id": "N4",
+    "id": "N5",
     "texto": "Edir Macedo injeta R$ 1,714 bilhão no Digimais",
     "data": "2026-11-21",
     "fonte": "Jornal do Brasil",
@@ -144,7 +177,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N5",
+    "id": "N6",
     "texto": "Edir Macedo injeta R$ 1,7 bilhão no Digimais para cobrir prejuízo",
     "data": "2026-11-21",
     "fonte": "politiza brasil",
@@ -152,7 +185,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N6",
+    "id": "N7",
     "texto": "Edir Macedo injeta R$ 1,7 bilhão no Digimais para tentar salvar o banco",
     "data": "2026-11-19",
     "fonte": "Diário do Centro do Mundo",
@@ -160,29 +193,21 @@
     "tipo": "Problema de liquidez, saques ou corrida"
    },
    {
-    "id": "N7",
+    "id": "N8",
     "texto": "Edir Macedo põe R$ 1,7 bilhão no Digimais para evitar colapso do banco",
     "data": "2026-11-19",
     "fonte": "Metrópoles",
     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQc2ZDSWNEXzFoTDF1OG9oY216NUs1SXRoLWZzelBkaUY2OVF0MkkyYWgzVzZMQ3JSZC1SbmI1alAwRUJ4QUpiZ0NSYzFtT0JHTm1pMWM3MWFYdnV4dWZvdlcyT09OcDFDaWF1YVRyU1QzSEFvZmVHNnpJVzVuMm9WYy0yak5LOVlfMmhHUE56d2VUT01ZVFQyQms5SzJ5OVNHVi02U1dyZmJKNWE1R1ViRU80RzBzR2w3Z2hUd3pKc0U?oc=5",
     "tipo": "Problema de liquidez, saques ou corrida"
-   },
-   {
-    "id": "N8",
-    "texto": "Igreja, banco e helicópteros: Universal expande negócios e faz aporte bilionário",
-    "data": "2026-11-19",
-    "fonte": "ncnews.com.br",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaHlMeW9KWXYyZlFCSDFLeDNNd2JqNzkxQVpDOTdWQzUyY0xHV0dFbFY2RFduc1ZaVWJiM29lcEFGaU5HX1dhWTRwZWhidWNsOHM1Ty1EbnFfVGNUUWdIdFhha09icEF0dnpMNWthSU9icXBUeDd5bjhVMC01NVlCRmxqZw?oc=5",
-    "tipo": "Venda do banco, busca de comprador ou aporte de capital"
    }
   ],
   "anomes": 202606
  },
  "C0080367": {
-  "resumo": "O Banco Master entrou no radar devido à combinação de métricas de liquidez reduzidas, custo de captação elevado e rápida expansão de crédito junto com aumento da inadimplência. Paralelamente, notícias recentes destacam investigações envolvendo executivos do banco e questionamentos sobre sua situação financeira. A ausência na divulgação de indicadores cruciais de capital reforça o sinal de alerta.",
+  "resumo": "O Banco Master apresenta elevado risco financeiro evidenciado pelo alto custo de captação, baixa liquidez imediata e fatia expressiva de ativos de difícil avaliação. Além dos indicadores numéricos sob pressão, a instituição enfrenta desdobramentos judiciais envolvendo investigações de fraudes em CDBs e atuação de liquidante.",
   "pontos": [
    {
-    "texto": "O custo de captação da instituição atingiu 25,7% ao ano, sendo 2,7 vezes a mediana dos seus pares, fortemente concentrado em depósitos a prazo (CDBs).",
+    "texto": "O banco opera com um custo de captação de 25,7% ao ano, muito acima dos pares, sendo fortemente dependente de depósitos a prazo (CDBs).",
     "evidencias": [
      "F1",
      "F5",
@@ -191,7 +216,7 @@
     ]
    },
    {
-    "texto": "O banco possui baixa liquidez imediata, equivalente a 0,6% da captação, e possui 40,2% do seu ativo em itens fora de caixa, títulos, crédito e cartão, considerados de difícil avaliação.",
+    "texto": "A liquidez imediata é reduzida a 0,6% da captação e 40,2% dos ativos estão fora do caixa, títulos públicos ou carteiras tradicionais de crédito.",
     "evidencias": [
      "F2",
      "F4",
@@ -199,7 +224,7 @@
     ]
    },
    {
-    "texto": "O crescimento acentuado da carteira de crédito e da captação foi acompanhado por uma elevação de 5,5 p.p. na inadimplência em 12 meses.",
+    "texto": "O forte crescimento do crédito e da captação no período veio acompanhado pela elevação da taxa de inadimplência.",
     "evidencias": [
      "F7",
      "F8",
@@ -208,17 +233,16 @@
     ]
    },
    {
-    "texto": "O Índice de Basileia não foi divulgado no último trimestre, interrompendo o histórico de transparência desse indicador.",
+    "texto": "Existem apurações judiciais sobre fraudes em doações e atrasos na transferência de CDBs para contornar o teto do FGC.",
     "evidencias": [
-     "F3"
+     "N1",
+     "N2"
     ]
    },
    {
-    "texto": "Notícias veiculadas citam desdobramentos judiciais, prisão preventiva mantida de Daniel Vorcaro e apurações sobre contratos e vínculos com a instituição.",
+    "texto": "O STF e a liquidação da instituição gerenciam disputas por liberação de recursos bloqueados pertencentes a outros bancos.",
     "evidencias": [
-     "N1",
-     "N3",
-     "N6",
+     "N4",
      "N7",
      "N8"
     ]
@@ -226,30 +250,30 @@
   ],
   "contradicoes": [
    {
-    "texto": "Embora o balanço mostre expressivo crescimento na carteira de crédito e ROE positivo de 11,5%, o noticiário aponta investigações judiciais, manutenção da prisão de controlador e citações sobre rombo e liquidação.",
+    "texto": "Enquanto a captação via CDBs cresceu significativamente até meados de 2025, matérias jornalísticas reportam fraudes e entraves para garantir a cobertura dos papéis pelo FGC.",
     "evidencias": [
-     "F9",
-     "F13",
-     "N3",
-     "N7",
-     "N8"
+     "F5",
+     "F8",
+     "N1",
+     "N2"
     ]
    },
    {
-    "texto": "Apesar do aumento expressivo da captação em 12 meses, o banco deixou de divulgar o Índice de Basileia e mantém uma liquidez imediata bastante reduzida em relação à captação total.",
+    "texto": "A interrupção na divulgação do Índice de Basileia contrasta com o histórico de transparência do banco, ocorrendo simultaneamente às decisões judiciais sobre a liquidação da instituição.",
     "evidencias": [
      "F3",
-     "F4",
-     "F8",
-     "F11"
+     "N4",
+     "N7"
     ]
    }
   ],
   "acompanhar": [
-   "Retomada da divulgação do Índice de Basileia, evolução da liquidez imediata, comportamento da inadimplência e os desdobramentos das investigações judiciais."
+   "Retomada da divulgação dos indicadores de solvência e do Índice de Basileia.",
+   "Decisões do STF e do Banco Central referentes à liquidação e liberação de valores bloqueados.",
+   "Reavaliação da qualidade dos ativos de difícil mensuração nos próximos relatórios."
   ],
   "metodo": "ia",
-  "chave": "5870c480c7cd",
+  "chave": "ce3e7545e7ef",
   "fatos": [
    {
     "id": "F1",
@@ -307,67 +331,67 @@
   "noticias": [
    {
     "id": "N1",
-    "texto": "Relatório sobre Moraes deixa de fora contrato da esposa do ministro com Banco Master e mensagens com Vorcaro",
-    "data": "2026-11-24",
-    "fonte": "BandNews",
-    "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPd01xR3VCRDRfOGxRdFVsTEVLZkpJdkYxSFBUTkdURTBDRUxlR0RFcUdqcFhDVzBpaE1BZ3BHSnJPYnZmS2NTa0hXMjVoMHdsWUU2VnBuZ3Zfb0ZQaEV6OWlnMUVTbEZDTWhhVGlwTHBoRnd5UHNnbnRVMUswUENBLUUxUWFSY0xrcTBqSi1wcTM0blRpcld0ZGxMZUdfSkYwYmJBTC03QVgzdmRxYXhveUxfSVlNUWRFOV81UlpaUkNUSkVhdWxmRkpHTUJzV1ViRXE2QXRZMXNVZU1I?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
+    "texto": "Justiça condena XP e assessoria por atraso em transferência de CDBs do Master que impediu cobertura do FGC",
+    "data": "2026-11-25",
+    "fonte": "Folha de S.Paulo",
+    "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNX21tdXBLQjk3VU1UVFFQUTlxZkt5ZHBZWVE2ZGNXYUl2b0RFLVAwdTJFNGFDbzFMa2xhVDJXSDRkM3FHUTQwdC1WWTBFYUNYUHRLVmdzUGRJdzVJbjRwX0VJOHp3bjZnaHZLX3dwblhoSUNHWjdub3h6eWhJUHZTQXM4a3QzY1Nia3VscmtWcGJuRzlrVUsxdXBPOWdlNk0xSGNBU0lHMlNpdHFDZTYwdTNlTHdoSDVxSTBMNXB2b01FSFU5ZG1OUXQ5WXZMc0xUY1JWWnFKWGwwOW8zWG54WGFlc25TTlRkNXlmd0gtNA?oc=5",
+    "tipo": "Atraso em pagamentos, resgates ou CDBs"
    },
    {
     "id": "N2",
-    "texto": "Títulos do BRB ficarão congelados após suspensão da CVM",
-    "data": "2026-11-24",
-    "fonte": "SBT News",
-    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSXZJa3hzeTdzS1JRRjYzU0ZUbVlpWUV2Q2g4c1dqOGVQclJYb2dUVW85ZG1XX0hDWnJuTXYxQi1fZjg4Vm5xNUJHLUxEaWdvT3NhOGxHR2xRR2FUV05WVDZkQnhYUGxBM18xb0ZILW9NRU4xMFVkUGFzSm5xRDVQemJyWWN0MkhiMkN6UGt2MlgyOUtpWUxOT09ubXA1NzBP?oc=5",
-    "tipo": "Problema de liquidez, saques ou corrida"
+    "texto": "Justiça vê fraude em doação de CDBs do Master para \"driblar\" teto do FGC",
+    "data": "2026-11-25",
+    "fonte": "Metrópoles",
+    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSGM5TllmZ2JHNXFYM3dweVBFWG5DWjR4a0hkNWIteEZkWUV2bXJDejlBMzBOblQ0dUZ5NDF5ZkNjRW42dUxxTEN0UlhhaG5UNGxXeWtIdVpaN1lVQW5uT0U0aWJMN3h2Rmh4ZE9vR0FLRkJOUkFneG55X2NjNjNIRmpHemM0TUpZWFJ6UkcteHE1M2dpNzRwUVlQRWljMmNJUDhsdXRRekFwMjlodnhGNVRlTkhkRFBmYnc?oc=5",
+    "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N3",
-    "texto": "Damares quer ouvir Vorcaro na prisão sobre rombo do Banco Master",
-    "data": "2026-11-24",
-    "fonte": "TV Sim Brasil",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYzkzTUtrM0F5bVV2OFVJekozTEE3ZjJCck5pZTFyR3RYalVkUDNDdTZpa0JIaXFld3ZBNDJTdDRZOUN2Sy1yajVqSVUzNUlkVjYzTVhtek1xNEszMGloQWNDRVZCX2NFaTFlZ1pUOHFWaG5oUVc1UVhXUzV2NTJNRTBHd0p6UUFmLWFVVDE0YUxvUEVwZjNWU1g5Z0dKMFlDaFhwTEJyek9vcVRyai1rWERGREE4X0dWZmNR?oc=5",
+    "texto": "Relatório da PF encaminhado ao Supremo não inclui 47 mensagens enviadas por Daniel Vorcaro a Alexandre de Moraes",
+    "data": "2026-11-25",
+    "fonte": "G1",
+    "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOcTVmbFZ0SjFKWU80WVA5dXU2dFVoUkhxYUF0aTl4QjNGMWpMUHZzOUtpelZzLVNDaV9EbHE1MEhWZHZIeUNkSC1maUpheXdtY2pqRUlLSXN5UGV5cG9LV0phek9lOWIzR0c5SVNOUmI4LV9yYWRrN25HZFhWMVR1a3FBNzhsSDVvNUlFamxmSWhKQjRaTVE4QXl5Vk1sZnFZZkdjaHhtaXp0ZXV5d29CcHhqc2ZfMVctcEJNVVJnTWNVLUMtWkZMeGc3RVBiYjhqWHpCbTJlVmtSXzFqeGthOUpSNUVMYS1hSWo0c09uQWVSX3haVWlTX3g1NWpRNC1QYnQwX9IBkwJBVV95cUxOUk1UVElvLXdsRHBMRXhrQ21kY0loMUxUbHpxdTBzTVFzNkJ3Y1kwdW5HdzJMUE1QNll1QWJGWlBKT0pEamxnbGd0Qmw0MlpJUlotRXpsaGt4bGQ5eVVnQ1hEaEc4Qm4tTk5mNWFoY3ZINXk5ZHJpa2ZSLThnZVRHeDFKbGhEblF3Q3pSTjFIeHI1S2JxbFVXMDZfMUwwWmhkOU1kQlRxSVYta0tBVzdEMTM1aXFIZGljYVRZQ18zajkzRll0MlMxTm0ydXExc3ZHcWVkOWh2ME1Xa0VGSkNvdnJpWkF3WXZ5OF9UZE50UVk0Rk1UZDhNWjJXSXlJSjdwRFQ5Y0M2TElSSHM2MW8wdm9zYw?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N4",
-    "texto": "BRB diz que banco segue funcionando após suspensão da CVM",
+    "texto": "Fachin dá 2 dias para liquidante do Master analisar liberação de recursos do BRB",
     "data": "2026-11-24",
-    "fonte": "Agência Brasil",
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ2YyLWYyQV94UmVJcGZYdzd6b0R6eHFSMDlPRkZhczJncG5xQVlQTko4bC1DWklQMDhNOUs3X2FNLTAzWGhpWTFscDdFbXhGVEJzb0NyZ25vNFN4RTA1OWtZMExGOWxZbmk2U05UZ2U0bDhDaFNhSEMwWVRaZmphUWNkVnU2MWdScHV0XzVuUFpfam5sdU9PNVBSRXAtbG5DWFZMaWw3NXZLUThkYUJrdGpoZW1RQQ?oc=5",
-    "tipo": "Multa, processo ou sanção de regulador"
+    "fonte": "Painel Político",
+    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONk1FZjktcHhhR3NITUhFd1NoNTJXcE53b1RZcndCS0hvZnMzNkhKUTE5N1Jyb2NsX3I4SnVlY1UyNHd1dG9PZG5JeFpRSUcyWnVLRTJ5akdweGItOWUyUXVTWWhDVGJEX3gwVEdIWHdBdHc1RXdONmJfTHZaOHpFYWdpck9CUXJxQnc0MkZtTnRydXpRQXBlaU40N3RZOUc5RkpqVVQwNUMyZjQ?oc=5",
+    "tipo": "Liquidação, intervenção ou RAET"
    },
    {
     "id": "N5",
-    "texto": "A sórdida trama para tirar Mendonça do caso Master definitivamente",
+    "texto": "Nunes Marques é definido relator de pedido de Vorcaro para retirar caso Master do gabinete da presidência do STF",
     "data": "2026-11-24",
-    "fonte": "Gazeta do Povo",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWmx2YlVVclJEcHBvRkgxN2FHZWdvOEVyZUd4Rkljb0hXZ1dHYmoxby1rV0JuYVhHYXdEOF9YV21qNllUM21RWV9Mb0ZoS2R0NEV1VllHSnFBUHluZGtOQ0ZRTkplbFVjWWhMZ3l3ZmZNQU1xZE5Fd2UxRmdVdGZ1RjFJdWYzVUZ0STdQYjN4TnZyMGNNX1ZvUjZBWHFHQ0FpYjlfY29Fb21RdW9MSlE?oc=5",
+    "fonte": "G1",
+    "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQVVAzZk1LcDZidm1vcjNaSHR5OTdJTnZiTUVuZmRBSjRiT2pHamN1M1M2ZURBd0FOa0w3NnBReHVTalNxOVFtbXBSUjVaaWZNeEVDaEt5X2N2T1hucDFfcEY0NUFNa2RGUUxmQjg5VkJZam9CQ1NWbzN5dDlKZk1MNkh3YWxEZVVwNnNDdHVfNjBnQmg3QkwxSC1rb0pmT3J0U0dBcmUtWlRQRWdHQmp6eC1CRE1xTXJiMWNQVGtrTFNVdjJCbWxzNnZfcHgwcTJHaGRDLTVZUDYwSUc1cUtXdGJ4dTQ0WG8zejljXzA0NHNSUTRtdjJCa0t2TdIBigJBVV95cUxPcUItQ3Nya0lZUW5FeUNoazUxYUJpQ2k3a2VpdEJyZ3phSnE4REhsa3ZUa0RaS3Y1dXdLTzBJLWFycGZqelRBdjF2OXMyODJNSDJHWlRfNTZFR1lDNmEwRUh1UDhKUmFWVVBWLWF2cEJyOFBaUWh4MGdsbkdnOHBHYzI2ajhTazR4SWM3V3o0WDZ3azVxMlN4ZVBzd2NlVDZoVHQxdFNWOXdJOFpUOE01UHFRVjN5UHZyWGh4NEl0eC1rLU55bmxaS0UzTEl0c0FYdGhDeENsSXNmaU9KQ2hYMlJGaWtrQmpxNmlxbDhwZ1NkY1otVTZ2aXQzbnJKLWl3MzJpUkdjcGJUdw?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N6",
-    "texto": "Relatório da PF omite contrato da mulher de Moraes com o Banco Master",
-    "data": "2026-11-23",
-    "fonte": "Band",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTVN2ajhRVDJkTjA3cnpmM21wSGRkNU1aQXlISHU5Y3pEekRHUVpacmltOW4wS0VYUFRzQ013TVE3SU0zalJOZW5PZndPcmlqT1JtTi1nczQ5VHhrN1NZRFF2MnRWdFBEejA0RWRhZHd0aDVRbEFQWWlwWkhyVThTYU5PTVA1bWkzM0FzNi1qakJSRnhNbzVlQ1k3RWtsVjFWQ3plMw?oc=5",
+    "texto": "Nunes Marques assume relatoria de ação de Vorcaro contra condução de Fachin nas investigações do Caso Master",
+    "data": "2026-11-24",
+    "fonte": "Jurinews",
+    "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPREZoY1pfUWNVX1B1UlRJQ1R5ZUZhaFJJSkNGOHAyU2VQeER5RTJ1VU9aeDVCbHFtNU9Wb2VRZm81RHNfZGpIRjZtUDNWalh3azQwRElxUlM1bXZONnVJUWpVR1JWQ05aV211ZHg4eEkzaXhQT0s0R0ZON1N2dkR1eG15aU50VzlmZU1hWTRjQzlXZDU0OFd5YzBubmZsakZDbUtuRjlzY0NuOU8tN0drWU9XLVFPdTVaOEZ1d2pBWHZlbTQxOXlLSVZUalJnNVludHRJaWFPWmVzaVFp?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N7",
-    "texto": "Presidente do Supremo mantém prisão preventiva de Daniel Vorcaro",
-    "data": "2026-11-23",
-    "fonte": "Consultor Jurídico",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPV0tBQ0hITkdFM19RVFRpWm5lU3hPXzZmQ2RLTWhsSzVQMGlOOWpjeEp3TkFfbHFhLUxvcUJ0Y2xFMEJYRktReVNZS1JNVnhkaU5XOXpWU1BXQ3VTWEtzeDl1N1VCcXYxQUI1VUNzc2FOMHBnQXBKOGROcFpaUnRaNWhVTXltMWRlSHJVcA?oc=5",
+    "texto": "Fachin manda liquidante do Master e BC se manifestarem sobre pedido do BRB para liberar valores bloqueados em investigação",
+    "data": "2026-11-24",
+    "fonte": "O GLOBO",
+    "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPYm4yQ2dCaDdyLTZQR2h3R1RjSnZIOGVYcUtaNDl3bFdza0VMTUxhVW5rTGlXUkxNanlwYXFaNzc2T3BWSWpVOWJMMkZxVC03Y0R3R1BLZC1ObDV6SHVkQk0tMTNqbVEtRkJvM1JZTW9yN21DY3pTUDEtckczeW5hTzN0UThkMzh1QXlfc25pSTNMdGF5UE9XWGdYVm5DQno3d0c3Zlh1SkNxWlpaOGszVXpFZHBfc3VvTDVjTGdRdXVaZnQzSmhxTTkwZHBXMDRUNmFMbG5UeGxwUFI0U01kQTkyYmkteGMxdmI5TTdBeWhVSVZDWTBXYVBRSmUzUWtwSXdxYUxXb1lxal94a1HSAZwCQVVfeXFMTk5vU0VmNWl0LWszT0ZuSVRlVWwzdVNNbFY0eXdNNk9SaWFXdW16NWF0aGZUUFpHQzV6YVZvT01qaURPMmo3WVlacExsQjhQdC1UcVBmZHZjd3p5SXNwTzMxYlRVam5uWlQwXzBBNlVueVgtMGl6UEhEZDZMZFJEZFZ5ZXhHLVRlQVJ4Nk94endHUnRDUW8xSklFdjZnZkU0Rldjd0RZeThNZnM3ai1nOW5GcTZEN1ZEeHMtOFNWZkMwWUVONFJHZGVLVFprZEFOWE9NR0RFUnFJakpqemJRb1oyNVcwdmxsOW15d1R6Nm0xeEUtMTdjaUhKaHpfSGpGVUxtZklGQVJuRVBWMHZVQ2RHdGtySnotaWx0NGY?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
     "id": "N8",
-    "texto": "Damares Alves busca investigar vínculos em liquidação do Banco Master",
-    "data": "2026-11-23",
-    "fonte": "Diário do Estado",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUTQ1UUE0b3BNZDU5a19VMFZtaUVaZjJKWnUwYTgxZnU5M1U3N2UyU2NEbEZoV1ZLOUY0dnhDQ1hXVEZycUFtYWJTWU9CZ0xwbUJvaThYa3NNUWhCdkRLVHBmV3dXcW1nVzd3UzFNRTFIRF94czlpbXAtelVhVTNuTTZWN191cWxWcUtzSTBJMl9tY0lsa0JBTlFwYVhxbFN6QTlrbA?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
+    "texto": "Fachin adia pedido do BRB para reaver recursos do Master; entenda disputa",
+    "data": "2026-11-24",
+    "fonte": "Band",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNWhSTS1Jc25tYjVsZFdWZ3Y0Q2FBREpoZ3FKZ1Q4c0gzWk5vTVFteG5lVzY3VTllb1JELVhfc2swcUl2OHJhRkdsUThJRWJCM1ZITFZ0b1dSdVRmQldvVF93QUROQzN5Z2IzYmMtOFQzRUl4bERQdy1wRHJMNDBYcFN4NklCZVc0WFp0VnowU0hzTlg4dEpGb2FBYnNyc2JPbHQtTVhoUzY?oc=5",
+    "tipo": "Liquidação, intervenção ou RAET"
    }
   ],
   "anomes": 202506
@@ -670,70 +694,57 @@
   "anomes": 202606
  },
  "C0080941": {
-  "resumo": "O Banco Genial entrou no radar devido a indicadores de capital e rentabilidade sob pressão, incluindo um índice de Basileia abaixo do limite mínimo. Além de registrar prejuízo nos últimos 12 meses e encolhimento na carteira de crédito, o banco enfrenta questionamentos na Justiça sobre negociações de grande porte.",
+  "resumo": "O Banco Genial entrou no radar de análise por estar com seu Índice de Basileia abaixo do mínimo exigido pelo regulador e por registrar prejuízo relevante nos últimos 12 meses. Adicionalmente, a instituição é citada em notícias relativas a disputas judiciais e negociação de títulos no mercado.",
   "pontos": [
    {
-    "texto": "O Índice de Basileia está em 7,8%, situando-se abaixo do mínimo exigido de 10,5%, após registrar uma queda de 4,3 p.p. em 12 meses.",
+    "texto": "O Índice de Basileia está em 7,8%, valor abaixo do limite mínimo de 10,5%, após registrar uma queda de 4,3 p.p. em 12 meses, acompanhado de um patrimônio líquido que representa 2,6% do ativo total.",
     "evidencias": [
      "F1",
      "F4",
+     "F5",
      "F6"
     ]
    },
    {
-    "texto": "A instituição registra prejuízo no período de 12 meses, com ROE negativo em -35,3%.",
+    "texto": "O resultado financeiro aponta prejuízo no período, refletido em um ROE de -35,3%.",
     "evidencias": [
      "F2",
      "F12"
     ]
    },
    {
-    "texto": "O patrimônio líquido do banco representa apenas 2,6% do total de seus ativos.",
-    "evidencias": [
-     "F5"
-    ]
-   },
-   {
-    "texto": "A carteira de crédito encolheu 41,6% em 12 meses, ao mesmo tempo em que a inadimplência acima de 15 dias atingiu 7,0%.",
+    "texto": "A carteira de crédito registrou encolhimento de 41,6% em 12 meses, enquanto a inadimplência acima de 15 dias ficou em 7,0%.",
     "evidencias": [
      "F8",
      "F11"
     ]
    },
    {
-    "texto": "Notícias apontam cobrança judicial de explicações sobre negociações bancárias envolvendo valores de R$ 4,4 bilhões.",
+    "texto": "A instituição enfrenta repercussão na imprensa por vendas de papéis de terceiros e cobranças judiciais para prestar explicações sobre negociações financeiras.",
     "evidencias": [
      "N1",
-     "N2"
+     "N2",
+     "N3"
     ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "Notícias relatam envolvimento em negociações bilionárias de R$ 4,4 bilhões, o que destoa da retração de 41,6% na carteira de crédito e do baixo nível de patrimônio líquido em relação ao ativo (2,6%).",
-    "evidencias": [
-     "F5",
-     "F8",
-     "N1"
-    ]
-   },
-   {
-    "texto": "Embora a captação de recursos tenha crescido 29,3%, a carteira de crédito recuou 41,6% e o ROE ficou em -35,3%, indicando que a entrada de recursos não se traduziu em expansão de crédito ou resultado positivo.",
+    "texto": "A captação de recursos teve alta de 29,3% no período em que a carteira de crédito reduziu 41,6%, demonstrando um crescimento da captação 71,0 p.p. superior à expansão do crédito.",
     "evidencias": [
      "F3",
      "F7",
-     "F8",
-     "F12"
+     "F8"
     ]
    }
   ],
   "acompanhar": [
-   "Recuperação do Índice de Basileia para o patamar mínimo regulatório de 10,5%",
-   "Desdobramentos judiciais e possíveis impactos das explicações cobradas pela Justiça de MT",
-   "Evolução da carteira de crédito e controle da taxa de inadimplência"
+   "Ações para reenquadramento do Índice de Basileia ao patamar exigido",
+   "Evolução do prejuízo operacional e do indicador de inadimplência",
+   "Desdobramentos e respostas prestadas à Justiça nos processos citados"
   ],
   "metodo": "ia",
-  "chave": "778b5480a2ab",
+  "chave": "4195d156ec90",
   "fatos": [
    {
     "id": "F1",
@@ -787,6 +798,14 @@
   "noticias": [
    {
     "id": "N1",
+    "texto": "Natália Portinari: Banco Genial vendia papéis do Master a previdências, mostram mensagens",
+    "data": "2026-11-25",
+    "fonte": "UOL Notícias",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNQUgxRTR1NnRjVm9WQmwyWTl0VEZQSkNkbVlEUVdUNXBER2VGM2JvalN5M0xjSVAyak5wWWx3cGNPbGxZQkNWMjFIVWJBTzZUVjRMR3dCMFdPZC0xTkZMN2p5TEYyRDFWZFBadUYteENjeWd2WTFxbDNaR01SV3J0VnlLd1d4aXBWanhET3FQSmtRZXNUaHBLUXNwS1VCVU5MQ3R5eEZ2ZjNOUkI2ZWFNNWJwYUVJRDZFVlc3Y0kxalF4cWdnT2JCSDZkWncwX0I3?oc=5",
+    "tipo": "Venda de carteiras ou ativos para gerar caixa"
+   },
+   {
+    "id": "N2",
     "texto": "Justiça de MT cobra explicações de BTG e Genial em ação de R$ 4,4 bilhões",
     "data": "2026-11-17",
     "fonte": "JBNEWS",
@@ -794,7 +813,7 @@
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
-    "id": "N2",
+    "id": "N3",
     "texto": "Justiça dá 15 dias para Genial e BTG explicarem negociação entre bancos",
     "data": "2026-11-16",
     "fonte": "Vero Notícias",
@@ -805,10 +824,10 @@
   "anomes": 202606
  },
  "C0084820": {
-  "resumo": "O Mercado Pago está no radar de risco devido ao forte crescimento da sua carteira de crédito e da captação de recursos acompanhado por uma alta taxa de inadimplência e baixa liquidez imediata. Além disso, uma fração significativa dos ativos do banco está concentrada em contas de mais difícil avaliação. Notícias sobre concorrência acirrada no crédito e mudanças de parceiros operacionais em criptoativos reforçam o momento de atenção.",
+  "resumo": "O Mercado Pago chama a atenção devido ao forte crescimento de sua carteira de crédito e captação, associado a um nível elevado de inadimplência. Além disso, o banco apresenta baixa liquidez imediata e grande parcela de ativos de difícil avaliação. O cenário exige acompanhamento sobre a sustentabilidade dessa expansão comercial frente aos riscos de crédito.",
   "pontos": [
    {
-    "texto": "Forte avanço no crédito e na captação acompanhado de elevada inadimplência, que está em 17,6% (7,9 vezes a mediana do mercado), enquanto a carteira de crédito cresceu 89,4% e a captação 65,4%.",
+    "texto": "Houve forte expansão na carteira de crédito (89,4%) e na captação (65,4%), acompanhada de uma inadimplência de 17,6%, valor 7,9 vezes maior que a mediana dos pares.",
     "evidencias": [
      "F1",
      "F3",
@@ -818,53 +837,40 @@
     ]
    },
    {
-    "texto": "Baixa liquidez imediata sobre a captação (1,1%) e patrimônio líquido de apenas 5,6% em relação ao total de ativos da instituição.",
+    "texto": "Existe concentração de 68,2% dos ativos fora de caixa, títulos, crédito e cartão, somada a uma liquidez imediata de apenas 1,1% sobre a captação.",
     "evidencias": [
-     "F4",
+     "F2",
      "F10"
     ]
    },
    {
-    "texto": "Alta concentração de ativos de difícil avaliação (68,2%), fatia que cresceu 17,3 pontos percentuais em 12 meses.",
+    "texto": "Notícias apontam alertas sobre riscos operacionais em virtude da troca do parceiro de custódia de criptomoedas, passando da Paxos para a Ripio.",
     "evidencias": [
-     "F2",
-     "F5"
-    ]
-   },
-   {
-    "texto": "Alertas operacionais e concorrenciais no mercado, destacando a troca de parceiro de custódia de criptomoedas (da Paxos para a Ripio) e o avanço de concorrentes no setor de crédito.",
-    "evidencias": [
-     "N1",
-     "N3",
+     "N2",
      "N4"
     ]
    }
   ],
   "contradicoes": [
    {
-    "texto": "Enquanto a instituição concede incentivos como cupons de compra para movimentar sua base, os dados financeiros mostram uma inadimplência expressiva de 17,6% e liquidez imediata de apenas 1,1%, o que contrasta com a necessidade de maior controle de risco.",
+    "texto": "Enquanto o mercado noticia incentivos comerciais para uso da plataforma e aumento da disputa de crédito no setor, os dados mostram inadimplência elevada em 17,6% e um ROE moderado de 8,4%, sinalizando que o ritmo de crescimento da base não se reflete em ganho imediato de eficiência ou controle de calotes.",
     "evidencias": [
      "F3",
-     "F10",
-     "F11",
-     "N5"
-    ]
-   },
-   {
-    "texto": "O expressivo crescimento de 89,4% na carteira de crédito do banco contrasta com a pressão de concorrentes diretos que expandiram suas carteiras em ritmo ainda maior (159%), o que pode pressionar a rentabilidade em um cenário de inadimplência já elevada.",
-    "evidencias": [
      "F8",
+     "F11",
      "F12",
-     "N4"
+     "N5",
+     "N6"
     ]
    }
   ],
   "acompanhar": [
-   "Trajetória da inadimplência e da liquidez imediata nos próximos balanços.",
-   "Evolução dos ativos de difícil avaliação e o impacto da mudança do parceiro de criptoativos na operação."
+   "Evolução do percentual de inadimplência acima de 15 dias",
+   "Nível de liquidez imediata sobre as captações nos próximos balanços",
+   "Proporção dos ativos classificados fora de caixa, títulos e carteira de crédito"
   ],
   "metodo": "ia",
-  "chave": "03d6d9ca8346",
+  "chave": "04df69aa86c1",
   "fatos": [
    {
     "id": "F1",
@@ -918,6 +924,14 @@
   "noticias": [
    {
     "id": "N1",
+    "texto": "Salão recém-inaugurado é invadido em Assis e cabeleireiro tem prejuízo superior a R$ 20 mil",
+    "data": "2026-11-24",
+    "fonte": "Assiscity",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9MQTUyRjRzenM4S2tpQ210ai1jWnAyMkRUMkVIamljaDJFX0N4Vkh3YmtwTWY0U2M5OFlMakVUU1FZQ19YbDlmdHlpcHFybmJZMWwwcm4wY1VnWGIwN0VEN2c5QUVqTWpfSy14dzBEbF8?oc=5",
+    "tipo": "Prejuízo ou resultado ruim"
+   },
+   {
+    "id": "N2",
     "texto": "Mercado Pago troca Paxos por Ripio: o risco que ninguem esta vendo",
     "data": "2026-11-21",
     "fonte": "BlockTrends",
@@ -925,7 +939,7 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N2",
+    "id": "N3",
     "texto": "Uma mão segurando um celular com aplicativo bancário ilustra o caso de um idoso que perdeu R$ 16,6 mil em Anápolis. Criminosos se passaram por funcionários do Mercado Livre e do Mercado Pago. O homem, de 74 anos, recebeu as ligações na quinta-f",
     "data": "2026-11-21",
     "fonte": "Instagram",
@@ -933,7 +947,7 @@
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    },
    {
-    "id": "N3",
+    "id": "N4",
     "texto": "Mercado Pago troca Paxos pela Ripio, muda endereços de bitcoin e alerta para risco de perda",
     "data": "2026-11-21",
     "fonte": "Livecoins",
@@ -941,7 +955,7 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N4",
+    "id": "N5",
     "texto": "Shopee amplia carteira de crédito em 159% e acirra disputa com Mercado Livre",
     "data": "2026-11-18",
     "fonte": "Mercado&Consumo",
@@ -949,7 +963,7 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N5",
+    "id": "N6",
     "texto": "Mercado Pago libera cupons de até R$ 1.000 para compras no Mercado Livre",
     "data": "2026-11-17",
     "fonte": "Seletronic",
@@ -957,7 +971,7 @@
     "tipo": "Notícia positiva (lucro, captação, rating melhor)"
    },
    {
-    "id": "N6",
+    "id": "N7",
     "texto": "Apple pode ser multada por dificultar Pix por aproximação no iPhone? Entenda investigação",
     "data": "2026-11-17",
     "fonte": "Estadão",
@@ -965,19 +979,11 @@
     "tipo": "Outro assunto"
    },
    {
-    "id": "N7",
+    "id": "N8",
     "texto": "Cade investiga Apple por bloqueio ao PIX por aproximação",
     "data": "2026-11-16",
     "fonte": "SpaceMoney",
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZFk2NldRal9uNHdtTlp3Q29iSGNQRUstWVRobnhUZURucGR4ODZOcDNIcFVIRUEwZndCUGw2WkV6UEpjZzlvUDdNTUVCS1liOHFvRVRzSlhzRzVLaGpYTU5zNk1pTEJERXYyOXFEbEZKd01WTjg3UGRKcFE4aFU0SUNHVHI?oc=5",
-    "tipo": "Investigação, operação policial ou suspeita de fraude"
-   },
-   {
-    "id": "N8",
-    "texto": "Cade investiga restrições da Apple ao Pix por aproximação no iPhone",
-    "data": "2026-11-16",
-    "fonte": "Jornal Diário do Povo",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdWY3WUQxNkpMdXpXVTlDRlZRUnpubDU3ZlRpTFo3M19TOUtacHl4Si1zV0IyRTJFWEYxaGlOc1JXdnczbEo1NVppX1hUS05nUUNtcnJBM3Q0ODM1TEdOY21yb0Fjb20xbmhKRXhWbjVyOFBGYzRKN2hyY05rOXdlRGVTOW53OWd6TlZPT2lmQkFnbThucVVGYU9sZFlPdV9zbW4zZ1RvbVBwejM0?oc=5",
     "tipo": "Investigação, operação policial ou suspeita de fraude"
    }
   ],
